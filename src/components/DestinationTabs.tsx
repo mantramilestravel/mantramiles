@@ -10,20 +10,20 @@ const domesticDestinations = [
 	{ id: "kerala", name: "Kerala", tagline: "God's own country", image: "🌴" },
 	{ id: "rajasthan", name: "Rajasthan", tagline: "Land of kings and palaces", image: "🏰" },
 	{ id: "himachal", name: "Himachal Pradesh", tagline: "Adventure in the mountains", image: "🏔️" },
-	{ id: "agra", name: "Agra", tagline: "Home to the Taj Mahal", image: "🕌" },
+	{ id: "northeast", name: "Northeast", tagline: "Explore North East Part of India", image: "🕌" },
 	{ id: "kashmir", name: "Kashmir", tagline: "Paradise on earth", image: "🌸" },
-	{ id: "mumbai", name: "Mumbai", tagline: "The city that never sleeps", image: "🌆" },
-	{ id: "delhi", name: "Delhi", tagline: "Where history meets modernity", image: "🏛️" }
+	{ id: "gujrat", name: "Gujrat", tagline: "The city that never sleeps", image: "🌆" },
+	{ id: "andaman", name: "Andaman", tagline: "Where history meets modernity", image: "🏖️" }
 ];
 
 const internationalDestinations = [
-	{ id: "maldives", name: "Maldives", tagline: "Tropical paradise awaits", image: "🏝️" },
+	{ id: "srilanka", name: "Srilanka", tagline: "Tropical paradise awaits", image: "🏝️" },
 	{ id: "switzerland", name: "Switzerland", tagline: "Alpine beauty and luxury", image: "🏔️" },
-	{ id: "paris", name: "Paris", tagline: "The city of love and lights", image: "🗼" },
+	{ id: "vietnam", name: "Vietnam", tagline: "The city of love and lights", image: "🗼" },
 	{ id: "dubai", name: "Dubai", tagline: "Where dreams meet reality", image: "🏙️" },
 	{ id: "thailand", name: "Thailand", tagline: "Land of smiles and temples", image: "🛕" },
-	{ id: "italy", name: "Italy", tagline: "Art, history, and cuisine", image: "🍝" },
-	{ id: "japan", name: "Japan", tagline: "Where tradition meets innovation", image: "🌸" },
+	{ id: "australia", name: "Australia", tagline: "Art, history, and cuisine", image: "🍝" },
+	{ id: "singapore", name: "Singapore", tagline: "Where tradition meets innovation", image: "🌸" },
 	{ id: "bali", name: "Bali", tagline: "Island of gods and beaches", image: "🌺" }
 ];
 
