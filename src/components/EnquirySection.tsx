@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export const EnquirySection = () => {
@@ -78,17 +78,28 @@ export const EnquirySection = () => {
                   <Phone className="w-5 h-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium text-foreground">Call Us</p>
-                    <p className="text-muted-foreground">+91 98765 43210</p>
-                    <p className="text-muted-foreground">+91 87654 32109</p>
+                    <p className="text-muted-foreground">+91 91088 47836</p>
                   </div>
                 </div>
+                {/* WhatsApp */}
+              <div className="flex items-center gap-2">
+                <MessageCircle className="h-4 w-4 text-green-500" />
+                <p className="font-medium text-foreground">WhatsApp Us</p>
+                <a 
+                  href="https://wa.me/917204386762" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-foreground"
+                >
+                  +91 72043 86762
+                </a>
+              </div>
 
                 <div className="flex items-start gap-3">
                   <Mail className="w-5 h-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium text-foreground">Email Us</p>
-                    <p className="text-muted-foreground">info@mantramiles.com</p>
-                    <p className="text-muted-foreground">support@mantramiles.com</p>
+                    <p className="text-muted-foreground">mantramiles108@gmail.com</p>
                   </div>
                 </div>
 
@@ -97,9 +108,8 @@ export const EnquirySection = () => {
                   <div>
                     <p className="font-medium text-foreground">Visit Us</p>
                     <p className="text-muted-foreground">
-                      123 Travel Plaza, <br />
-                      Connaught Place, <br />
-                      New Delhi - 110001
+                      343, Sir M Visveswaraiah Layout, <br />
+                      5th Block, Bangalore - 560110 <br />
                     </p>
                   </div>
                 </div>
@@ -109,7 +119,7 @@ export const EnquirySection = () => {
                   <div>
                     <p className="font-medium text-foreground">Office Hours</p>
                     <p className="text-muted-foreground">Mon - Sat: 9:00 AM - 7:00 PM</p>
-                    <p className="text-muted-foreground">Sunday: 10:00 AM - 5:00 PM</p>
+                    <p className="text-muted-foreground">Sunday: 10:00 AM - 5:00 PM On Call</p>
                   </div>
                 </div>
 

@@ -1,20 +1,32 @@
-import { Mail, Phone, Facebook, Instagram, Twitter, MapPin } from "lucide-react";
+import { Mail, Phone, Facebook, Instagram, MapPin, MessageCircle } from "lucide-react";
+import Image from "@/assets/logo.png"; // if using Next.js (otherwise use <img>)
 
 export const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
+          
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold">Wanderlust Travels</h3>
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+              <img 
+                src={Image} // imported logo image
+                alt="MantraMiles Logo"
+                width={50}
+                height={50}
+                className="rounded-md"
+              />
+              <h3 className="text-xl font-bold">MantraMiles</h3>
+            </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               Creating unforgettable journeys and memories that last a lifetime. 
-              Your trusted travel companion for over a decade. Test
+              Your trusted travel companion for over a decade.
             </p>
             <div className="flex items-center gap-2 text-sm">
               <MapPin className="h-4 w-4" />
-              <span>Mumbai, Delhi, Bangalore</span>
+              <span>343, Sir M Visveswaraiah Layout, 5th Block, Bangalore - 560110</span>
             </div>
           </div>
 
@@ -22,31 +34,11 @@ export const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#domestic" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Domestic
-                </a>
-              </li>
-              <li>
-                <a href="#international" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  International
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Contact
-                </a>
-              </li>
+              <li><a href="#" className="hover:text-primary-foreground">Home</a></li>
+              <li><a href="#domestic" className="hover:text-primary-foreground">Domestic</a></li>
+              <li><a href="#international" className="hover:text-primary-foreground">International</a></li>
+              <li><a href="#about" className="hover:text-primary-foreground">About Us</a></li>
+              <li><a href="#contact" className="hover:text-primary-foreground">Contact</a></li>
             </ul>
           </div>
 
@@ -56,20 +48,26 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <a 
-                  href="mailto:info@wanderlust-travels.com" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  info@wanderlust-travels.com
+                <a href="mailto:mantramiles108@gmail.com" className="hover:text-primary-foreground">
+                  mantramiles108@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
+                <a href="tel:+919108847836" className="hover:text-primary-foreground">
+                  +91 91088 47836
+                </a>
+              </div>
+              {/* WhatsApp */}
+              <div className="flex items-center gap-2">
+                <MessageCircle className="h-4 w-4 text-green-500" />
                 <a 
-                  href="tel:+919876543210" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  href="https://wa.me/917204386762" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-foreground"
                 >
-                  +91 98765 43210
+                  +91 72043 86762
                 </a>
               </div>
             </div>
@@ -79,27 +77,15 @@ export const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold">Follow Us</h4>
             <div className="flex gap-3">
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
-              >
+              <a href="https://www.facebook.com/profile.php?id=61577960233221" className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
-              >
+              <a href="https://www.instagram.com/mantramiles_/" className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20">
                 <Instagram className="h-5 w-5" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
               </a>
             </div>
             <p className="text-xs text-primary-foreground/60">
-              Share your travel stories with #WanderlustTravels
+              Share your travel stories with #MantraMiles
             </p>
           </div>
         </div>
@@ -107,15 +93,12 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <div className="text-primary-foreground/80">
-            © 2024 Wanderlust Travels. All rights reserved.
+            © 2025 MantraMiles. All rights reserved.
+            <br />Designed by Pramod Ramamurthy - 9739020703<br />
           </div>
           <div className="flex gap-6">
-            <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-              Terms of Use
-            </a>
+            <a href="#" className="hover:text-primary-foreground">Privacy Policy</a>
+            <a href="#" className="hover:text-primary-foreground">Terms of Use</a>
           </div>
         </div>
       </div>

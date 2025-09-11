@@ -1,232 +1,303 @@
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { MapPin, Clock, Star, Calendar, Users, Utensils, Car, Hotel, ArrowLeft } from "lucide-react";
+import jsPDF from "jspdf";
 
-const packageDetails = {
-  1: {
-    name: "Golden Triangle Deluxe",
-    destinations: "Delhi • Agra • Jaipur",
-    duration: "6 Days / 5 Nights",
-    description: "Experience India's most iconic destinations with luxury accommodations. Witness the majestic Taj Mahal at sunrise and explore royal palaces with expert guides.",
-    price: "₹45,999",
-    rating: 4.8,
-    type: "domestic",
-    image: "🏛️",
-    highlights: [
-      "Sunrise visit to Taj Mahal",
-      "Luxury heritage hotels",
-      "Private guided tours",
-      "Cultural performances",
-      "Traditional cuisine experiences"
-    ],
-    itinerary: [
-      { day: 1, title: "Arrival in Delhi", activities: ["Airport pickup", "Hotel check-in", "Red Fort visit", "Chandni Chowk exploration"] },
-      { day: 2, title: "Delhi Sightseeing", activities: ["India Gate", "Lotus Temple", "Qutub Minar", "Humayun's Tomb"] },
-      { day: 3, title: "Delhi to Agra", activities: ["Morning departure", "Taj Mahal visit", "Agra Fort", "Local market visit"] },
-      { day: 4, title: "Agra to Jaipur", activities: ["Fatehpur Sikri en route", "City Palace", "Hawa Mahal", "Local bazaar"] },
-      { day: 5, title: "Jaipur Exploration", activities: ["Amber Fort", "Jantar Mantar", "Albert Hall Museum", "Cultural show"] },
-      { day: 6, title: "Departure", activities: ["Hotel checkout", "Jaipur airport transfer", "Departure"] }
-    ],
-    inclusions: ["Accommodation", "All meals", "Transportation", "Guide services", "Entry fees"],
-    exclusions: ["International flights", "Personal expenses", "Tips", "Travel insurance"]
-  }
-  // Add more package details as needed
+import { packagesData } from "@/components/packages";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+
+/**
+ * PackageDetails.tsx
+ * - 3-up gallery with hover highlight
+ * - modal gallery with left/right navigation (no X on image)
+ * - back button only
+ * - short description
+ * - day-wise itinerary cards
+ * - inclusions/exclusions/terms AFTER itinerary
+ * - booking CTA on right (sticky on large screens)
+ */
+
+type ItineraryItem = { day: string; detail: string };
+type PackageType = {
+  id: string;
+  name: string;
+  destinations: string;
+  duration: string;
+  description: string;
+  price: string;
+  rating: number;
+  type: string;
+  coverImage?: string;
+  images: string[];
+  highlights?: string[];
+  inclusions?: string[];
+  exclusions?: string[];
+  terms?: string[];
+  itinerary?: ItineraryItem[];
 };
 
-export default function PackageDetails() {
-  const { id } = useParams();
+export default function PackageDetails(): JSX.Element {
+  const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const packageId = parseInt(id || "1");
-  const pkg = packageDetails[packageId as keyof typeof packageDetails] || packageDetails[1];
+  const pkg = packagesData.find((p: PackageType) => p.id === id) || (packagesData[0] as PackageType);
 
-  const handleBookNow = () => {
-    navigate(`/payment/${packageId}`);
+  const [modalIndex, setModalIndex] = useState<number | null>(null);
+
+  // keyboard navigation for modal
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (modalIndex === null) return;
+      if (e.key === "Escape") setModalIndex(null);
+      if (e.key === "ArrowLeft") setModalIndex((i) => (i === null ? null : (i - 1 + pkg.images.length) % pkg.images.length));
+      if (e.key === "ArrowRight") setModalIndex((i) => (i === null ? null : (i + 1) % pkg.images.length));
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [modalIndex, pkg.images.length]);
+
+  if (!pkg) return <div className="py-24 text-center">Package not found</div>;
+
+  // PDF generation - paginate if many items
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF({ unit: "pt", format: "a4" });
+    const margin = 40;
+    let y = 60;
+
+    doc.setFontSize(18);
+    doc.text(pkg.name, margin, y);
+    y += 26;
+
+    doc.setFontSize(12);
+    doc.text(`Duration: ${pkg.duration}`, margin, y);
+    y += 18;
+    doc.text(`Price: ${pkg.price}`, margin, y);
+    y += 30;
+
+    doc.setFontSize(14);
+    doc.text("Day-wise Itinerary:", margin, y);
+    y += 20;
+
+    doc.setFontSize(11);
+    const lineHeight = 16;
+    (pkg.itinerary || []).forEach((it, idx) => {
+      const text = `${it.day} — ${it.detail}`;
+      const splitted = doc.splitTextToSize(text, 520);
+      if (y + splitted.length * lineHeight > 800) {
+        doc.addPage();
+        y = 60;
+      }
+      doc.text(splitted, margin, y);
+      y += splitted.length * lineHeight + 6;
+    });
+
+    // Add a page for inclusions/exclusions/terms
+    doc.addPage();
+    y = 60;
+    doc.setFontSize(14);
+    doc.text("Inclusions", margin, y);
+    doc.setFontSize(11);
+    y += 18;
+    (pkg.inclusions || []).forEach((i) => {
+      const lines = doc.splitTextToSize(`• ${i}`, 520);
+      doc.text(lines, margin, y);
+      y += lines.length * lineHeight;
+    });
+
+    y += 10;
+    doc.setFontSize(14);
+    doc.text("Exclusions", margin, y);
+    doc.setFontSize(11);
+    y += 18;
+    (pkg.exclusions || []).forEach((i) => {
+      const lines = doc.splitTextToSize(`• ${i}`, 520);
+      doc.text(lines, margin, y);
+      y += lines.length * lineHeight;
+    });
+
+    y += 10;
+    doc.setFontSize(14);
+    doc.text("Terms & Conditions", margin, y);
+    doc.setFontSize(11);
+    y += 18;
+    (pkg.terms || []).forEach((i) => {
+      const lines = doc.splitTextToSize(`• ${i}`, 520);
+      doc.text(lines, margin, y);
+      y += lines.length * lineHeight;
+    });
+
+    doc.save(`${pkg.id}-itinerary.pdf`);
   };
 
-  const handleBackToHome = () => {
-    navigate('/');
+  // modal helpers
+  const openModalAt = (index: number) => setModalIndex(index);
+  const closeModal = () => setModalIndex(null);
+  const showPrev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setModalIndex((i) => (i === null ? null : (i - 1 + pkg.images.length) % pkg.images.length));
+  };
+  const showNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setModalIndex((i) => (i === null ? null : (i + 1) % pkg.images.length));
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header onNavigate={() => {}} currentView="packages" onBackToHome={handleBackToHome} />
-      
-      <div className="container mx-auto px-6 py-20">
-        <Button 
-          variant="ghost" 
-          onClick={() => navigate(-1)}
-          className="mb-6"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back
+    <div className="py-16 px-6 max-w-7xl mx-auto">
+      {/* Back button (left only as requested) */}
+      <div className="flex justify-start mb-8">
+        <Button variant="outline" className="rounded-full px-5" onClick={() => navigate(-1)}>
+          <ArrowLeft className="mr-2" size={16} /> Back to Packages
         </Button>
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 space-y-8">
-            {/* Package Header */}
+      {/* Title + short summary */}
+      <header className="mb-10">
+        <div className="flex items-center gap-4 mb-3">
+          <Badge className="px-3 py-1">⭐ {pkg.rating}</Badge>
+          <span className="text-xl font-semibold text-green-700">{pkg.price}</span>
+        </div>
+
+        <h1 className="text-4xl font-extrabold mb-3">{pkg.name}</h1>
+        <div className="text-gray-600 mb-2">{pkg.destinations} • {pkg.duration}</div>
+        <p className="text-lg text-muted-foreground max-w-3xl">{pkg.description}</p>
+      </header>
+
+      {/* Gallery: 3-up on large screens */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        {pkg.images.map((src, i) => (
+          <div
+            key={i}
+            onClick={() => openModalAt(i)}
+            className="relative overflow-hidden rounded-2xl shadow-lg cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === "Enter" && openModalAt(i)}
+          >
+            <img src={src} alt={`${pkg.name} ${i + 1}`} className="w-full h-56 md:h-72 object-cover rounded-2xl" />
+            {/* subtle overlay gloss on hover */}
+            <div className="absolute inset-0 pointer-events-none transition-opacity opacity-0 hover:opacity-30 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Main grid: itinerary (left wide) + CTA (right) */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2">
+          {/* Itinerary */}
+          <h2 className="text-3xl font-bold mb-6">Day-wise Itinerary</h2>
+          <div className="space-y-6 mb-8">
+            {(pkg.itinerary || []).map((it, idx) => (
+              <Card key={idx} className="shadow-md border-l-4 border-green-500 hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-lg font-semibold text-green-700">{it.day}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">{it.detail}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Inclusions / Exclusions / Terms - AFTER itinerary */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card>
               <CardHeader>
-                <div className="flex items-start justify-between mb-4">
-                  <Badge variant={pkg.type === 'domestic' ? 'default' : 'secondary'}>
-                    {pkg.type === 'domestic' ? 'Domestic' : 'International'}
-                  </Badge>
-                  <div className="flex items-center gap-1">
-                    <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    <span className="font-semibold">{pkg.rating}</span>
-                  </div>
-                </div>
-                <div className="text-6xl mb-4">{pkg.image}</div>
-                <CardTitle className="text-3xl font-bold">{pkg.name}</CardTitle>
-                <div className="flex flex-wrap gap-4 text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <MapPin className="h-4 w-4" />
-                    <span>{pkg.destinations}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="h-4 w-4" />
-                    <span>{pkg.duration}</span>
-                  </div>
-                </div>
-                <CardDescription className="text-lg mt-4">
-                  {pkg.description}
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            {/* Highlights */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Package Highlights</CardTitle>
+                <CardTitle>Inclusions</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {pkg.highlights.map((highlight, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <div className="h-2 w-2 bg-primary rounded-full" />
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
+                <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                  {(pkg.inclusions || []).map((inc, i) => <li key={i}>{inc}</li>)}
                 </ul>
               </CardContent>
             </Card>
 
-            {/* Itinerary */}
             <Card>
               <CardHeader>
-                <CardTitle>Day-wise Itinerary</CardTitle>
+                <CardTitle>Exclusions</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-6">
-                  {pkg.itinerary.map((day) => (
-                    <div key={day.day} className="border-l-4 border-primary pl-6">
-                      <h4 className="font-semibold text-lg">Day {day.day}: {day.title}</h4>
-                      <ul className="mt-2 space-y-1">
-                        {day.activities.map((activity, index) => (
-                          <li key={index} className="text-muted-foreground">• {activity}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
+                <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                  {(pkg.exclusions || []).map((exc, i) => <li key={i}>{exc}</li>)}
+                </ul>
               </CardContent>
             </Card>
 
-            {/* Inclusions & Exclusions */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-green-600">Inclusions</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {pkg.inclusions.map((item, index) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <div className="h-2 w-2 bg-green-500 rounded-full" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-red-600">Exclusions</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {pkg.exclusions.map((item, index) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <div className="h-2 w-2 bg-red-500 rounded-full" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Booking Sidebar */}
-          <div className="lg:col-span-1">
-            <Card className="sticky top-24">
+            <Card>
               <CardHeader>
-                <CardTitle>Book This Package</CardTitle>
+                <CardTitle>Terms</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="text-center">
-                  <span className="text-sm text-muted-foreground">Starting from</span>
-                  <div className="text-3xl font-bold text-primary">{pkg.price}</div>
-                  <span className="text-sm text-muted-foreground">per person</span>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2 text-sm">
-                    <Calendar className="h-4 w-4" />
-                    <span>Flexible dates available</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Users className="h-4 w-4" />
-                    <span>Group discounts available</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Hotel className="h-4 w-4" />
-                    <span>Luxury accommodations</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Car className="h-4 w-4" />
-                    <span>Private transportation</span>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <Button onClick={handleBookNow} className="w-full" size="lg">
-                    Book Now
-                  </Button>
-                  <Button variant="outline" className="w-full">
-                    Get Quote
-                  </Button>
-                  <Button variant="ghost" className="w-full">
-                    Download Itinerary
-                  </Button>
-                </div>
-
-                <div className="text-center text-sm text-muted-foreground">
-                  <p>24/7 Customer Support</p>
-                  <p>Secure Payment Gateway</p>
-                  <p>Free Cancellation up to 48hrs</p>
-                </div>
+              <CardContent>
+                <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                  {(pkg.terms || []).map((t, i) => <li key={i}>{t}</li>)}
+                </ul>
               </CardContent>
             </Card>
           </div>
         </div>
+
+        {/* CTA on right */}
+        <aside className="lg:col-span-1">
+          <div className="sticky top-24">
+            <Card className="p-6 shadow-2xl border-2 border-green-50">
+              <div className="mb-4">
+                <h3 className="text-xl font-bold">Book This Package</h3>
+                <div className="text-sm text-muted-foreground mt-1">Starting from</div>
+                <div className="text-3xl font-extrabold text-green-600 mt-2">{pkg.price}</div>
+              </div>
+
+              <ul className="space-y-2 mb-6 text-sm text-gray-700">
+                <li>✔ Flexible dates available</li>
+                <li>✔ Group discounts available</li>
+                <li>✔ Luxury accommodations</li>
+                <li>✔ Private transportation</li>
+              </ul>
+
+              <Button className="w-full mb-4 py-4 text-lg">Get Quote</Button>
+              <Button variant="outline" className="w-full py-4 text-lg" onClick={handleDownloadPDF}>
+                Download Itinerary
+              </Button>
+
+              <div className="text-xs text-muted-foreground text-center mt-4">
+                24/7 Customer Support · Free cancellation up to 48hrs
+              </div>
+            </Card>
+          </div>
+        </aside>
       </div>
 
-      <Footer />
+      {/* Modal Gallery - custom overlay with arrows (no X on image) */}
+      {modalIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+          onClick={closeModal} // clicking backdrop closes
+        >
+          {/* left arrow */}
+          <button
+            aria-label="previous"
+            onClick={(e) => { e.stopPropagation(); showPrev(); }}
+            className="absolute left-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white"
+          >
+            <ChevronLeft size={28} />
+          </button>
+
+          <div
+            className="max-w-[90vw] max-h-[90vh] flex items-center justify-center px-6"
+            onClick={(e) => e.stopPropagation()} // clicking image area shouldn't close
+          >
+            <img src={pkg.images[modalIndex]} alt={`modal-${modalIndex}`} className="max-w-full max-h-full rounded-2xl shadow-2xl" />
+          </div>
+
+          {/* right arrow */}
+          <button
+            aria-label="next"
+            onClick={(e) => { e.stopPropagation(); showNext(); }}
+            className="absolute right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white"
+          >
+            <ChevronRight size={28} />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

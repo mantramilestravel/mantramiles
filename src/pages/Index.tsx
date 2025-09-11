@@ -9,10 +9,13 @@ import { StatsSection } from "@/components/StatsSection";
 import { EnquirySection } from "@/components/EnquirySection";
 import { AboutSection } from "@/components/AboutSection";
 import { Footer } from "@/components/Footer";
+import MainBlog, { BlogPostType } from "@/components/MainBlog";
+import BlogPost from "@/components/BlogPost";
 
 const Index = () => {
   const [currentView, setCurrentView] = useState<'home' | 'packages'>('home');
   const [selectedDestination, setSelectedDestination] = useState<string>('');
+  const [selectedBlog, setSelectedBlog] = useState<BlogPostType | null>(null);
 
   const handleDestinationClick = (destination: string) => {
     setSelectedDestination(destination);
@@ -22,29 +25,37 @@ const Index = () => {
   const handleBackToHome = () => {
     setCurrentView('home');
     setSelectedDestination('');
+    setSelectedBlog(null);
   };
 
   const handleNavigate = (section: string) => {
     if (section === 'domestic' || section === 'international') {
-      // Scroll to destinations section
       const element = document.getElementById('destinations');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else if (section === 'packages') {
-      // Scroll to top packages section
       const element = document.getElementById('top-packages');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else if (section === 'about') {
-      // Scroll to about section
       const element = document.getElementById('about');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
   };
+
+  const handleBlogClick = (post: BlogPostType) => {
+    setSelectedBlog(post);
+  };
+
+  if (selectedBlog) {
+    return (
+      <BlogPost blogPost={selectedBlog} onBack={handleBackToHome} />
+    );
+  }
 
   if (currentView === 'packages') {
     return (
@@ -65,25 +76,28 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header 
-        onNavigate={handleNavigate} 
-        currentView={currentView}
-        onBackToHome={handleBackToHome}
+      onNavigate={handleNavigate} 
+      currentView={currentView}
+      onBackToHome={handleBackToHome}
       />
       <HeroCarousel onDestinationClick={handleDestinationClick} />
       <div id="top-packages">
-        <TopPackagesSection />
+      <TopPackagesSection />
+      </div>
+      <div>
+      <MainBlog onBlogClick={handleBlogClick} />
       </div>
       <div id="destinations">
-        <DestinationTabs onDestinationClick={handleDestinationClick} />
+      <DestinationTabs onDestinationClick={handleDestinationClick} />
       </div>
       <StatsSection />
       <TestimonialsSection />
       <div id="about">
-        <AboutSection />
+      <AboutSection />
       </div>
       <EnquirySection />
       <div id="footer">
-        <Footer />
+      <Footer />
       </div>
     </div>
   );

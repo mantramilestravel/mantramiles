@@ -4,21 +4,21 @@ import { Users, Calendar, MapPin, Award } from "lucide-react";
 const stats = [
   {
     icon: Calendar,
-    value: 15,
+    value: 10,
     suffix: "+",
     label: "Years of Experience",
     description: "Serving travelers since 2009"
   },
   {
     icon: Users,
-    value: 25000,
+    value: 10000,
     suffix: "+",
     label: "Happy Customers",
     description: "Satisfied travelers worldwide"
   },
   {
     icon: MapPin,
-    value: 150,
+    value: 100,
     suffix: "+",
     label: "Destinations Covered",
     description: "Across India and abroad"
