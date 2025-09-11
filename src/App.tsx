@@ -15,7 +15,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      
         <Routes>
           {/* ✅ Root route should be "/" */}
           <Route path="/" element={<Index />} />
@@ -24,7 +24,7 @@ const App = () => (
           {/* Catch-all for undefined routes */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      
     </TooltipProvider>
   </QueryClientProvider>
 );
