@@ -4,7 +4,7 @@ import App from "./App.tsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter basename="/mantramiles-copy1/">
+  <BrowserRouter basename={import.meta.env.MODE === "production" ? "/mantramiles-copy1/" : "/"}>
     <App />
   </BrowserRouter>
 );
