@@ -7,6 +7,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { QuoteDialog } from "@/components/QuoteDialog";
 
 /**
  * PackageDetails.tsx
@@ -253,7 +254,10 @@ export default function PackageDetails(): JSX.Element {
                 <li>✔ Private transportation</li>
               </ul>
 
-              <Button className="w-full mb-4 py-4 text-lg">Get Quote</Button>
+              <QuoteDialog destination={pkg.name}>
+                <Button className="w-full mb-4 py-4 text-lg">Get Quote</Button>
+              </QuoteDialog>
+              
               <Button variant="outline" className="w-full py-4 text-lg" onClick={handleDownloadPDF}>
                 Download Itinerary
               </Button>

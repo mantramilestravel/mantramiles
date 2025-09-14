@@ -11,7 +11,7 @@ export const TestimonialsSection = () => {
     id: 1,
     name: "Madhusudan Iyengar",
     location: "Bangalore",
-    text: "I've embarked on numerous spiritual quests, but my recent pilgrimage with MantraMiles was exceptional. The attention to spiritual detail and personalized guidance made it truly enlightening.",
+    text: "I've embarked on numerous spiritual quests, but my recent pilgrimage with Mantra Miles was exceptional. The attention to spiritual detail and personalized guidance made it truly enlightening.",
     rating: 5,
     trip: "Chardham Yatra Package",
   },
@@ -19,7 +19,7 @@ export const TestimonialsSection = () => {
     id: 2,
     name: "Anirudh Singh",
     location: "Bangalore",
-    text: "This was the most profound spiritual experience I've ever had! Everything exceeded my expectations. MantraMiles truly knows how to create unforgettable spiritual journeys.",
+    text: "This was the most profound spiritual experience I've ever had! Everything exceeded my expectations. Mantra Miles truly knows how to create unforgettable spiritual journeys.",
     rating: 5,
     trip: "Chardham Yatra Package",
   },
@@ -27,7 +27,7 @@ export const TestimonialsSection = () => {
     id: 3,
     name: "Ritu M",
     location: "Bangalore",
-    text: "MantraMiles transformed my spiritual journey into a once-in-a-lifetime experience. Their expertise and dedication to crafting unique itineraries truly set them apart.",
+    text: "Mantra Miles transformed my spiritual journey into a once-in-a-lifetime experience. Their expertise and dedication to crafting unique itineraries truly set them apart.",
     rating: 5,
     trip: "Chardham Yatra Package",
   },
@@ -35,7 +35,7 @@ export const TestimonialsSection = () => {
     id: 4,
     name: "Anirudh Singh",
     location: "Bangalore",
-    text: "This was the most profound spiritual experience I've ever had! Everything exceeded my expectations. MantraMiles truly knows how to create unforgettable spiritual journeys.",
+    text: "This was the most profound spiritual experience I've ever had! Everything exceeded my expectations. Mantra Miles truly knows how to create unforgettable spiritual journeys.",
     rating: 4,
     trip: "Chardham Yatra Tour",
   },
@@ -70,13 +70,13 @@ export const TestimonialsSection = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Don't just take our word for it. Hear from the clients who have experienced 
-            the Mantramiles travels firsthand.
+            the Mantra Miles travels firsthand.
           </p>
         </div>
 
         {/* Testimonial Card */}
         <div className="relative max-w-4xl mx-auto">
-          <Card className="border-0 shadow-2xl">
+          <Card className="border-0 shadow-2xl px-16">
             <CardContent className="p-8 md:p-12">
               <div className="flex items-center justify-between mb-8">
                 <Quote className="w-12 h-12 text-bronze-600 opacity-50" />

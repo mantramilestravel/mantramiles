@@ -1728,7 +1728,9 @@ export const PackagesSection = ({ destination, onBack }: PackagesSectionProps) =
                           </>
                         )}
                       </Button>
-                      <QuoteDialog destination={destinationData.name}>
+                      <QuoteDialog
+                        destination={destinationData.name}
+                      >
                         <Button
                           variant="outline"
                           className="flex-1"
@@ -1737,6 +1739,7 @@ export const PackagesSection = ({ destination, onBack }: PackagesSectionProps) =
                           Get Quote
                         </Button>
                       </QuoteDialog>
+
                     </div>
                   </div>
 

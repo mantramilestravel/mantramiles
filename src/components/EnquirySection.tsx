@@ -78,28 +78,28 @@ export const EnquirySection = () => {
                   <Phone className="w-5 h-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium text-foreground">Call Us</p>
-                    <p className="text-muted-foreground">+91 91088 47836</p>
+                    <p className="text-muted-foreground">+91 99728 16108</p>
                   </div>
                 </div>
                 {/* WhatsApp */}
-              <div className="flex items-center gap-2">
-                <MessageCircle className="h-4 w-4 text-green-500" />
-                <p className="font-medium text-foreground">WhatsApp Us</p>
-                <a 
-                  href="https://wa.me/917204386762" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-primary-foreground"
-                >
-                  +91 72043 86762
-                </a>
-              </div>
+                <div className="flex items-center gap-2">
+                  <MessageCircle className="h-4 w-4 text-green-500" />
+                  <p className="font-medium text-foreground">WhatsApp Us</p>
+                  <a
+                    href="https://wa.me/+919972816108"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-600 hover:text-green-700 font-medium transition-colors"
+                  >
+                    +91 99728 16108
+                  </a>
+                </div>
 
                 <div className="flex items-start gap-3">
                   <Mail className="w-5 h-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium text-foreground">Email Us</p>
-                    <p className="text-muted-foreground">mantramiles108@gmail.com</p>
+                    <p className="text-muted-foreground">mantramiles.01@gmail.com</p>
                   </div>
                 </div>
 
@@ -127,6 +127,19 @@ export const EnquirySection = () => {
                   <p className="text-sm text-muted-foreground">
                     🛕 <strong>Mantra Miles</strong> - Your trusted travel partner for spiritual and adventure journeys across India and beyond.
                   </p>
+                </div>
+                <div className="pt-4">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.42892474482!2d77.54402309340274!3d12.921716205644842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3b3bb3a6a3b7%3A0xa602637ad3766e8b!2sMantra%20Miles!5e0!3m2!1sen!2sin!4v1694700000000!5m2!1sen!2sin"
+                    width="100%"
+                    height="250"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-lg"
+                  ></iframe>
+
                 </div>
               </CardContent>
             </Card>

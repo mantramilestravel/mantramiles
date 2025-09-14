@@ -18,7 +18,7 @@ export const Footer = () => {
                 height={50}
                 className="rounded-md"
               />
-              <h3 className="text-xl font-bold">MantraMiles</h3>
+              <h3 className="text-xl font-bold">Mantra Miles</h3>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               Creating unforgettable journeys and memories that last a lifetime. 
@@ -48,26 +48,26 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:mantramiles108@gmail.com" className="hover:text-primary-foreground">
-                  mantramiles108@gmail.com
+                <a href="mailto:mantramiles.01@gmail.com" className="hover:text-primary-foreground">
+                  mantramiles.01@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <a href="tel:+919108847836" className="hover:text-primary-foreground">
-                  +91 91088 47836
+                <a href="tel:+91 9972816108" className="hover:text-primary-foreground">
+                  +91 99728 16108
                 </a>
               </div>
               {/* WhatsApp */}
               <div className="flex items-center gap-2">
                 <MessageCircle className="h-4 w-4 text-green-500" />
                 <a 
-                  href="https://wa.me/917204386762" 
+                  href="https://wa.me/+919972816108" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:text-primary-foreground"
                 >
-                  +91 72043 86762
+                  +91 99728 16108
                 </a>
               </div>
             </div>
@@ -77,7 +77,7 @@ export const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold">Follow Us</h4>
             <div className="flex gap-3">
-              <a href="https://www.facebook.com/profile.php?id=61577960233221" className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20">
+              <a href="https://www.facebook.com/mantramiles" className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20">
                 <Facebook className="h-5 w-5" />
               </a>
               <a href="https://www.instagram.com/mantramiles_/" className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20">
@@ -93,7 +93,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <div className="text-primary-foreground/80">
-            © 2025 MantraMiles. All rights reserved.
+            © 2025 Mantra Miles. All rights reserved.
             <br />Designed by Pramod Ramamurthy - 9739020703<br />
           </div>
           <div className="flex gap-6">

@@ -1,119 +1,146 @@
+// src/components/DestinationTabs.tsx
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Plane } from "lucide-react";
 import { QuoteDialog } from "./QuoteDialog";
 
+import goaImage from "@/assets/goa.jpg";
+import keralaImage from "@/assets/kerala.jpg";
+import rajasthanImage from "@/assets/rajasthan.jpg";
+import himachalImage from "@/assets/himachal.jpg";
+import northeastImage from "@/assets/northeast.jpg";
+import kashmirImage from "@/assets/kashmir.jpeg";
+import gujaratImage from "@/assets/gujarat.jpg";
+import andamanImage from "@/assets/andaman.jpg";
+
+// Import International Destinations Images
+import srilankaImage from "@/assets/packages/srilanka/srilanka5.webp";
+import switzerlandImage from "@/assets/switzerland.jpeg";
+import vietnamImage from "@/assets/vietnam.jpg";
+import dubaiImage from "@/assets/dubai.jpg";
+import thailandImage from "@/assets/thailand.jpg";
+import australiaImage from "@/assets/australia.png";
+import singaporeImage from "@/assets/singapore.jpg";
+import baliImage from "@/assets/bali.jpeg";
+
+// Domestic Destinations
 const domesticDestinations = [
-	{ id: "goa", name: "Goa", tagline: "Sun, sand, and endless beaches", image: "🏖️" },
-	{ id: "kerala", name: "Kerala", tagline: "God's own country", image: "🌴" },
-	{ id: "rajasthan", name: "Rajasthan", tagline: "Land of kings and palaces", image: "🏰" },
-	{ id: "himachal", name: "Himachal Pradesh", tagline: "Adventure in the mountains", image: "🏔️" },
-	{ id: "northeast", name: "Northeast", tagline: "Explore North East Part of India", image: "🕌" },
-	{ id: "kashmir", name: "Kashmir", tagline: "Paradise on earth", image: "🌸" },
-	{ id: "gujrat", name: "Gujrat", tagline: "The city that never sleeps", image: "🌆" },
-	{ id: "andaman", name: "Andaman", tagline: "Where history meets modernity", image: "🏖️" }
+  { id: "goa", name: "Goa", tagline: "Sun, sand, and endless beaches", image: {goaImage}},
+  { id: "kerala", name: "Kerala", tagline: "God's own country", image: keralaImage },
+  { id: "rajasthan", name: "Rajasthan", tagline: "Land of kings and palaces", image: rajasthanImage },
+  { id: "himachal", name: "Himachal Pradesh", tagline: "Adventure in the mountains", image: himachalImage },
+  { id: "northeast", name: "Northeast", tagline: "Explore untouched beauty", image: northeastImage },
+  { id: "kashmir", name: "Kashmir", tagline: "Paradise on earth", image: kashmirImage },
+  { id: "gujarat", name: "Gujarat", tagline: "Culture, heritage & wildlife", image: gujaratImage },
+  { id: "andaman", name: "Andaman", tagline: "Pristine beaches & history", image: andamanImage }
 ];
 
+// International Destinations
 const internationalDestinations = [
-	{ id: "srilanka", name: "Srilanka", tagline: "Tropical paradise awaits", image: "🏝️" },
-	{ id: "switzerland", name: "Switzerland", tagline: "Alpine beauty and luxury", image: "🏔️" },
-	{ id: "vietnam", name: "Vietnam", tagline: "The city of love and lights", image: "🗼" },
-	{ id: "dubai", name: "Dubai", tagline: "Where dreams meet reality", image: "🏙️" },
-	{ id: "thailand", name: "Thailand", tagline: "Land of smiles and temples", image: "🛕" },
-	{ id: "australia", name: "Australia", tagline: "Art, history, and cuisine", image: "🍝" },
-	{ id: "singapore", name: "Singapore", tagline: "Where tradition meets innovation", image: "🌸" },
-	{ id: "bali", name: "Bali", tagline: "Island of gods and beaches", image: "🌺" }
+  { id: "srilanka", name: "Sri Lanka", tagline: "Tropical paradise awaits", image: srilankaImage },
+  { id: "switzerland", name: "Switzerland", tagline: "Alpine beauty & luxury", image: switzerlandImage },
+  { id: "vietnam", name: "Vietnam", tagline: "Heritage meets modern vibes", image: vietnamImage },
+  { id: "dubai", name: "Dubai", tagline: "Luxury & innovation", image: dubaiImage },
+  { id: "thailand", name: "Thailand", tagline: "Land of smiles & temples", image: thailandImage },
+  { id: "australia", name: "Australia", tagline: "Nature, beaches & adventure", image: australiaImage },
+  { id: "singapore", name: "Singapore", tagline: "Tradition meets innovation", image: singaporeImage },
+  { id: "bali", name: "Bali", tagline: "Island of gods & beaches", image: baliImage }
 ];
 
 interface DestinationTabsProps {
-	onDestinationClick: (destination: string) => void;
+  onDestinationClick: (destination: string) => void;
 }
 
 export const DestinationTabs: React.FC<DestinationTabsProps> = ({ onDestinationClick }) => {
-	const [activeTab, setActiveTab] = useState("domestic");
+  const [activeTab, setActiveTab] = useState("domestic");
 
-	const DestinationGrid = ({ destinations }: { destinations: typeof domesticDestinations }) => (
-		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-			{destinations.map((destination) => (
-				<Card
-					key={destination.id}
-					className="group overflow-hidden border-0 shadow-card hover:shadow-hero transition-all duration-300 hover:-translate-y-2 bg-card"
-				>
-					<CardContent className="p-6">
-						<div className="text-center">
-							<div className="text-4xl mb-4 group-hover:animate-float">
-								{destination.image}
-							</div>
-							<h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-								{destination.name}
-							</h3>
-							<p className="text-muted-foreground text-sm leading-relaxed mb-4">
-								{destination.tagline}
-							</p>
-							<div className="flex gap-2">
-								<Button
-									variant="outline"
-									size="sm"
-									className="flex-1"
-									onClick={() => onDestinationClick(destination.id)}
-								>
-									Explore
-								</Button>
-								<QuoteDialog destination={destination.name}>
-									<Button size="sm" className="flex-1">
-										Get Quote
-									</Button>
-								</QuoteDialog>
-							</div>
-						</div>
-					</CardContent>
-				</Card>
-			))}
-		</div>
-	);
+  const DestinationGrid = ({ destinations }: { destinations: typeof domesticDestinations }) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
+      {destinations.map((destination) => (
+        <div
+          key={destination.id}
+          className="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+        >
+          {/* Background image */}
+          <div className="relative h-72 w-full overflow-hidden">
+            <img
+              src={destination.image}
+              alt={destination.name}
+              className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+            />
+            {/* Softer bottom-only gradient for text readability */}
+            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          </div>
 
-	return (
-		<section className="py-16 px-4 bg-secondary/30">
-			<div className="max-w-7xl mx-auto">
-				<div className="text-center mb-12">
-					<h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-						Discover Amazing Destinations
-					</h2>
-					<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-						From breathtaking local gems to exotic international wonders,
-						find your perfect getaway destination.
-					</p>
-				</div>
+          {/* Content overlay */}
+          <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+            <h3 className="text-2xl font-bold drop-shadow-md">{destination.name}</h3>
+            <p className="text-sm text-gray-200 mb-4">{destination.tagline}</p>
+            <div className="flex gap-3">
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex-1 border-white text-white bg-black/40 hover:bg-white hover:text-emerald-600 transition"
+                onClick={() => onDestinationClick(destination.id)}
+              >
+                Explore
+              </Button>
+              <QuoteDialog destination={destination.name}>
+                <Button
+                  size="sm"
+                  className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg"
+                >
+                  Get Quote
+                </Button>
+              </QuoteDialog>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 
-				<Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-					<TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8 bg-background border border-border">
-						<TabsTrigger
-							value="domestic"
-							className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-						>
-							<MapPin className="h-4 w-4" />
-							Domestic
-						</TabsTrigger>
-						<TabsTrigger
-							value="international"
-							className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-						>
-							<Plane className="h-4 w-4" />
-							International
-						</TabsTrigger>
-					</TabsList>
+  return (
+    <section className="relative py-20 px-6 bg-gradient-to-b from-emerald-50 via-white to-emerald-50">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-6">
+            Discover Amazing Destinations
+          </h2>
+          <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+            From breathtaking local gems to exotic international wonders, find your perfect getaway destination.
+          </p>
+        </div>
 
-					<TabsContent value="domestic" className="animate-fade-in">
-						<DestinationGrid destinations={domesticDestinations} />
-					</TabsContent>
+        {/* Tabs */}
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <TabsList className="flex justify-center w-full max-w-md mx-auto mb-12 bg-white/80 border border-gray-200 rounded-full shadow-md">
+            <TabsTrigger
+              value="domestic"
+              className="flex items-center gap-2 rounded-full px-6 py-3 data-[state=active]:bg-emerald-600 data-[state=active]:text-white transition"
+            >
+              <MapPin className="h-4 w-4" />
+              Domestic
+            </TabsTrigger>
+            <TabsTrigger
+              value="international"
+              className="flex items-center gap-2 rounded-full px-6 py-3 data-[state=active]:bg-emerald-600 data-[state=active]:text-white transition"
+            >
+              <Plane className="h-4 w-4" />
+              International
+            </TabsTrigger>
+          </TabsList>
 
-					<TabsContent value="international" className="animate-fade-in">
-						<DestinationGrid destinations={internationalDestinations} />
-					</TabsContent>
-				</Tabs>
-			</div>
-		</section>
-	);
+          <TabsContent value="domestic" className="animate-fade-in">
+            <DestinationGrid destinations={domesticDestinations} />
+          </TabsContent>
+          <TabsContent value="international" className="animate-fade-in">
+            <DestinationGrid destinations={internationalDestinations} />
+          </TabsContent>
+        </Tabs>
+      </div>
+    </section>
+  );
 };

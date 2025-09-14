@@ -63,7 +63,7 @@ const BlogPostCard = ({ title, description, image, onClick }) => {
 // Main component for the blog section on your homepage
 const MainBlog: React.FC<MainBlogProps> = ({ onBlogClick }) => {
   return (
-    <section className="bg-gray-100 py-16">
+    <section id="blog" className="bg-gray-100 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-12">
           Travel Stories & Insights

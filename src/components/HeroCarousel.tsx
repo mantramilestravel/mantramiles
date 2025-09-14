@@ -8,7 +8,7 @@ import badrinathTemple from "@/assets/badrinath-temple.jpg";
 import keralaBackwaters from "@/assets/kerala-backwaters.jpg";
 import gangotriTemple from "@/assets/gangotri-temple.jpg";
 import chardham from "@/assets/chardham.jpg";
-import swissAlps from "@/assets/swiss-alps-hero.jpg"; 
+import swissAlps from "@/assets/swiss-alps-hero.jpg";
 
 const heroImages = [
   {
@@ -60,13 +60,13 @@ const heroImages = [
     cta: "Book Early & Save 10%",
   },
   {
-  id: 7,
-  image: swissAlps, // make sure you import the Swiss Alps image
-  title: "Swiss Alps Retreat – Nature, Serenity & Adventure",
-  subtitle: "Breathe in the magic of snow-capped peaks and alpine charm",
-  highlight: "Where breathtaking landscapes meet soulful escapes",
-  cta: "Reserve Your Spot Today",
-}
+    id: 7,
+    image: swissAlps, // make sure you import the Swiss Alps image
+    title: "Swiss Alps Retreat – Nature, Serenity & Adventure",
+    subtitle: "Breathe in the magic of snow-capped peaks and alpine charm",
+    highlight: "Where breathtaking landscapes meet soulful escapes",
+    cta: "Reserve Your Spot Today",
+  }
 
 ];
 
@@ -103,9 +103,8 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onDestinationClick }
       {heroImages.map((item, index) => (
         <div
           key={item.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentIndex ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
         >
           <div
             className="h-full w-full bg-cover bg-center"
@@ -113,10 +112,10 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onDestinationClick }
             role="img"
             aria-label={`${item.title} - ${item.subtitle}`}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60">
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-10">
               <div className="flex h-full items-center justify-center">
-                <div className="text-center text-white px-6 max-w-3xl animate-fade-in">
-                  
+                <div className="text-center text-white px-6 max-w-3xl animate-fade-in z-20">
+
                   {/* Highlight ribbon */}
                   {item.highlight && (
                     <p className="inline-block bg-teal-600 text-white text-sm md:text-base font-medium px-4 py-1 rounded-full mb-4 shadow-md">
@@ -135,7 +134,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onDestinationClick }
                   {/* CTA Button (dynamic text) */}
                   <Button
                     size="lg"
-                    className="bg-primary text-white shadow-lg hover:scale-105 hover:shadow-xl transition-transform"
+                    className="relative z-30 bg-primary text-white shadow-lg hover:scale-105 hover:shadow-xl transition-transform"
                     onClick={scrollToPackages}
                   >
                     {item.cta}
@@ -152,7 +151,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onDestinationClick }
         variant="ghost"
         size="icon"
         aria-label="Previous Slide"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full z-40"
         onClick={prevSlide}
       >
         <ChevronLeft className="h-6 w-6" />
@@ -162,7 +161,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onDestinationClick }
         variant="ghost"
         size="icon"
         aria-label="Next Slide"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full z-40"
         onClick={nextSlide}
       >
         <ChevronRight className="h-6 w-6" />
@@ -174,11 +173,10 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onDestinationClick }
           <button
             key={index}
             aria-label={`Go to slide ${index + 1}`}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentIndex
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
                 ? "bg-white scale-125"
                 : "bg-white/50 hover:bg-white/70"
-            }`}
+              }`}
             onClick={() => setCurrentIndex(index)}
           />
         ))}

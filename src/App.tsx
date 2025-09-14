@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import PackageDetails from "@/pages/PackageDetails";
 import PaymentGateway from "./pages/PaymentGateway";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,7 @@ const App = () => (
           {/* Catch-all for undefined routes */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      
+      <ScrollToTop />
     </TooltipProvider>
   </QueryClientProvider>
 );
