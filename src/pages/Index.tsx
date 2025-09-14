@@ -11,6 +11,8 @@ import { AboutSection } from "@/components/AboutSection";
 import { Footer } from "@/components/Footer";
 import MainBlog, { BlogPostType } from "@/components/MainBlog";
 import BlogPost from "@/components/BlogPost";
+import PartnersAndCertificates from "@/components/PartnersAndCertificates";
+
 
 const Index = () => {
   const [currentView, setCurrentView] = useState<'home' | 'packages'>('home');
@@ -84,6 +86,7 @@ const Index = () => {
       <div id="top-packages">
       <TopPackagesSection />
       </div>
+      <PartnersAndCertificates />
       <div>
       <MainBlog onBlogClick={handleBlogClick} />
       </div>

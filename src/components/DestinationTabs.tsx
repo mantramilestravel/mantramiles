@@ -26,7 +26,7 @@ import baliImage from "@/assets/bali.jpeg";
 
 // Domestic Destinations
 const domesticDestinations = [
-  { id: "goa", name: "Goa", tagline: "Sun, sand, and endless beaches", image: {goaImage}},
+  { id: "goa", name: "Goa", tagline: "Sun, sand, and endless beaches", image: goaImage },
   { id: "kerala", name: "Kerala", tagline: "God's own country", image: keralaImage },
   { id: "rajasthan", name: "Rajasthan", tagline: "Land of kings and palaces", image: rajasthanImage },
   { id: "himachal", name: "Himachal Pradesh", tagline: "Adventure in the mountains", image: himachalImage },
