@@ -18,7 +18,7 @@ const App = () => (
       <Sonner />
 
       {/* ✅ Wrap routes in BrowserRouter */}
-      <BrowserRouter>
+      
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
@@ -26,7 +26,7 @@ const App = () => (
           <Route path="/payment/:id" element={<PaymentGateway />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+
     </TooltipProvider>
   </QueryClientProvider>
 );
