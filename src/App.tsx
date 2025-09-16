@@ -16,16 +16,17 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      
+
+      {/* ✅ Wrap routes in BrowserRouter */}
+      <BrowserRouter>
+        <ScrollToTop />
         <Routes>
-          {/* ✅ Root route should be "/" */}
           <Route path="/" element={<Index />} />
           <Route path="/package/:id" element={<PackageDetails />} />
           <Route path="/payment/:id" element={<PaymentGateway />} />
-          {/* Catch-all for undefined routes */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      <ScrollToTop />
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
