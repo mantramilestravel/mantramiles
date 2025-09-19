@@ -1,18 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   base: "/",
-  server: {
-    host: "::",
-    port: 8080,
-    fs: {
-      strict: false, // Allows serving files outside of root, can be useful
-    },
-  },
   plugins: [
     react(),
     mode === 'development' &&
@@ -22,5 +16,13 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  server: {
+    https: {
+      key: fs.readFileSync('./certs/cert.key'),
+      cert: fs.readFileSync('./certs/cert.crt'),
+    },
+    port: 8080,
+    host: 'localhost',
   },
 }));

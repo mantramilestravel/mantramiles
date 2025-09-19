@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,9 +8,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Slider } from "@/components/ui/slider";
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useMetaPixel } from "@/hooks/useMetaPixel";
+import { UserFormData } from "@/types/metaPixel";
 
 export const EnquirySection = () => {
   const { toast } = useToast();
+  const { trackLeadGeneration, trackLocationSearch, isEnabled } = useMetaPixel();
   const [budget, setBudget] = useState([50000]);
   const [formData, setFormData] = useState({
     name: "",
@@ -24,13 +27,79 @@ export const EnquirySection = () => {
     packageType: "",
     message: ""
   });
+  
+  // Debounce timer for location search
+  const locationSearchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (locationSearchTimeoutRef.current) {
+        clearTimeout(locationSearchTimeoutRef.current);
+      }
+    };
+  }, []);
+  
+  // Helper function to get browser fingerprinting data
+  const getBrowserData = useCallback(() => {
+    // Get Facebook browser ID (fbp) and click ID (fbc) from cookies
+    const getFacebookCookie = (name: string) => {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop()?.split(';').shift();
+      return undefined;
+    };
 
-  const handleSubmit = (e: React.FormEvent) => {
+    return {
+      fbp: getFacebookCookie('_fbp'),
+      fbc: getFacebookCookie('_fbc'),
+      userAgent: navigator.userAgent,
+      // Generate a simple client identifier based on browser characteristics
+      clientId: btoa(`${navigator.userAgent}-${screen.width}x${screen.height}-${navigator.language}`).slice(0, 32)
+    };
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Track Lead event
+    if (isEnabled) {
+      try {
+        // Get browser fingerprinting data
+        const browserData = getBrowserData();
+        
+        const userData: UserFormData = {
+          firstName: formData.name.split(' ')[0],
+          lastName: formData.name.split(' ').slice(1).join(' '),
+          email: formData.email,
+          phone: formData.phone,
+          // Include browser fingerprinting data for better matching
+          ...(browserData.clientId && { external_id: browserData.clientId }),
+          ...(browserData.fbp && { fbp: browserData.fbp }),
+          ...(browserData.fbc && { fbc: browserData.fbc }),
+          ...(browserData.userAgent && { client_user_agent: browserData.userAgent })
+        };
+        
+        const packageInfo = formData.destination ? {
+          id: formData.destination.toLowerCase().replace(/\s+/g, '-'),
+          name: formData.destination,
+          category: formData.packageType || 'travel_package',
+          price: formData.budget,
+          currency: 'INR'
+        } : undefined;
+        
+        await trackLeadGeneration(userData, packageInfo);
+      } catch (error) {
+        console.warn('Meta Pixel lead generation tracking failed:', error);
+        // Continue with form submission even if tracking fails
+      }
+    }
+    
     toast({
       title: "Enquiry Submitted!",
       description: "Thank you for your interest. Our team will contact you within 24 hours.",
     });
+    
     // Reset form
     setFormData({
       name: "",
@@ -47,8 +116,40 @@ export const EnquirySection = () => {
     setBudget([50000]);
   };
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = async (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+    
+    // Track FindLocation event when user searches for destination with debouncing
+    if (field === 'destination' && value.length > 2 && isEnabled) {
+      // Clear existing timeout
+      if (locationSearchTimeoutRef.current) {
+        clearTimeout(locationSearchTimeoutRef.current);
+      }
+      
+      // Set new timeout for debounced tracking
+      locationSearchTimeoutRef.current = setTimeout(async () => {
+        try {
+          // Get browser fingerprinting data for anonymous tracking
+          const browserData = getBrowserData();
+          
+          // Create fallback user data with browser fingerprinting
+          const fallbackUserData: UserFormData = {
+            // Use client ID as external ID for anonymous users
+            ...(browserData.clientId && { external_id: browserData.clientId }),
+            // Include Facebook cookies if available
+            ...(browserData.fbp && { fbp: browserData.fbp }),
+            ...(browserData.fbc && { fbc: browserData.fbc }),
+            // Include user agent for better matching
+            ...(browserData.userAgent && { client_user_agent: browserData.userAgent })
+          };
+          
+          await trackLocationSearch(value, fallbackUserData);
+        } catch (error) {
+          console.warn('Meta Pixel location search tracking failed:', error);
+          // Continue silently - don't disrupt user experience
+        }
+      }, 500); // 500ms debounce delay
+    }
   };
 
   return (

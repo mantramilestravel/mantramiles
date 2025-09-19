@@ -8,26 +8,32 @@ import PackageDetails from "@/pages/PackageDetails";
 import PaymentGateway from "./pages/PaymentGateway";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
+import { MetaPixelProvider, MetaPixelNoticeBanner } from "@/contexts/MetaPixelContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
+    <MetaPixelProvider autoInitialize={true}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
 
-      {/* ✅ Wrap routes in BrowserRouter */}
-      
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/package/:id" element={<PackageDetails />} />
-          <Route path="/payment/:id" element={<PaymentGateway />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/package/:id" element={<PackageDetails />} />
+            <Route path="/payment/:id" element={<PaymentGateway />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          
+          {/* Meta Pixel Notice Banner */}
+          <MetaPixelNoticeBanner />
+        </BrowserRouter>
 
-    </TooltipProvider>
+      </TooltipProvider>
+    </MetaPixelProvider>
   </QueryClientProvider>
 );
 

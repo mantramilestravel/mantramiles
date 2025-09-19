@@ -1,9 +1,11 @@
 // src/components/DestinationTabs.tsx
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { MapPin, Plane } from "lucide-react";
 import { QuoteDialog } from "./QuoteDialog";
+import { useMetaPixel } from "@/hooks/useMetaPixel";
+import { UserFormData } from "@/types/metaPixel";
 
 import goaImage from "@/assets/goa.jpg";
 import keralaImage from "@/assets/kerala.jpg";
@@ -54,6 +56,39 @@ interface DestinationTabsProps {
 
 export const DestinationTabs: React.FC<DestinationTabsProps> = ({ onDestinationClick }) => {
   const [activeTab, setActiveTab] = useState("domestic");
+  const { trackSearch, isEnabled } = useMetaPixel();
+
+  // Browser fingerprinting for anonymous user tracking
+  const getBrowserData = useCallback((): UserFormData => {
+    try {
+      // Get Facebook cookies
+      const fbp = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('_fbp='))
+        ?.split('=')[1] || '';
+      
+      const fbc = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('_fbc='))
+        ?.split('=')[1] || '';
+      
+      // Generate client ID based on browser characteristics
+      const clientId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+      
+      return {
+        external_id: clientId,
+        fbp: fbp || undefined,
+        fbc: fbc || undefined,
+        client_user_agent: navigator.userAgent
+      };
+    } catch (error) {
+      console.warn('Error collecting browser data:', error);
+      return {
+        external_id: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+        client_user_agent: navigator.userAgent
+      };
+    }
+  }, []);
 
   const DestinationGrid = ({ destinations }: { destinations: typeof domesticDestinations }) => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
@@ -82,7 +117,21 @@ export const DestinationTabs: React.FC<DestinationTabsProps> = ({ onDestinationC
                 variant="outline"
                 size="sm"
                 className="flex-1 border-white text-white bg-black/40 hover:bg-white hover:text-emerald-600 transition"
-                onClick={() => onDestinationClick(destination.id)}
+                onClick={async () => {
+                  // Track Search event for destination exploration
+                  if (isEnabled) {
+                    try {
+                      const browserData = getBrowserData();
+                      await trackSearch({
+                        search_string: destination.name,
+                        content_category: activeTab === 'domestic' ? 'domestic_travel' : 'international_travel'
+                      }, browserData);
+                    } catch (error) {
+                      console.warn('Meta Pixel tracking failed:', error);
+                    }
+                  }
+                  onDestinationClick(destination.id);
+                }}
               >
                 Explore
               </Button>

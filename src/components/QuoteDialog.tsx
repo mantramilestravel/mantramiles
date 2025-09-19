@@ -24,6 +24,8 @@ import { CalendarIcon, Send } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
+import { useMetaPixel } from "@/hooks/useMetaPixel";
+import { UserFormData } from "@/types/metaPixel";
 
 interface QuoteDialogProps {
   destination: string;
@@ -33,10 +35,40 @@ interface QuoteDialogProps {
 export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [date, setDate] = useState<Date | null>(null);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    travelers: '',
+    budget: '',
+    requirements: ''
+  });
   const { toast } = useToast();
+  const { trackPackageInterest, isEnabled } = useMetaPixel();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Track AddToCart event for quote request
+    if (isEnabled) {
+      const userData: UserFormData = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone
+      };
+      
+      const packageInfo = {
+        id: destination.toLowerCase().replace(/\s+/g, '-'),
+        name: destination,
+        category: 'travel_package',
+        price: getBudgetValue(formData.budget),
+        currency: 'INR'
+      };
+      
+      await trackPackageInterest(packageInfo, userData);
+    }
 
     toast({
       title: "Quote Request Submitted!",
@@ -44,6 +76,21 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
     });
 
     setIsOpen(false);
+  };
+  
+  const getBudgetValue = (budgetRange: string): number => {
+    switch (budgetRange) {
+      case 'below-25k': return 20000;
+      case '25k-50k': return 37500;
+      case '50k-100k': return 75000;
+      case '100k-200k': return 150000;
+      case 'above-200k': return 250000;
+      default: return 50000;
+    }
+  };
+  
+  const updateFormData = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -63,29 +110,54 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Label htmlFor="firstName">First Name</Label>
-              <Input id="firstName" placeholder="Enter first name" required />
+              <Input 
+                id="firstName" 
+                placeholder="Enter first name" 
+                value={formData.firstName}
+                onChange={(e) => updateFormData('firstName', e.target.value)}
+                required 
+              />
             </div>
             <div>
               <Label htmlFor="lastName">Last Name</Label>
-              <Input id="lastName" placeholder="Enter last name" required />
+              <Input 
+                id="lastName" 
+                placeholder="Enter last name" 
+                value={formData.lastName}
+                onChange={(e) => updateFormData('lastName', e.target.value)}
+                required 
+              />
             </div>
           </div>
 
           {/* Contact */}
           <div>
             <Label htmlFor="email">Email Address</Label>
-            <Input id="email" type="email" placeholder="Enter your email" required />
+            <Input 
+              id="email" 
+              type="email" 
+              placeholder="Enter your email" 
+              value={formData.email}
+              onChange={(e) => updateFormData('email', e.target.value)}
+              required 
+            />
           </div>
           <div>
             <Label htmlFor="phone">Phone Number</Label>
-            <Input id="phone" placeholder="Enter your phone number" required />
+            <Input 
+              id="phone" 
+              placeholder="Enter your phone number" 
+              value={formData.phone}
+              onChange={(e) => updateFormData('phone', e.target.value)}
+              required 
+            />
           </div>
 
           {/* Travelers + Budget */}
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Label>Number of Travelers</Label>
-              <Select>
+              <Select onValueChange={(value) => updateFormData('travelers', value)}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select travelers" />
                 </SelectTrigger>
@@ -101,7 +173,7 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
             </div>
             <div>
               <Label>Budget Range</Label>
-              <Select>
+              <Select onValueChange={(value) => updateFormData('budget', value)}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select budget" />
                 </SelectTrigger>
@@ -144,6 +216,8 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
             <Textarea
               id="requirements"
               placeholder="Tell us about any specific requirements or preferences..."
+              value={formData.requirements}
+              onChange={(e) => updateFormData('requirements', e.target.value)}
               rows={3}
             />
           </div>

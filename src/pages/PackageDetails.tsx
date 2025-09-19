@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { QuoteDialog } from "@/components/QuoteDialog";
+import { useMetaPixel } from "@/hooks/useMetaPixel";
 
 /**
  * PackageDetails.tsx
@@ -42,9 +43,68 @@ type PackageType = {
 export default function PackageDetails(): JSX.Element {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { trackPackageView, trackCustomizeProduct, isEnabled } = useMetaPixel();
   const pkg = packagesData.find((p: PackageType) => p.id === id) || (packagesData[0] as PackageType);
 
   const [modalIndex, setModalIndex] = useState<number | null>(null);
+  const [hasTrackedView, setHasTrackedView] = useState(false);
+
+  // Helper function to get browser fingerprinting data
+  const getBrowserData = () => {
+    // Get Facebook browser ID (fbp) and click ID (fbc) from cookies
+    const getFacebookCookie = (name: string) => {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop()?.split(';').shift();
+      return undefined;
+    };
+
+    return {
+      fbp: getFacebookCookie('_fbp'),
+      fbc: getFacebookCookie('_fbc'),
+      userAgent: navigator.userAgent,
+      // Generate a simple client identifier based on browser characteristics
+      clientId: btoa(`${navigator.userAgent}-${screen.width}x${screen.height}-${navigator.language}`).slice(0, 32)
+    };
+  };
+
+  // Create fallback user data with browser fingerprinting
+  const createFallbackUserData = (): import('@/types/metaPixel').UserFormData => {
+    const browserData = getBrowserData();
+    return {
+      // Use client ID as external ID for anonymous users
+      ...(browserData.clientId && { external_id: browserData.clientId }),
+      // Include Facebook cookies if available
+      ...(browserData.fbp && { fbp: browserData.fbp }),
+      ...(browserData.fbc && { fbc: browserData.fbc }),
+      // Include user agent for better matching
+      ...(browserData.userAgent && { client_user_agent: browserData.userAgent })
+    };
+  };
+
+  // Track ViewContent event when component mounts
+  useEffect(() => {
+    if (isEnabled && !hasTrackedView && pkg) {
+      const packageInfo = {
+        id: pkg.id,
+        name: pkg.name,
+        category: pkg.type || 'travel_package',
+        price: parseFloat(pkg.price.replace(/[^\d.]/g, '')) || 0,
+        currency: 'INR',
+        duration: pkg.duration
+      };
+      
+      const fallbackUserData = createFallbackUserData();
+      
+      try {
+        trackPackageView(packageInfo, fallbackUserData);
+        setHasTrackedView(true);
+      } catch (error) {
+        console.warn('Meta Pixel tracking failed for package view:', error);
+        setHasTrackedView(true); // Still mark as tracked to avoid retries
+      }
+    }
+  }, [isEnabled, hasTrackedView, pkg, trackPackageView]);
 
   // keyboard navigation for modal
   useEffect(() => {
@@ -61,7 +121,32 @@ export default function PackageDetails(): JSX.Element {
   if (!pkg) return <div className="py-24 text-center">Package not found</div>;
 
   // PDF generation - paginate if many items
-  const handleDownloadPDF = () => {
+  const handleDownloadPDF = async () => {
+    // Track CustomizeProduct event for PDF download
+    if (isEnabled && pkg) {
+      const packageInfo = {
+        id: pkg.id,
+        name: pkg.name,
+        category: pkg.type || 'travel_package',
+        price: parseFloat(pkg.price.replace(/[^\d.]/g, '')) || 0,
+        currency: 'INR',
+        duration: pkg.duration
+      };
+      
+      const fallbackUserData = createFallbackUserData();
+      
+      try {
+        await trackCustomizeProduct(fallbackUserData, {
+          packageId: packageInfo.id,
+          packageName: packageInfo.name,
+          packageCategory: packageInfo.category,
+          packagePrice: packageInfo.price,
+          currency: packageInfo.currency
+        });
+      } catch (error) {
+        console.warn('Meta Pixel tracking failed for customize product:', error);
+      }
+    }
     const doc = new jsPDF({ unit: "pt", format: "a4" });
     const margin = 40;
     let y = 60;
