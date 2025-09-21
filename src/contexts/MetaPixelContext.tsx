@@ -45,7 +45,7 @@ const getEnvVar = (key: string, defaultValue: string = '') => {
 const getTestEnvVar = (key: string, defaultValue: string = '') => {
   const testValues: Record<string, string> = {
     'VITE_META_PIXEL_ID': '1432150071232639', // Test value from .env.local
-    'VITE_META_PIXEL_TOKEN': 'EAALpplWXX8BPacMNUjWScEuMnFnvBm...', // Partial test value
+    'VITE_META_PIXEL_TOKEN': 'EAALPpJ0WXX8BPeMNUyW5CeUMmFrnV8mcco6XLqelTwRZBimjXiP8f22OaylutR0dKHhYYQHJsxjYpv5x0zSVP4azYVGSLl84lfiLAmOPydYYRzrHQk1ZAsu15wS8szNQLKZCBKjcPuLdBXP28qI9GHFra4oid0LilNeRW7ezH2naCCmR3pyqdtmgb80WbFLBwZDZD', // Test value
     'VITE_META_PIXEL_TEST_CODE': 'TEST32092',
     'VITE_META_PIXEL_API_VERSION': 'v18.0',
     'VITE_META_PIXEL_LOGGING': 'true'
