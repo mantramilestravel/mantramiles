@@ -58,11 +58,11 @@ export const MetaPixelProvider: React.FC<MetaPixelProviderProps> = ({
       setError(null);
 
       if (initConfig.enableLogging) {
-        // console.log('Meta Pixel initialized successfully', {
-        //   pixelId: initConfig.pixelId,
-        //   apiVersion: initConfig.apiVersion,
-        //   isEnabled: true
-        // });
+        console.log('Meta Pixel initialized successfully', {
+          pixelId: initConfig.pixelId,
+          apiVersion: initConfig.apiVersion,
+          isEnabled: true
+        });
       }
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to initialize Meta Pixel';
