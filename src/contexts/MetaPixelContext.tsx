@@ -15,7 +15,7 @@ const getDefaultConfig = (): Partial<MetaPixelConfig> => {
   return {
     pixelId: import.meta.env.VITE_META_PIXEL_ID || '',
     accessToken: import.meta.env.VITE_META_PIXEL_TOKEN || '',
-    apiVersion: 'v18.0',
+    apiVersion: import.meta.env.VITE_META_PIXEL_API_VERSION || 'v18.0',
     enableLogging: import.meta.env.DEV || false,
     testEventCode: import.meta.env.VITE_META_PIXEL_TEST_CODE
   };
@@ -78,7 +78,7 @@ export const MetaPixelProvider: React.FC<MetaPixelProviderProps> = ({
     if (autoInitialize && !isInitialized) {
       const defaultConfig = getDefaultConfig();
       const mergedConfig = { ...defaultConfig, ...providedConfig };
-      
+
       // Only initialize if we have required config
       if (mergedConfig.pixelId && mergedConfig.accessToken) {
         initialize(mergedConfig as MetaPixelConfig);
@@ -134,6 +134,15 @@ export const MetaPixelNoticeBanner: React.FC<NoticeBannerProps> = ({
   };
 
   if (!showBanner) {
+    console.log('MetaPixelNoticeBanner: Not showing banner');
+    console.warn({
+      pixelId: import.meta.env.VITE_META_PIXEL_ID || '',
+      accessToken: import.meta.env.VITE_META_PIXEL_TOKEN || '',
+      apiVersion: import.meta.env.VITE_META_PIXEL_API_VERSION || 'v18.0',
+      enableLogging: import.meta.env.DEV || false,
+      testEventCode: import.meta.env.VITE_META_PIXEL_TEST_CODE
+    });
+
     return null;
   }
 
@@ -142,7 +151,7 @@ export const MetaPixelNoticeBanner: React.FC<NoticeBannerProps> = ({
       <div className="container mx-auto flex items-center justify-between gap-4">
         <div className="flex-1">
           <p className="text-sm">
-            We use tracking pixels to analyze website traffic and improve your experience. 
+            We use tracking pixels to analyze website traffic and improve your experience.
             This helps us provide better services and relevant content.
           </p>
         </div>
