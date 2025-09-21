@@ -9,7 +9,7 @@ interface MetaPixelProviderProps {
   autoInitialize?: boolean;
   config?: Partial<MetaPixelConfig>;
 }
-  
+
 // Safe environment variable access helper
 const getEnvVar = (key: string, defaultValue: string = '') => {
   try {
