@@ -7,7 +7,7 @@ export interface BlogPostType {
   id: number;
   title: string;
   description: string;
-  image: any;
+  image: string;
 }
 
 // Example data for blog posts.
@@ -37,7 +37,14 @@ interface MainBlogProps {
 }
 
 // Reusable component for a single blog post card
-const BlogPostCard = ({ title, description, image, onClick }) => {
+interface BlogPostCardProps {
+  title: string;
+  description: string;
+  image: string;
+  onClick: () => void;
+}
+
+const BlogPostCard: React.FC<BlogPostCardProps> = ({ title, description, image, onClick }) => {
   return (
     <div
       onClick={onClick}

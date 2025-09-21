@@ -10,14 +10,29 @@ interface MetaPixelProviderProps {
   config?: Partial<MetaPixelConfig>;
 }
 
+// Safe environment variable access helper
+const getEnvVar = (key: string, defaultValue: string = '') => {
+  try {
+    // Check if we're in a Vite environment with import.meta.env
+    if (typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).__VITE_ENV__) {
+      return ((window as unknown as Record<string, unknown>).__VITE_ENV__ as Record<string, string>)[key] || defaultValue;
+    }
+    // Fallback to import.meta.env if available
+    return (import.meta as { env?: Record<string, string> })?.env?.[key] || defaultValue;
+  } catch (error) {
+    console.warn(`Failed to access environment variable ${key}:`, error);
+    return defaultValue;
+  }
+};
+
 // Default configuration
 const getDefaultConfig = (): Partial<MetaPixelConfig> => {
   return {
-    pixelId: import.meta.env.VITE_META_PIXEL_ID || '',
-    accessToken: import.meta.env.VITE_META_PIXEL_TOKEN || '',
-    apiVersion: import.meta.env.VITE_META_PIXEL_API_VERSION || 'v18.0',
-    enableLogging: import.meta.env.DEV || false,
-    testEventCode: import.meta.env.VITE_META_PIXEL_TEST_CODE
+    pixelId: getEnvVar('VITE_META_PIXEL_ID'),
+    accessToken: getEnvVar('VITE_META_PIXEL_TOKEN'),
+    apiVersion: getEnvVar('VITE_META_PIXEL_API_VERSION', 'v18.0'),
+    enableLogging: getEnvVar('DEV') === 'true',
+    testEventCode: getEnvVar('VITE_META_PIXEL_TEST_CODE')
   };
 };
 
@@ -121,13 +136,19 @@ export const MetaPixelNoticeBanner: React.FC<NoticeBannerProps> = ({
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
+    console.log('MetaPixelNoticeBanner: Component mounted');
+    
     // Show banner if notice hasn't been dismissed yet
     if (!hasNoticeDismissed()) {
+      console.log('MetaPixelNoticeBanner: Notice not dismissed, showing banner');
       setShowBanner(true);
+    } else {
+      console.log('MetaPixelNoticeBanner: Notice already dismissed');
     }
   }, []);
 
   const handleDismiss = () => {
+    console.log('MetaPixelNoticeBanner: Dismissing banner');
     setNoticeDismissed();
     setShowBanner(false);
     onDismiss?.();
@@ -135,12 +156,12 @@ export const MetaPixelNoticeBanner: React.FC<NoticeBannerProps> = ({
 
   if (!showBanner) {
     console.log('MetaPixelNoticeBanner: Not showing banner');
-    console.warn({
-      pixelId: import.meta.env.VITE_META_PIXEL_ID || '',
-      accessToken: import.meta.env.VITE_META_PIXEL_TOKEN || '',
-      apiVersion: import.meta.env.VITE_META_PIXEL_API_VERSION || 'v18.0',
-      enableLogging: import.meta.env.DEV || false,
-      testEventCode: import.meta.env.VITE_META_PIXEL_TEST_CODE
+    console.warn('Environment variables:', {
+      pixelId: getEnvVar('VITE_META_PIXEL_ID'),
+      accessToken: getEnvVar('VITE_META_PIXEL_TOKEN'),
+      apiVersion: getEnvVar('VITE_META_PIXEL_API_VERSION', 'v18.0'),
+      enableLogging: getEnvVar('DEV') === 'true',
+      testEventCode: getEnvVar('VITE_META_PIXEL_TEST_CODE')
     });
 
     return null;

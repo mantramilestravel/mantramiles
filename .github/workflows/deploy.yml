@@ -1,0 +1,39 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build
+        run: npm run build
+        env:
+          VITE_META_PIXEL_ID: ${{ vars.VITE_META_PIXEL_ID }}
+          VITE_META_PIXEL_TOKEN: ${{ vars.VITE_META_PIXEL_TOKEN }}
+          VITE_META_PIXEL_TEST_CODE: ${{ vars.VITE_META_PIXEL_TEST_CODE }}
+          VITE_META_API_VERSION: ${{ vars.VITE_META_API_VERSION }}
+          VITE_META_PIXEL_LOGGING: ${{ vars.VITE_META_PIXEL_LOGGING }}
+          
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: www.mantramiles.in

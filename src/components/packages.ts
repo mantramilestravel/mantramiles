@@ -5,24 +5,28 @@ import puriImage from "@/assets/puri_top.jpg";
 import angkorImage from "@/assets/cambodia_top.jpg";
 import ladakhImage from "@/assets/ladakh_top.jpg";
 
+interface ImageModule {
+  default: string;
+}
+
 const chardhamImages = Object.values(
   import.meta.glob('@/assets/packages/chardham/chardham*.{jpg,jpeg,png,webp,svg}', { eager: true })
-).map((module: any) => module.default);
+).map((module: ImageModule) => module.default);
 const nepalImages = Object.values(
   import.meta.glob('@/assets/packages/nepal/*.{jpg,jpeg,png,webp,svg}', { eager: true })
-).map((module: any) => module.default);
+).map((module: ImageModule) => module.default);
 const srilankaImages = Object.values(
   import.meta.glob('@/assets/packages/srilanka/*.{jpg,jpeg,png,webp,svg}', { eager: true })
-).map((module: any) => module.default);
+).map((module: ImageModule) => module.default);
 const puriImages = Object.values(
   import.meta.glob('@/assets/packages/puri/*.{jpg,jpeg,png,webp,svg}', { eager: true })
-).map((module: any) => module.default);
+).map((module: ImageModule) => module.default);
 const angkorImages = Object.values(
   import.meta.glob('@/assets/packages/angkorwat/*.{jpg,jpeg,png,webp,svg}', { eager: true })
-).map((module: any) => module.default);
+).map((module: ImageModule) => module.default);
 const ladakhImages = Object.values(
   import.meta.glob('@/assets/packages/ladakh/*.{jpg,jpeg,png,webp,svg}', { eager: true })
-).map((module: any) => module.default);
+).map((module: ImageModule) => module.default);
 
 
 
