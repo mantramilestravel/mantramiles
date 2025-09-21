@@ -10,30 +10,71 @@ interface MetaPixelProviderProps {
   config?: Partial<MetaPixelConfig>;
 }
 
-// Safe environment variable access helper
+// Safe environment variable access helper with debugging
 const getEnvVar = (key: string, defaultValue: string = '') => {
+  console.log(`🔍 Attempting to get environment variable: ${key}`);
+  
   try {
+    // Log all available import.meta.env variables
+    console.log('📋 All import.meta.env variables:', import.meta.env);
+    
     // Check if we're in a Vite environment with import.meta.env
     if (typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).__VITE_ENV__) {
-      return ((window as unknown as Record<string, unknown>).__VITE_ENV__ as Record<string, string>)[key] || defaultValue;
+      const windowEnv = (window as unknown as Record<string, unknown>).__VITE_ENV__ as Record<string, string>;
+      console.log('🪟 Window __VITE_ENV__ found:', windowEnv);
+      const value = windowEnv[key] || defaultValue;
+      console.log(`✅ Got ${key} from window.__VITE_ENV__:`, value);
+      return value;
     }
+    
     // Fallback to import.meta.env if available
-    return (import.meta as { env?: Record<string, string> })?.env?.[key] || defaultValue;
+    const metaEnvValue = (import.meta as { env?: Record<string, string> })?.env?.[key];
+    console.log(`🔄 import.meta.env.${key}:`, metaEnvValue);
+    
+    const finalValue = metaEnvValue || defaultValue;
+    console.log(`✅ Final value for ${key}:`, finalValue);
+    
+    return finalValue;
   } catch (error) {
-    console.warn(`Failed to access environment variable ${key}:`, error);
+    console.error(`❌ Failed to access environment variable ${key}:`, error);
     return defaultValue;
   }
 };
 
-// Default configuration
-const getDefaultConfig = (): Partial<MetaPixelConfig> => {
-  return {
-    pixelId: getEnvVar('VITE_META_PIXEL_ID'),
-    accessToken: getEnvVar('VITE_META_PIXEL_TOKEN'),
-    apiVersion: getEnvVar('VITE_META_PIXEL_API_VERSION', 'v18.0'),
-    enableLogging: getEnvVar('DEV') === 'true',
-    testEventCode: getEnvVar('VITE_META_PIXEL_TEST_CODE')
+// Temporary test values for debugging (remove after testing)
+const getTestEnvVar = (key: string, defaultValue: string = '') => {
+  const testValues: Record<string, string> = {
+    'VITE_META_PIXEL_ID': '1432150071232639', // Test value from .env.local
+    'VITE_META_PIXEL_TOKEN': 'EAALpplWXX8BPacMNUjWScEuMnFnvBm...', // Partial test value
+    'VITE_META_PIXEL_TEST_CODE': 'TEST32092',
+    'VITE_META_PIXEL_API_VERSION': 'v18.0',
+    'VITE_META_PIXEL_LOGGING': 'true'
   };
+  
+  const testValue = testValues[key];
+  if (testValue) {
+    console.log(`🧪 Using test value for ${key}:`, testValue);
+    return testValue;
+  }
+  
+  return getEnvVar(key, defaultValue);
+};
+
+// Default configuration with debugging
+const getDefaultConfig = (): Partial<MetaPixelConfig> => {
+  console.log('🔧 Getting default Meta Pixel configuration...');
+  
+  // Use test values for now to debug
+  const config = {
+    pixelId: getTestEnvVar('VITE_META_PIXEL_ID'),
+    accessToken: getTestEnvVar('VITE_META_PIXEL_TOKEN'),
+    apiVersion: getTestEnvVar('VITE_META_PIXEL_API_VERSION', 'v18.0'),
+    enableLogging: getTestEnvVar('VITE_META_PIXEL_LOGGING') === 'true' || getEnvVar('DEV') === 'true',
+    testEventCode: getTestEnvVar('VITE_META_PIXEL_TEST_CODE')
+  };
+  
+  console.log('📋 Generated Meta Pixel config:', config);
+  return config;
 };
 
 // Check if user has dismissed the notice
@@ -136,14 +177,19 @@ export const MetaPixelNoticeBanner: React.FC<NoticeBannerProps> = ({
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    console.log('MetaPixelNoticeBanner: Component mounted');
+    console.log('🎯 MetaPixelNoticeBanner: Component mounted');
+    console.log('🌍 Current environment variables check:');
+    
+    // Test environment variable access
+    const testConfig = getDefaultConfig();
+    console.log('🧪 Test config from banner component:', testConfig);
     
     // Show banner if notice hasn't been dismissed yet
     if (!hasNoticeDismissed()) {
-      console.log('MetaPixelNoticeBanner: Notice not dismissed, showing banner');
+      console.log('✅ MetaPixelNoticeBanner: Notice not dismissed, showing banner');
       setShowBanner(true);
     } else {
-      console.log('MetaPixelNoticeBanner: Notice already dismissed');
+      console.log('❌ MetaPixelNoticeBanner: Notice already dismissed');
     }
   }, []);
 
