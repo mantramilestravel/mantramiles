@@ -12,20 +12,20 @@ interface MetaPixelProviderProps {
 
 // Default configuration
 const getDefaultConfig = (): Partial<MetaPixelConfig> => {
-  return {
-    pixelId: '1432150071232639',
-    accessToken: 'EAALPpJ0WXX8BPeMNUyW5CeUMmFrnV8mcco6XLqelTwRZBimjXiP8f22OaylutR0dKHhYYQHJsxjYpv5x0zSVP4azYVGSLl84lfiLAmOPydYYRzrHQk1ZAsu15wS8szNQLKZCBKjcPuLdBXP28qI9GHFra4oid0LilNeRW7ezH2naCCmR3pyqdtmgb80WbFLBwZDZD',
-    apiVersion: 'v18.0',
-    enableLogging: true,
-    testEventCode: 'TEST32932'
-  };
   // return {
-  //   pixelId: import.meta.env.VITE_META_PIXEL_ID,
-  //   accessToken: import.meta.env.VITE_META_PIXEL_TOKEN,
-  //   apiVersion: import.meta.env.VITE_META_PIXEL_API_VERSION || 'v18.0',
-  //   enableLogging: import.meta.env.DEV === true,
-  //   testEventCode: import.meta.env.VITE_META_PIXEL_TEST_CODE
+  //   pixelId: '1432150071232639',
+  //   accessToken: 'EAALPpJ0WXX8BPeMNUyW5CeUMmFrnV8mcco6XLqelTwRZBimjXiP8f22OaylutR0dKHhYYQHJsxjYpv5x0zSVP4azYVGSLl84lfiLAmOPydYYRzrHQk1ZAsu15wS8szNQLKZCBKjcPuLdBXP28qI9GHFra4oid0LilNeRW7ezH2naCCmR3pyqdtmgb80WbFLBwZDZD',
+  //   apiVersion: 'v18.0',
+  //   enableLogging: true,
+  //   testEventCode: 'TEST32932'
   // };
+  return {
+    pixelId: import.meta.env.VITE_META_PIXEL_ID,
+    accessToken: import.meta.env.VITE_META_PIXEL_TOKEN,
+    apiVersion: import.meta.env.VITE_META_PIXEL_API_VERSION || 'v18.0',
+    enableLogging: import.meta.env.DEV === true,
+    testEventCode: import.meta.env.VITE_META_PIXEL_TEST_CODE
+  };
 };
 
 // Check if user has dismissed the notice
@@ -165,4 +165,4 @@ export const MetaPixelNoticeBanner: React.FC<NoticeBannerProps> = ({
   );
 };
 
-export default MetaPixelProvider;
+// export default MetaPixelProvider;
