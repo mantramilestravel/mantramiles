@@ -10,71 +10,22 @@ interface MetaPixelProviderProps {
   config?: Partial<MetaPixelConfig>;
 }
 
-// Safe environment variable access helper with debugging
-const getEnvVar = (key: string, defaultValue: string = '') => {
-  console.log(`🔍 Attempting to get environment variable: ${key}`);
-  
-  try {
-    // Log all available import.meta.env variables
-    console.log('📋 All import.meta.env variables:', import.meta.env);
-    
-    // Check if we're in a Vite environment with import.meta.env
-    if (typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).__VITE_ENV__) {
-      const windowEnv = (window as unknown as Record<string, unknown>).__VITE_ENV__ as Record<string, string>;
-      console.log('🪟 Window __VITE_ENV__ found:', windowEnv);
-      const value = windowEnv[key] || defaultValue;
-      console.log(`✅ Got ${key} from window.__VITE_ENV__:`, value);
-      return value;
-    }
-    
-    // Fallback to import.meta.env if available
-    const metaEnvValue = (import.meta as { env?: Record<string, string> })?.env?.[key];
-    console.log(`🔄 import.meta.env.${key}:`, metaEnvValue);
-    
-    const finalValue = metaEnvValue || defaultValue;
-    console.log(`✅ Final value for ${key}:`, finalValue);
-    
-    return finalValue;
-  } catch (error) {
-    console.error(`❌ Failed to access environment variable ${key}:`, error);
-    return defaultValue;
-  }
-};
-
-// Temporary test values for debugging (remove after testing)
-const getTestEnvVar = (key: string, defaultValue: string = '') => {
-  const testValues: Record<string, string> = {
-    'VITE_META_PIXEL_ID': '1432150071232639', // Test value from .env.local
-    'VITE_META_PIXEL_TOKEN': 'EAALPpJ0WXX8BPeMNUyW5CeUMmFrnV8mcco6XLqelTwRZBimjXiP8f22OaylutR0dKHhYYQHJsxjYpv5x0zSVP4azYVGSLl84lfiLAmOPydYYRzrHQk1ZAsu15wS8szNQLKZCBKjcPuLdBXP28qI9GHFra4oid0LilNeRW7ezH2naCCmR3pyqdtmgb80WbFLBwZDZD', // Test value
-    'VITE_META_PIXEL_TEST_CODE': 'TEST32092',
-    'VITE_META_PIXEL_API_VERSION': 'v18.0',
-    'VITE_META_PIXEL_LOGGING': 'true'
-  };
-  
-  const testValue = testValues[key];
-  if (testValue) {
-    console.log(`🧪 Using test value for ${key}:`, testValue);
-    return testValue;
-  }
-  
-  return getEnvVar(key, defaultValue);
-};
-
-// Default configuration with debugging
+// Default configuration
 const getDefaultConfig = (): Partial<MetaPixelConfig> => {
-  console.log('🔧 Getting default Meta Pixel configuration...');
-  
-  // Use test values for now to debug
-  const config = {
-    pixelId: getTestEnvVar('VITE_META_PIXEL_ID'),
-    accessToken: getTestEnvVar('VITE_META_PIXEL_TOKEN'),
-    apiVersion: getTestEnvVar('VITE_META_PIXEL_API_VERSION', 'v18.0'),
-    enableLogging: getTestEnvVar('VITE_META_PIXEL_LOGGING') === 'true' || getEnvVar('DEV') === 'true',
-    testEventCode: getTestEnvVar('VITE_META_PIXEL_TEST_CODE')
+  return {
+    pixelId: '1432150071232639',
+    accessToken: 'EAALPpJ0WXX8BPeMNUyW5CeUMmFrnV8mcco6XLqelTwRZBimjXiP8f22OaylutR0dKHhYYQHJsxjYpv5x0zSVP4azYVGSLl84lfiLAmOPydYYRzrHQk1ZAsu15wS8szNQLKZCBKjcPuLdBXP28qI9GHFra4oid0LilNeRW7ezH2naCCmR3pyqdtmgb80WbFLBwZDZD',
+    apiVersion: 'v18.0',
+    enableLogging: true,
+    testEventCode: 'TEST32932'
   };
-  
-  console.log('📋 Generated Meta Pixel config:', config);
-  return config;
+  // return {
+  //   pixelId: import.meta.env.VITE_META_PIXEL_ID,
+  //   accessToken: import.meta.env.VITE_META_PIXEL_TOKEN,
+  //   apiVersion: import.meta.env.VITE_META_PIXEL_API_VERSION || 'v18.0',
+  //   enableLogging: import.meta.env.DEV === true,
+  //   testEventCode: import.meta.env.VITE_META_PIXEL_TEST_CODE
+  // };
 };
 
 // Check if user has dismissed the notice
@@ -177,39 +128,19 @@ export const MetaPixelNoticeBanner: React.FC<NoticeBannerProps> = ({
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    console.log('🎯 MetaPixelNoticeBanner: Component mounted');
-    console.log('🌍 Current environment variables check:');
-    
-    // Test environment variable access
-    const testConfig = getDefaultConfig();
-    console.log('🧪 Test config from banner component:', testConfig);
-    
     // Show banner if notice hasn't been dismissed yet
     if (!hasNoticeDismissed()) {
-      console.log('✅ MetaPixelNoticeBanner: Notice not dismissed, showing banner');
       setShowBanner(true);
-    } else {
-      console.log('❌ MetaPixelNoticeBanner: Notice already dismissed');
     }
   }, []);
 
   const handleDismiss = () => {
-    console.log('MetaPixelNoticeBanner: Dismissing banner');
     setNoticeDismissed();
     setShowBanner(false);
     onDismiss?.();
   };
 
   if (!showBanner) {
-    console.log('MetaPixelNoticeBanner: Not showing banner');
-    console.warn('Environment variables:', {
-      pixelId: getEnvVar('VITE_META_PIXEL_ID'),
-      accessToken: getEnvVar('VITE_META_PIXEL_TOKEN'),
-      apiVersion: getEnvVar('VITE_META_PIXEL_API_VERSION', 'v18.0'),
-      enableLogging: getEnvVar('DEV') === 'true',
-      testEventCode: getEnvVar('VITE_META_PIXEL_TEST_CODE')
-    });
-
     return null;
   }
 
