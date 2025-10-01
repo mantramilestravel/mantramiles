@@ -20,7 +20,8 @@ const App = () => (
         <Sonner />
 
         <BrowserRouter>
-          <ScrollToTop />
+          <ScrollToTop whatsappNumber="919972816108" whatsappMessage="Hi! I need help with..." />
+
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/package/:id" element={<PackageDetails />} />
