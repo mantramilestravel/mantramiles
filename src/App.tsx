@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom"; // ⬅️ changed from BrowserRouter
 import Index from "./pages/Index";
 import PackageDetails from "@/pages/PackageDetails";
 import PaymentGateway from "./pages/PaymentGateway";
@@ -19,8 +19,10 @@ const App = () => (
         <Toaster />
         <Sonner />
 
-        <BrowserRouter>
-          <ScrollToTop />
+        {/* ⬇️ swapped BrowserRouter for HashRouter */}
+        <HashRouter>
+          <ScrollToTop whatsappNumber="919972816108" whatsappMessage="Hi! I need help with..." />
+
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/package/:id" element={<PackageDetails />} />
@@ -30,7 +32,7 @@ const App = () => (
           
           {/* Meta Pixel Notice Banner */}
           <MetaPixelNoticeBanner />
-        </BrowserRouter>
+        </HashRouter>
 
       </TooltipProvider>
     </MetaPixelProvider>
