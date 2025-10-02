@@ -26,6 +26,7 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useMetaPixel } from "@/hooks/useMetaPixel";
 import { UserFormData } from "@/types/metaPixel";
+import emailjs from "emailjs-com";
 
 interface QuoteDialogProps {
   destination: string;
@@ -36,16 +37,21 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [date, setDate] = useState<Date | null>(null);
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    travelers: '',
-    budget: '',
-    requirements: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    travelers: "",
+    budget: "",
+    requirements: ""
   });
   const { toast } = useToast();
   const { trackPackageInterest, isEnabled } = useMetaPixel();
+
+  // EmailJS config
+   const SERVICE_ID = "service_30wnvqu";
+  const TEMPLATE_ID = "template_y3evqpn";
+  const USER_ID = import.meta.env.VITE_EMAILJS_USER || "";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -58,39 +64,73 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
         email: formData.email,
         phone: formData.phone
       };
-      
+
       const packageInfo = {
-        id: destination.toLowerCase().replace(/\s+/g, '-'),
+        id: destination.toLowerCase().replace(/\s+/g, "-"),
         name: destination,
-        category: 'travel_package',
+        category: "travel_package",
         price: getBudgetValue(formData.budget),
-        currency: 'INR'
+        currency: "INR"
       };
-      
+
       await trackPackageInterest(packageInfo, userData);
     }
 
-    toast({
-      title: "Quote Request Submitted!",
-      description: `We'll send you a customized quote for ${destination} within 24 hours.`,
-    });
+    // Prepare EmailJS payload
+    const payload = {
+      from_name: `${formData.firstName} ${formData.lastName}`,
+      reply_to: formData.email,
+      phone: formData.phone,
+      travelers: formData.travelers,
+      budget: formData.budget,
+      travelDate: date ? format(date, "PPP") : "Not specified",
+      requirements: formData.requirements,
+      destination: destination,
+      pageUrl: typeof window !== "undefined" ? window.location.href : ""
+    };
 
-    setIsOpen(false);
+    try {
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, payload, USER_ID);
+
+      toast({
+        title: "Quote Request Submitted!",
+        description: `We'll send you a customized quote for ${destination} within 24 hours.`,
+      });
+
+      setIsOpen(false);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        travelers: "",
+        budget: "",
+        requirements: ""
+      });
+      setDate(null);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      toast({
+        title: "Submission failed",
+        description: "We couldn't send your quote request. Please try again later or email connect@mantramiles.in.",
+        variant: "destructive",
+      });
+    }
   };
-  
+
   const getBudgetValue = (budgetRange: string): number => {
     switch (budgetRange) {
-      case 'below-25k': return 20000;
-      case '25k-50k': return 37500;
-      case '50k-100k': return 75000;
-      case '100k-200k': return 150000;
-      case 'above-200k': return 250000;
+      case "below-25k": return 20000;
+      case "25k-50k": return 37500;
+      case "50k-100k": return 75000;
+      case "100k-200k": return 150000;
+      case "above-200k": return 250000;
       default: return 50000;
     }
   };
-  
+
   const updateFormData = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -110,22 +150,22 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Label htmlFor="firstName">First Name</Label>
-              <Input 
-                id="firstName" 
-                placeholder="Enter first name" 
+              <Input
+                id="firstName"
+                placeholder="Enter first name"
                 value={formData.firstName}
-                onChange={(e) => updateFormData('firstName', e.target.value)}
-                required 
+                onChange={(e) => updateFormData("firstName", e.target.value)}
+                required
               />
             </div>
             <div>
               <Label htmlFor="lastName">Last Name</Label>
-              <Input 
-                id="lastName" 
-                placeholder="Enter last name" 
+              <Input
+                id="lastName"
+                placeholder="Enter last name"
                 value={formData.lastName}
-                onChange={(e) => updateFormData('lastName', e.target.value)}
-                required 
+                onChange={(e) => updateFormData("lastName", e.target.value)}
+                required
               />
             </div>
           </div>
@@ -133,23 +173,23 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
           {/* Contact */}
           <div>
             <Label htmlFor="email">Email Address</Label>
-            <Input 
-              id="email" 
-              type="email" 
-              placeholder="Enter your email" 
+            <Input
+              id="email"
+              type="email"
+              placeholder="Enter your email"
               value={formData.email}
-              onChange={(e) => updateFormData('email', e.target.value)}
-              required 
+              onChange={(e) => updateFormData("email", e.target.value)}
+              required
             />
           </div>
           <div>
             <Label htmlFor="phone">Phone Number</Label>
-            <Input 
-              id="phone" 
-              placeholder="Enter your phone number" 
+            <Input
+              id="phone"
+              placeholder="Enter your phone number"
               value={formData.phone}
-              onChange={(e) => updateFormData('phone', e.target.value)}
-              required 
+              onChange={(e) => updateFormData("phone", e.target.value)}
+              required
             />
           </div>
 
@@ -157,7 +197,7 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Label>Number of Travelers</Label>
-              <Select onValueChange={(value) => updateFormData('travelers', value)}>
+              <Select onValueChange={(value) => updateFormData("travelers", value)}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select travelers" />
                 </SelectTrigger>
@@ -173,7 +213,7 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
             </div>
             <div>
               <Label>Budget Range</Label>
-              <Select onValueChange={(value) => updateFormData('budget', value)}>
+              <Select onValueChange={(value) => updateFormData("budget", value)}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select budget" />
                 </SelectTrigger>
@@ -217,7 +257,7 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
               id="requirements"
               placeholder="Tell us about any specific requirements or preferences..."
               value={formData.requirements}
-              onChange={(e) => updateFormData('requirements', e.target.value)}
+              onChange={(e) => updateFormData("requirements", e.target.value)}
               rows={3}
             />
           </div>
