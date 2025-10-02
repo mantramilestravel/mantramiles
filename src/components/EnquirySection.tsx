@@ -10,6 +10,7 @@ import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useMetaPixel } from "@/hooks/useMetaPixel";
 import { UserFormData } from "@/types/metaPixel";
+import emailjs from "emailjs-com";
 
 export const EnquirySection = () => {
   const { toast } = useToast();
@@ -27,10 +28,10 @@ export const EnquirySection = () => {
     packageType: "",
     message: ""
   });
-  
+
   // Debounce timer for location search
   const locationSearchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  
+
   // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
@@ -39,10 +40,9 @@ export const EnquirySection = () => {
       }
     };
   }, []);
-  
+
   // Helper function to get browser fingerprinting data
   const getBrowserData = useCallback(() => {
-    // Get Facebook browser ID (fbp) and click ID (fbc) from cookies
     const getFacebookCookie = (name: string) => {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
@@ -54,32 +54,33 @@ export const EnquirySection = () => {
       fbp: getFacebookCookie('_fbp'),
       fbc: getFacebookCookie('_fbc'),
       userAgent: navigator.userAgent,
-      // Generate a simple client identifier based on browser characteristics
       clientId: btoa(`${navigator.userAgent}-${screen.width}x${screen.height}-${navigator.language}`).slice(0, 32)
     };
   }, []);
 
+  // EmailJS config
+  const SERVICE_ID = "service_30wnvqu";
+  const TEMPLATE_ID = "template_y3evqpn";
+  // Set VITE_EMAILJS_USER in .env.local or your host; fallback to empty string
+  const USER_ID = (import.meta.env.VITE_EMAILJS_USER as string) || "";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Track Lead event
+
+    // Meta Pixel Lead tracking (best-effort)
     if (isEnabled) {
       try {
-        // Get browser fingerprinting data
         const browserData = getBrowserData();
-        
         const userData: UserFormData = {
-          firstName: formData.name.split(' ')[0],
-          lastName: formData.name.split(' ').slice(1).join(' '),
+          firstName: formData.name.split(' ')[0] || '',
+          lastName: formData.name.split(' ').slice(1).join(' ') || '',
           email: formData.email,
           phone: formData.phone,
-          // Include browser fingerprinting data for better matching
           ...(browserData.clientId && { external_id: browserData.clientId }),
           ...(browserData.fbp && { fbp: browserData.fbp }),
           ...(browserData.fbc && { fbc: browserData.fbc }),
           ...(browserData.userAgent && { client_user_agent: browserData.userAgent })
         };
-        
         const packageInfo = formData.destination ? {
           id: formData.destination.toLowerCase().replace(/\s+/g, '-'),
           name: formData.destination,
@@ -87,68 +88,87 @@ export const EnquirySection = () => {
           price: formData.budget,
           currency: 'INR'
         } : undefined;
-        
         await trackLeadGeneration(userData, packageInfo);
-      } catch (error) {
-        console.warn('Meta Pixel lead generation tracking failed:', error);
-        // Continue with form submission even if tracking fails
+      } catch (err) {
+        console.warn("Meta Pixel lead generation tracking failed:", err);
       }
     }
-    
-    toast({
-      title: "Enquiry Submitted!",
-      description: "Thank you for your interest. Our team will contact you within 24 hours.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      destination: "",
-      travelDates: "",
-      duration: "",
-      travelers: "",
-      budget: 50000,
-      packageType: "",
-      message: ""
-    });
-    setBudget([50000]);
+
+    // Prepare EmailJS payload (must match template variable names)
+    const payload = {
+      from_name: formData.name,
+      reply_to: formData.email,
+      phone: formData.phone,
+      destination: formData.destination,
+      travelDates: formData.travelDates,
+      duration: formData.duration,
+      travelers: formData.travelers,
+      budget: formData.budget,
+      packageType: formData.packageType,
+      message: formData.message,
+      pageUrl: typeof window !== "undefined" ? window.location.href : ""
+    };
+
+    try {
+      if (!USER_ID) {
+        // If USER_ID is not supplied, warn and still attempt send (EmailJS may reject)
+        console.warn("VITE_EMAILJS_USER not set. Please add VITE_EMAILJS_USER to your .env (EmailJS user/public key).");
+      }
+
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, payload, USER_ID);
+
+      toast({
+        title: "Enquiry Submitted!",
+        description: "Thank you — our team will contact you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        destination: "",
+        travelDates: "",
+        duration: "",
+        travelers: "",
+        budget: 50000,
+        packageType: "",
+        message: ""
+      });
+      setBudget([50000]);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      toast({
+        title: "Submission failed",
+        description: "We couldn't send your enquiry. Try again or email connect@mantramiles.in.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleInputChange = async (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-    
+
     // Track FindLocation event when user searches for destination with debouncing
     if (field === 'destination' && value.length > 2 && isEnabled) {
-      // Clear existing timeout
       if (locationSearchTimeoutRef.current) {
         clearTimeout(locationSearchTimeoutRef.current);
       }
-      
-      // Set new timeout for debounced tracking
+
       locationSearchTimeoutRef.current = setTimeout(async () => {
         try {
-          // Get browser fingerprinting data for anonymous tracking
           const browserData = getBrowserData();
-          
-          // Create fallback user data with browser fingerprinting
           const fallbackUserData: UserFormData = {
-            // Use client ID as external ID for anonymous users
             ...(browserData.clientId && { external_id: browserData.clientId }),
-            // Include Facebook cookies if available
             ...(browserData.fbp && { fbp: browserData.fbp }),
             ...(browserData.fbc && { fbc: browserData.fbc }),
-            // Include user agent for better matching
             ...(browserData.userAgent && { client_user_agent: browserData.userAgent })
           };
-          
           await trackLocationSearch(value, fallbackUserData);
         } catch (error) {
           console.warn('Meta Pixel location search tracking failed:', error);
-          // Continue silently - don't disrupt user experience
         }
-      }, 500); // 500ms debounce delay
+      }, 500);
     }
   };
 
@@ -182,7 +202,7 @@ export const EnquirySection = () => {
                     <p className="text-muted-foreground">+91 99728 16108</p>
                   </div>
                 </div>
-                {/* WhatsApp */}
+
                 <div className="flex items-center gap-2">
                   <MessageCircle className="h-4 w-4 text-green-500" />
                   <p className="font-medium text-foreground">WhatsApp Us</p>
@@ -200,7 +220,7 @@ export const EnquirySection = () => {
                   <Mail className="w-5 h-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium text-foreground">Email Us</p>
-                    <p className="text-muted-foreground">mantramiles.01@gmail.com</p>
+                    <p className="text-muted-foreground">connect@mantramiles.com</p>
                   </div>
                 </div>
 
