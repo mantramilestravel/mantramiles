@@ -135,7 +135,7 @@ class MetaPixelService {
       };
 
       if (this.config.enableLogging) {
-        console.log('Meta Pixel Event Payload:', JSON.stringify(payload, null, 2));
+        // console.log('Meta Pixel Event Payload:', JSON.stringify(payload, null, 2));
       }
 
       const response = await fetch(`${this.baseUrl}?access_token=${this.config.accessToken}`, {
@@ -155,7 +155,7 @@ class MetaPixelService {
       }
 
       if (this.config.enableLogging) {
-        console.log('Meta Pixel Response:', responseData);
+        // console.log('Meta Pixel Response:', responseData);
       }
 
       return responseData as MetaPixelResponse;
