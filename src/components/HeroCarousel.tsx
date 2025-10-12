@@ -7,15 +7,15 @@ import kedarnathTemple from "@/assets/kedarnath-temple.jpg";
 import badrinathTemple from "@/assets/badrinath-temple.jpg";
 import keralaBackwaters from "@/assets/kerala-backwaters.jpg";
 import gangotriTemple from "@/assets/gangotri-temple.jpg";
-import chardham from "@/assets/chardham.jpg";
+import ayodhya from "@/assets/ayodhya_top.jpg";
 import swissAlps from "@/assets/swiss-alps-hero.jpg";
 
 const heroImages = [
   {
     id: 1,
-    image: chardham,
-    title: "Chardham Yatra 2025",
-    subtitle: "Join the most revered pilgrimage circuit in India . 11 days/10 nights. ",
+    image: ayodhya,
+    title: "Varanasi With Ayodhya Ram lala Tour",
+    subtitle: "Join the most revered pilgrimage circuit in India . 3 days/2 nights. ",
     highlight: "Bangalore Departure.",
     cta: "Book Early & Save 10%",
   },

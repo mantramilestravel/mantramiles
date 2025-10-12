@@ -1,16 +1,16 @@
-import chardhamImage from "@/assets/chardham_top.jpg";
+import ahobilamImage from "@/assets/ahobilam_top.jpg";
 import nepalImage from "@/assets/nepal_top.webp";
 import srilankaImage from "@/assets/srilanka_top.png";
 import puriImage from "@/assets/puri_top.jpg";
 import angkorImage from "@/assets/cambodia_top.jpg";
-import ladakhImage from "@/assets/ladakh_top.jpg";
+import varanasiAyodhyaImage from "@/assets/ayodhya_top.jpg";
 
 interface ImageModule {
   default: string;
 }
 
-const chardhamImages = Object.values(
-  import.meta.glob('@/assets/packages/chardham/chardham*.{jpg,jpeg,png,webp,svg}', { eager: true })
+const ahobilamImages = Object.values(
+  import.meta.glob('@/assets/packages/ahobilam/*.{jpg,jpeg,png,webp,svg}', { eager: true })
 ).map((module: ImageModule) => module.default);
 const nepalImages = Object.values(
   import.meta.glob('@/assets/packages/nepal/*.{jpg,jpeg,png,webp,svg}', { eager: true })
@@ -24,61 +24,65 @@ const puriImages = Object.values(
 const angkorImages = Object.values(
   import.meta.glob('@/assets/packages/angkorwat/*.{jpg,jpeg,png,webp,svg}', { eager: true })
 ).map((module: ImageModule) => module.default);
-const ladakhImages = Object.values(
-  import.meta.glob('@/assets/packages/ladakh/*.{jpg,jpeg,png,webp,svg}', { eager: true })
+const varanasiAyodhyaImages = Object.values(
+  import.meta.glob('@/assets/packages/varanasiAyodhyaImages/*.{jpg,jpeg,png,webp,svg}', { eager: true })
 ).map((module: ImageModule) => module.default);
 
 
 
 export const packagesData = [
   {
-    id: "chardham-yatra",
-    name: "Chardham Yatra – Ultimate Himalayan Pilgrimage September 11th, 2025",
-    destinations: "Yamunotri • Gangotri • Kedarnath • Badrinath • Lakhamandal",
-    duration: "11 Days / 10 Nights",
+    id: "ahobilam-narasimha-pilgrimage",
+    name: "Ahobilam Narasimha Pilgrimage",
+    destinations: "Bangalore • Ahobilam (Upper & Lower) • Various Narasimha Temples",
+    duration: "3 Days / 2 Nights",
     description:
-      "Embark on the holy Chardham Yatra covering the four sacred shrines of Yamunotri, Gangotri, Kedarnath, and Badrinath. Witness divine darshans, scenic treks, and spiritual bliss amidst the Himalayas. A perfect blend of devotion, culture, and natural beauty.",
-    price: "₹64,000*",
-    rating: 4.9,
+      "A devotional pilgrimage to the sacred Ahobilam Narasimha temples — Upper and Lower Ahobilam — covering key shrines including Kaaranja, Ahobila, Varaha (Karoda), Jwala, Malola, Prahlada School, Yogananda, Kshatravata, Pavana and Bhargava Narasimha. Program based on the group itinerary run on 22 Dec 2017; includes guided darshans, briefings and bhajans.",
+    price: "On Request",
+    rating: 4.7,
     type: "Domestic",
     tag: "Group Package",
-    coverImage: chardhamImage,
-    images: chardhamImages,
+    coverImage: ahobilamImage,
+    images: ahobilamImages,
     inclusions: [
-      "Accommodation in standard hotels/guesthouses on twin/triple sharing",
-      "Daily vegetarian breakfast & dinner",
-      "All transfers and sightseeing by private coach/tempo traveller",
-      "Helicopter/pony arrangements (optional, extra cost at Kedarnath)",
-      "Assistance with darshan arrangements at temples"
+      "Round-trip coach transport from Bangalore",
+      "Accommodation at lodges in Ahobilam (as per the itinerary)",
+      "Packed breakfasts/lunches/dinners as specified in the itinerary",
+      "Local transfers (bus/jeep) for Upper Ahobilam sightseeing",
+      "Guided darshans and temple briefings",
+      "Support from local coordinators and puja/arrangement assistance"
     ],
     exclusions: [
-      "Airfare/train fare to Haridwar/Rishikesh",
-      "Personal expenses (laundry, phone, tips)",
-      "Lunches and snacks en route",
-      "Travel/medical insurance",
-      "Any expenses due to weather, landslides, or natural calamities"
+      "Personal expenses (tips, phone calls, laundry)",
+      "Travel insurance",
+      "Any meals or services not explicitly listed in inclusions",
+      "Expenses arising from weather-related or road delays",
+      "Airfare/train fare to Bangalore (if applicable)"
     ],
     terms: [
-      "Pilgrims must carry valid ID proof",
-      "Travel involves high-altitude regions; medical fitness required",
-      "Advance payment is non-refundable",
-      "Company not liable for weather disruptions, landslides, or delays",
-      "Itinerary may change depending on temple timings and road conditions"
+      "Pilgrims must carry valid government ID (Aadhaar/PAN/Passport) for verification",
+      "Advance payment required to confirm booking; deposits may be non-refundable",
+      "Itinerary may change depending on temple timings, weather, or local conditions",
+      "Participants should be medically fit for moderate walking/hill paths",
+      "Company not liable for delays or disruptions due to natural causes or local restrictions"
     ],
     itinerary: [
-      { day: "Day 1", detail: "Arrival at Haridwar/Rishikesh, check-in at hotel. In the evening attend the sacred Ganga Aarti at Har Ki Pauri. Overnight stay in Haridwar." },
-      { day: "Day 2", detail: "Drive from Haridwar to Barkot (220 km, 8 hrs) via scenic Mussoorie. En route visit Kempty Falls. Overnight stay at Barkot." },
-      { day: "Day 3", detail: "Early morning drive to Janki Chatti, then trek (6 km) to Yamunotri. Take a holy dip in the Yamuna River and visit Yamunotri Temple. Return trek and drive back to Barkot. Overnight stay." },
-      { day: "Day 4", detail: "Drive from Barkot to Uttarkashi (100 km, 4 hrs). En route visit the famous Vishwanath Temple and local markets. Overnight stay at Uttarkashi." },
-      { day: "Day 5", detail: "Excursion to Gangotri (100 km each way). Take a dip in the holy Bhagirathi River at Gangotri Ghat and offer prayers at Gangotri Temple. Return to Uttarkashi for overnight stay." },
-      { day: "Day 6", detail: "Drive from Uttarkashi to Guptkashi (220 km, 8–9 hrs). Enjoy views of Mandakini River en route. Evening at leisure. Overnight stay in Guptkashi." },
-      { day: "Day 7", detail: "Early morning drive to Sonprayag, then trek (18 km) or take helicopter service to Kedarnath. Visit Kedarnath Temple for darshan and evening aarti. Overnight stay at Kedarnath (subject to availability)." },
-      { day: "Day 8", detail: "After morning pooja, return trek to Sonprayag and drive back to Guptkashi. Rest and overnight stay." },
-      { day: "Day 9", detail: "Drive to Badrinath (190 km, 7–8 hrs) via Joshimath. En route visit Narsingh Temple and Shankaracharya Math. In the evening, attend Badrinath Temple darshan. Overnight stay." },
-      { day: "Day 10", detail: "Visit Mana village (the last village before Tibet), Vyas Gufa, Ganesh Gufa, and Bhim Pul. After darshan at Badrinath Temple again, drive back to Rudraprayag. Overnight stay." },
-      { day: "Day 11", detail: "Drive from Rudraprayag to Haridwar/Rishikesh (160 km, 6 hrs). En route visit Devprayag (confluence of Bhagirathi and Alaknanda forming the Ganga). Drop at railway station/airport for onward journey." },
+      {
+        day: "Day 1",
+        detail:
+          "06:30 pm Board the bus. 07:00 pm Leave Bangalore and proceed towards Ahobilam. 08:30 pm Dinner (packed). 09:00 pm Rest."
+      },
+      {
+        day: "Day 2",
+        detail:
+          "05:00 am Reach Ahobilam and check-in to respective lodges. 06:30 am Get ready and assemble at Ahobilam Mutt. 07:30 am Breakfast at Vedapatha Shala. 08:00 am Board the bus and proceed towards Upper Ahobilam. 08:15 am Reach Kaaranja Narasimha Temple – Darshan & Briefing. 08:45 am Board bus and proceed towards Ahobila Narasimha. 09:00 am Reach Ahobila Narasimha – Darshan & Briefing. 10:00 am Proceed towards Varaha (Karoda) Narasimha (by walk). 10:30 am Reach Varaha Narasimha – Darshan & Briefing. 11:00 am Proceed towards Jwala Narasimha (by walk). 12:00 pm Reach Jwala Narasimha and Raktha Kund – Darshan. 12:30 pm Lunch (packed). 01:00 pm Proceed towards Malola Narasimha (by walk). 02:00 pm Reach Malola Narasimha – Darshan & Briefing (Both Malola & Jwala). 03:00 pm Proceed towards Prahlada School (by walk). 03:30 pm Reach Prahlada School. 04:00 pm Proceed towards bus (by walk). 05:00 pm Board the bus and proceed towards Lower Ahobilam. 05:30 pm Reach Lower Ahobilam and proceed towards Lakshmi Narasimha (Prahlada Varada) Temple – Darshan, Briefing and Kirtan/Bhajans. 07:00 pm Proceed towards Ahobilam Mutt/Shopping. 07:30 pm Dinner at Vedapatha Shala. 08:30 pm Proceed towards respective lodges. 08:45 pm Rest."
+      },
+      {
+        day: "Day 3",
+        detail:
+          "05:00 am Wake up. 06:00 am Board the bus and proceed towards Yogananda Narasimha Temple. 06:15 am Reach Yogananda Narasimha – Darshan & Briefing. 06:45 am Proceed towards Kshatravata Narasimha Temple. 07:00 am Reach Kshatravata Narasimha Temple. (Sankalpam followed by Narasimha Homa on confirmation). 08:00 am Darshan and briefing of Kshatravata Narasimha. 08:30 am Breakfast at Kshatravata Narasimha Temple. 09:00 am Board the jeep and proceed towards Pavana Narasimha Temple. 10:00 am Reach Pavana Narasimha – Darshan & Briefing. 11:00 am Board the jeep and proceed towards Bhargava Narasimha Temple. 12:00 pm Reach Bhargava Narasimha – Darshan & Briefing. 12:45 pm Board jeep and proceed towards Vedapatha Shala. 01:00 pm Reach Ahobilam Mutt and proceed to lunch. 02:00 pm Board the bus and proceed towards Bangalore. 07:30 pm Dinner en route. 10:30 pm Reach Bangalore."
+      }
     ]
-    ,
   },
   {
     id: "nepal-muktinath",
@@ -127,97 +131,170 @@ export const packagesData = [
     ,
   },
   {
-    id: "srilanka-ramayana",
-    name: "Sri Lanka Ramayana Yatra – Sacred Island Journey in November 2025",
-    destinations:
-      "Colombo • Kandy • Lankadishwara • Ashoka Vatika • Ramboda • Ussangoda • Kelaniya • Nagadweepa • Trincomalee",
-    duration: "9 Days / 8 Nights",
-    description:
-      "Follow the legendary Ramayana trail across Sri Lanka covering Kandy, Ashoka Vatika, Ussangoda, and Trincomalee. Discover sacred temples, mythological sites, and cultural treasures while exploring the island’s natural beauty. A divine journey blending history, devotion, and serenity.",
-    price: "₹85,000*",
-    rating: 4.7,
-    type: "International",
-    coverImage: srilankaImage,
-    images: srilankaImages,
-    inclusions: [
-      "Accommodation in 4-star hotels with daily breakfast",
-      "Airport transfers and intercity travel in private coach",
-      "All sightseeing and temple visits as per itinerary",
-      "English-speaking guide throughout the tour",
-      "Entrance fees to listed monuments"
-    ],
-    exclusions: [
-      "International airfare",
-      "Sri Lanka visa fees",
-      "Lunches and dinners (unless specified)",
-      "Personal expenses, tips, and porterage",
-      "Optional activities (safaris, shows, water sports)"
-    ],
-    terms: [
-      "Passport must be valid for 6 months",
-      "Visa approval is traveler’s responsibility",
-      "Advance payment is non-refundable",
-      "Company not liable for delays due to traffic, weather, or strikes",
-      "Modest attire required at temples"
-    ],
-    itinerary: [
-      { day: "Day 1", detail: "Arrival at Colombo International Airport. Meet and greet by tour representative. Transfer to hotel for check-in. In the evening, short orientation drive through Colombo city. Overnight stay in Colombo." },
-      { day: "Day 2", detail: "After breakfast, drive to Kandy (115 km / 4 hrs). En route visit Pinnawala Elephant Orphanage. In Kandy, visit the sacred Temple of the Tooth Relic (Sri Dalada Maligawa). Evening cultural dance show. Overnight stay in Kandy." },
-      { day: "Day 3", detail: "Excursion to Lankadishwara Temple, believed to be associated with the Ramayana. Explore local markets and handicraft stores in Kandy. Overnight stay in Kandy." },
-      { day: "Day 4", detail: "Drive to Nuwara Eliya via Ramboda. En route visit Hanuman Temple at Ramboda and beautiful Ramboda Falls. Arrive in Nuwara Eliya, visit Seetha Amman Temple and Ashoka Vatika (Hakgala Botanical Garden). Overnight stay in Nuwara Eliya." },
-      { day: "Day 5", detail: "Morning sightseeing in Nuwara Eliya town. Later, drive along the southern coast to reach Ussangoda, a site believed to be scorched by Hanuman’s fire tail. Continue journey to Galle for overnight stay." },
-      { day: "Day 6", detail: "After breakfast, visit Kelaniya Temple near Colombo, believed to be sanctified by Lord Buddha and linked to Vibheeshana of Ramayana. Evening free for leisure in Colombo. Overnight stay in Colombo." },
-      { day: "Day 7", detail: "Drive to Nagadweepa (Nainativu) off the coast of Jaffna, associated with stories of the Ramayana. Visit Nagapooshani Amman Temple and Nagadweepa Vihara. Overnight stay in Jaffna." },
-      { day: "Day 8", detail: "Morning drive to Trincomalee (approx. 6 hrs). Visit Koneswaram Temple, a famous pilgrimage site perched on a cliff overlooking the Indian Ocean. Evening at leisure in Trincomalee. Overnight stay in Trincomalee." },
-      { day: "Day 9", detail: "After breakfast, transfer back to Colombo (approx. 6 hrs). Drop at Colombo International Airport for onward journey." },
-    ],
-  },
+  id: "srilanka-ramayana",
+  name: "Sri Lanka Ramayana Yatra – Sacred Island Journey November 2025",
+  destinations:
+    "Colombo • Kandy • Seetha Kotuwa • Nuwara Eliya • Ella • Chilaw • Negombo • Kelaniya",
+  duration: "9 Days / 8 Nights",
+  description:
+    "Follow the legendary Ramayana trail across Sri Lanka — from Kandy and Seetha Kotuwa to Nuwara Eliya, Ella, Chilaw, and Kelaniya. Explore sacred temples, Ramayana sites, lush tea estates, and colonial hill towns while enjoying vegetarian meals, expert guidance, and serene island hospitality.",
+  price: "₹85,000 + GST",
+  rating: 4.8,
+  type: "International",
+  tag: "Deluxe Package",
+  coverImage: srilankaImage,
+  images: srilankaImages,
+  inclusions: [
+    "Economy class return airfare (Bangalore/Chennai – Colombo – Bangalore/Chennai)",
+    "Sri Lanka visa assistance and processing",
+    "All airport transfers and local transport by AC coach",
+    "Accommodation in standard/deluxe hotels on twin sharing basis",
+    "Daily vegetarian meals (Breakfast, Lunch & Dinner)",
+    "Entry fees to listed monuments and temples",
+    "English-speaking guide for the entire tour",
+    "Professional & service charges, driver allowance, toll and parking"
+  ],
+  exclusions: [
+    "Personal expenses (laundry, tips, telephone calls, pooja materials)",
+    "Optional activities or additional sightseeing not mentioned in the itinerary",
+    "Travel/medical insurance",
+    "GST (5%)",
+    "Any cost arising due to natural calamities, strikes, or flight delays"
+  ],
+  terms: [
+    "Passport must be valid for at least 6 months from travel date",
+    "Registration closes by the announced last date or until seats are full",
+    "Advance payment of 60% required at registration; balance 40% one week before departure",
+    "Package amount ₹85,000 (Deluxe) + GST, ex-Bangalore",
+    "Non-refundable advance once registered",
+    "Itinerary subject to change based on local conditions or Yatra Director’s discretion"
+  ],
+  itinerary: [
+    {
+      day: "Day 1",
+      detail:
+        "Arrival at Bandaranaike International Airport and welcome by representative. En route visit Pinnawala Elephant Orphanage. Proceed to Kandy. In the evening, attend a traditional Kandyan cultural dance performance. Dinner and overnight stay in Kandy. (Visit: Temple of the Tooth Relic – Sri Dalada Maligawa)"
+    },
+    {
+      day: "Day 2",
+      detail:
+        "After breakfast, excursion to Seetha Kotuwa (Sita’s Fort) — believed to be one of the earliest places Sita was kept before Ashoka Vatika. Return to Kandy for dinner and overnight stay."
+    },
+    {
+      day: "Day 3",
+      detail:
+        "After breakfast, drive to Nuwara Eliya via Ramboda. En route visit Sri Bhakta Hanuman Temple at Ramboda and the scenic Ramboda Waterfalls. Visit tea plantations and a tea factory en route. Dinner and overnight stay in Nuwara Eliya."
+    },
+    {
+      day: "Day 4",
+      detail:
+        "After breakfast, visit Sita Amman Temple and Hakgala Botanical Gardens — believed to be part of Ashoka Vatika where Sita was held captive. Continue to Ella to explore Ramayana-related sites. Dinner and overnight stay in Nuwara Eliya."
+    },
+    {
+      day: "Day 5",
+      detail:
+        "After breakfast, visit Divurumpola Temple — the site of Sita’s Agni Pariksha. Proceed to Ella to see Ravana Ella Cave and the majestic Ella Falls where Ravana is said to have hidden Sita. Dinner and overnight stay in Nuwara Eliya."
+    },
+    {
+      day: "Day 6",
+      detail:
+        "After breakfast, drive to Colombo. Visit city attractions including temples, churches, and colonial landmarks. In the evening, visit Panchamuga Anjaneyar Temple in Kalubowila — the only five-faced Hanuman Temple in Sri Lanka. Dinner and overnight stay in Colombo."
+    },
+    {
+      day: "Day 7",
+      detail:
+        "After breakfast, proceed to Chilaw. Visit Munishwaram Temple (dedicated to Lord Shiva) where Lord Rama prayed after defeating Ravana. Continue to Negombo for dinner and overnight stay."
+    },
+    {
+      day: "Day 8",
+      detail:
+        "After breakfast, visit Manavari Temple — where Lord Rama installed and worshipped the first Ramalinga Shivalingam to absolve himself of Brahmahatya Dosham. This is the only other lingam apart from Rameshwaram named after Lord Rama. Dinner and overnight stay in Negombo."
+    },
+    {
+      day: "Day 9",
+      detail:
+        "After breakfast, visit Kelaniya Vibheeshana Temple and enjoy a short Colombo sightseeing tour. Transfer to Bandaranaike International Airport for return flight to India with divine memories."
+    }
+  ]
+}
+,
 
   {
     id: "puri-jagannath",
     name: "Puri Jagannath & Mayapur – Divine East India Pilgrimage December 2025",
     destinations:
-      "Puri • Jagannath Temple • Konark Sun Temple • Chilika Lake • Bhuvaneshwar",
+      "Puri • Jagannath Temple • Konark Sun Temple • Chilika Lake • Bhubaneswar • Kolkata • Gangasagar • Mayapur",
     duration: "7 Days / 6 Nights",
     description:
-      "Discover Odisha’s spiritual and cultural gems with visits to Jagannath Temple, Konark Sun Temple, and Chilika Lake. Explore ancient temples, serene beaches, and vibrant traditions. A soulful journey through India’s heritage and devotion.",
-    price: "₹45,000*",
+      "Discover Odisha and Bengal’s spiritual and cultural gems with visits to Lingaraj, Konark Sun Temple, Jagannath Temple, Chilika Lake, Gangasagar and Mayapur. A soulful journey through India’s heritage, scripture, and devotional traditions — featuring temple darshans, heritage villages, and key Vaishnava & Shaiva sites.",
+    price: "₹49,000/-",
     rating: 4.6,
     type: "Domestic",
     coverImage: puriImage,
     images: puriImages,
     inclusions: [
-      "Accommodation in 3/4-star hotels",
-      "Daily breakfast & dinner",
+      "Flights (Bangalore – Bhubaneswar; Kolkata – Bangalore) as per itinerary",
+      "Deluxe hotel stays (as specified)",
       "All transfers in AC private vehicle",
-      "Sightseeing with English-speaking guide",
-      "Assistance with temple darshan arrangements"
+      "3-tier AC train segment (Puri → Kolkata) where applicable",
+      "Guided sightseeing with English-speaking guide",
+      "Meals as per itinerary (specified)",
+      "Entry fees & applicable taxes"
     ],
     exclusions: [
-      "Airfare/train fare to Bhubaneswar",
-      "Entry fees to monuments (non-Indian nationals)",
-      "Lunches and personal expenses",
-      "Camera/video charges",
-      "Travel insurance"
+      "Personal expenses (tips, donations, rickshaws, phone calls)",
+      "Optional activities (extra boat rides, optional experiences)",
+      "Medical / travel insurance",
+      "Anything not mentioned in inclusions"
     ],
     terms: [
-      "Travelers must follow temple rules (non-Hindus not allowed inside Jagannath Temple)",
-      "Advance payment is non-refundable",
-      "Company not liable for delays caused by weather or local restrictions",
-      "Itinerary may change due to temple rituals",
-      "ID proof required for hotel check-in"
-    ]
-    ,
+      "Registration deadline: 2nd Nov 2025",
+      "Full package amount: ₹49,000/-",
+      "Payment schedule: Rs. 25,000 at registration + remaining before departure (15 days prior)",
+      "Advance payment required to confirm booking; deposits may be non-refundable",
+      "Company not liable for delays due to weather, local restrictions or temple rituals",
+      "Itinerary may change depending on temple timings, train/flight schedules or road conditions",
+      "Valid ID required for hotel check-in"
+    ],
     itinerary: [
-      { day: "Day 1", detail: "Arrival at Bhubaneswar Airport/Railway Station. Transfer to Puri and check-in at hotel. Evening visit to the sacred Jagannath Temple for darshan. Overnight stay in Puri." },
-      { day: "Day 2", detail: "Early morning attend Mangala Aarti at Jagannath Temple. Later, explore Puri town including Gundicha Temple and local markets. Evening free for leisure on Puri Beach. Overnight stay in Puri." },
-      { day: "Day 3", detail: "Excursion to Konark (35 km). Visit the world-famous Konark Sun Temple (UNESCO World Heritage Site). On the way back, visit Chandrabhaga Beach. Return to Puri for overnight stay." },
-      { day: "Day 4", detail: "Full-day trip to Chilika Lake (Satapada – 50 km). Enjoy a boat ride on Asia’s largest brackish water lagoon and spot dolphins at the mouth of the lake. Return to Puri by evening. Overnight stay in Puri." },
-      { day: "Day 5", detail: "Drive from Puri to Bhubaneswar (60 km). En route visit Dhauli Shanti Stupa and Pipili Applique Village. In Bhubaneswar, visit Lingaraj Temple, Mukteshwar Temple, and Rajarani Temple. Overnight stay in Bhubaneswar." },
-      { day: "Day 6", detail: "Morning excursion to Nandankanan Zoological Park, famous for its white tigers and safari rides. Afternoon visit to Odisha State Museum and Ekamra Haat for handicrafts shopping. Overnight stay in Bhubaneswar." },
-      { day: "Day 7", detail: "After breakfast, transfer to Bhubaneswar Airport/Railway Station for onward journey with divine memories of Odisha’s spiritual and heritage trail." },
+      {
+        day: "Day 1",
+        detail:
+          "Bangalore → Bhubaneswar → Konark → Puri. Morning flight from Bangalore to Bhubaneswar. Visit Lingaraj Temple and Ananta Vasudev (Anantavasudev) Temple; lunch at Lingaraj Temple complex. Afternoon drive to Konark Sun Temple (UNESCO site) for sightseeing. Evening proceed to Puri, check-in, dinner and rest."
+      },
+      {
+        day: "Day 2",
+        detail:
+          "Puri & local temples. Early morning darshan at Jagannath Temple. Return to hotel for lunch. Evening sightseeing within local radius: Tota Gopinath Temple, Swargadwara, Indradyumna Sarovar, Gundicha Mandir and other Chaitanya-related sites. Overnight in Puri."
+      },
+      {
+        day: "Day 3",
+        detail:
+          "Puri → Alarnath & Sakshi Gopal → Raghurajpur. Early morning visit Alarnath Temple and Sakshi Gopal. Lunch on-route. Afternoon visit Raghurajpur Crafts Village (Pattachitra & artisans). Return and relax at hotel in Puri."
+      },
+      {
+        day: "Day 4",
+        detail:
+          "Puri → Jajpur & Remuna → Kolkata. Early morning drive to Jajpur to visit Sakti Peetha. Continue to Remuna to visit Kshirachora Gopinath Temple and have lunch in Remuna. Evening reach Kolkata, check-in and rest."
+      },
+      {
+        day: "Day 5",
+        detail:
+          "Kolkata → Gangasagar → Mayapur. Early depart for Gangasagar Island (~3 hours) — visit Kapil Muni area and sacred confluence where Ganges meets the sea. Late afternoon drive to Mayapur (~4–5 hours). Check-in and rest."
+      },
+      {
+        day: "Day 6",
+        detail:
+          "Mayapur heritage day. Early Mangal Aarti at Sri Mayapur Chandrodaya Mandir. Visit key sites including the Vedic Planetarium, birthplace of Chaitanya Mahaprabhu, Sri Srivasa Angan, Advaita Bhavan, Gadadhara Angan and other heritage manuscript sites. Evening free for shopping and personal exploration."
+      },
+      {
+        day: "Day 7",
+        detail:
+          "Kolkata early morning Kalighat visit (depart ~4 AM). Visit Ramakrishna Math & Belur Math. Lunch, then transfer to Kolkata Airport for flight to Bangalore. Tour concludes."
+      }
     ]
-  },
+  }
+  ,
   {
     id: "angkor-thailand",
     name: "Angkor Wat & Thailand Discovery – Spiritual Meets Tropical - Jan 2026",
@@ -264,52 +341,60 @@ export const packagesData = [
 
   },
   {
-    id: "ladakh-pilgrimage",
-    name: "The Ladakh Adventure & Pilgrimage Tour - Jan 2026",
-    destinations:
-      "Leh • Hemis and Thiksey • Lamayuru • Alchi village • Nubra Valley • Pangong Lake • Khardung La Pass",
-    duration: "11 Days / 10 Nights",
+    id: "varanasi-ayodhya-pilgrimage",
+    name: "Varanasi & Ayodhya Divine Pilgrimage",
+    destinations: "Varanasi • Sarnath • Ayodhya",
+    duration: "3 Days / 2 Nights",
     description:
-      "Embark on a breathtaking Ladakh expedition covering Leh, Nubra Valley, Pangong Lake, and Khardung La Pass. Marvel at monasteries, high-altitude lakes, and Himalayan landscapes. A blend of adventure, culture, and spiritual calm in the Land of High Passes.",
-    price: "₹75,000*",
+      "Experience the spiritual heart of India with this 3-day pilgrimage covering the sacred city of Varanasi and the holy birthplace of Lord Rama in Ayodhya. Witness the mesmerizing Ganga Aarti, visit ancient temples, and feel the divine energy of two of India’s most revered destinations.",
+    price: "₹24,999/-",
     rating: 4.8,
     type: "Domestic",
-    coverImage: ladakhImage,
-    images: ladakhImages,
+    tag: "Flight Package",
+    coverImage: varanasiAyodhyaImage,
+    images: varanasiAyodhyaImages,
     inclusions: [
-      "Accommodation in deluxe hotels/guesthouses & camps",
-      "Daily breakfast & dinner",
-      "All sightseeing & transfers by private SUV/tempo traveler",
-      "Inner line permits for Nubra Valley and Pangong Lake",
-      "Assistance with acclimatization and medical support"
+      "Both-way flight ticket (Bangalore – Varanasi – Bangalore)",
+      "Twin sharing stay in A/C Deluxe rooms",
+      "All meals – Breakfast, Lunch, and Dinner (pure vegetarian)",
+      "A/C luxury vehicle for entire tour including all taxes, toll, and driver charges",
+      "Pick-up and drop from airport",
+      "Tour guide support throughout the trip",
+      "V.I.P. Darshan tickets for temples",
+      "Evening Ganga Aarti experience by boat"
     ],
     exclusions: [
-      "Airfare to Leh",
-      "Lunches, snacks, and beverages",
+      "Personal expenses (tips, pooja items, rituals, entry tickets, extra boat rides, etc.)",
       "Travel/medical insurance",
-      "Camel ride/rafting/optional activities",
-      "Expenses due to flight cancellations, weather, or landslides"
+      "GST (5%)",
+      "Anything not mentioned in the inclusions"
     ],
     terms: [
-      "Travelers must be medically fit for high altitude",
-      "Itinerary may change due to road/weather conditions",
-      "Advance payment is non-refundable",
-      "Company not responsible for flight delays to Leh (common due to weather)",
-      "ID proof required for permits"
+      "Child below 6 years is complimentary.",
+      "Child aged 6–12 years charged at 40% of adult cost (extra bed provided).",
+      "Children aged 12+ considered adults.",
+      "Room sharing as per package occupancy (twin/triple).",
+      "Advance payment required to confirm booking.",
+      "Itinerary subject to change due to flight schedule, weather, or temple timings."
     ],
     itinerary: [
-      { day: "Day 1", detail: "Arrival at Leh Airport (Kushok Bakula Rimpochee). Transfer to hotel for complete rest and acclimatization. Evening stroll in Leh Market. Overnight stay in Leh." },
-      { day: "Day 2", detail: "Visit Hemis Monastery, Thiksey Monastery, and Shey Palace. Evening free for leisure. Overnight stay in Leh." },
-      { day: "Day 3", detail: "Drive to Lamayuru (120 km), en route visit Magnetic Hill and Gurudwara Pathar Sahib. Explore Lamayuru Monastery. Overnight stay in Lamayuru/Alchi." },
-      { day: "Day 4", detail: "Morning visit to Alchi Monastery and Likir Monastery. Drive back to Leh by evening. Overnight stay in Leh." },
-      { day: "Day 5", detail: "Drive to Nubra Valley via Khardung La Pass (18380 ft). Visit Diskit Monastery and Hunder Sand Dunes for camel safari. Overnight stay in Nubra Valley." },
-      { day: "Day 6", detail: "Explore villages in Nubra Valley including Sumur and Panamik (hot springs). Return drive to Leh via Khardung La. Overnight stay in Leh." },
-      { day: "Day 7", detail: "Drive to Pangong Lake (approx. 6 hrs) via Chang La Pass. Enjoy the mesmerizing turquoise lake, evening at leisure by the lakeside. Overnight stay in Pangong." },
-      { day: "Day 8", detail: "Morning sunrise view at Pangong Lake. Drive back to Leh with en route visits to monasteries and scenic stops. Overnight stay in Leh." },
-      { day: "Day 9", detail: "Excursion to Stok Palace and Museum. Visit Shanti Stupa and Leh Palace. Evening free for shopping and cafes. Overnight stay in Leh." },
-      { day: "Day 10", detail: "Free day for leisure or optional rafting on the Zanskar River. Evening farewell cultural program. Overnight stay in Leh." },
-      { day: "Day 11", detail: "After breakfast, transfer to Leh Airport for onward journey." },
+      {
+        day: "Day 1",
+        detail:
+          "Arrival at Varanasi Airport. Pick-up and transfer to hotel for check-in. In the evening, witness the mesmerizing Ganga Aarti at Dashashwamedh Ghat — a truly spiritual experience. Optionally, enjoy the ceremony from a boat (additional cost). Overnight stay at hotel in Varanasi."
+      },
+      {
+        day: "Day 2",
+        detail:
+          "Early morning visit to Kashi Vishwanath Temple, Annapurna Temple, Bharat Mata Temple, Sankat Mochan (Hanuman Temple), and Manas Mandir. Return to hotel for breakfast and rest. Later, enjoy a boat ride on the Ganges visiting famous ghats. Visit Sarnath and BHU campus. Evening free for shopping (optional). Dinner and overnight stay at hotel in Varanasi."
+      },
+      {
+        day: "Day 3",
+        detail:
+          "After breakfast, proceed to Ayodhya (250 km / 5 hrs). Visit sacred sites including Hanuman Garhi, Kanak Bhawan, and explore the banks of River Saryu. Experience the divine aura at Lord Rama’s birthplace. Lunch and return journey to Varanasi Airport for flight to Bangalore. Tour ends with divine blessings."
+      }
     ]
   }
+
 ];
 export default packagesData;

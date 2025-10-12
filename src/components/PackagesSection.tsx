@@ -1244,56 +1244,63 @@ const packageData = {
   },
   dubai: {
     name: "Dubai",
-    packages: [
-      {
-        "title": "Dubai & Abu Dhabi: The Grand Extravaganza",
-        "duration": "6 Days / 5 Nights (Land Only)",
-        "overview": "Experience the ultimate adventure in the UAE with this comprehensive land package. This itinerary combines the best of Dubai and Abu Dhabi, from thrilling desert safaris and traditional dhow cruises to visits to iconic landmarks like the Burj Khalifa and the high-speed rides at Ferrari World. The package also includes access to the stunning Miracle Garden and lively Global Village.",
-        "inclusions": [
-          "Desert Safari with BBQ Dinner (Standard) - Shared Basis",
-          "Creek Dhow Cruise with Dinner - Shared Basis",
-          "Half-Day Dubai City Tour - Shared Basis",
-          "Abu Dhabi City Tour with Ferrari World - Shared Basis",
-          "Miracle Garden and Global Village - Shared Basis",
-          "Burj Khalifa 124th Floor (Non-Prime Time) with Dubai Aquarium and Underwater Zoo with Penguin Cove (Regular Pass) - Shared Basis",
-          "Private airport transfers from Dubai Airport (DXB) to hotel and vice versa"
-        ],
-        "exclusions": [
-          "International and domestic flights",
-          "Hotel accommodation",
-          "Visa services",
-          "Meals unless specified (only dinners are included on the safari and cruise)",
-          "Entrance fees to monuments/attractions not part of the specified tours",
-          "Personal expenses such as tips, shopping, and laundry"
-        ],
-        "price": "₹31,357*",
-        "rating": null,
-        "itinerary": [
-          {
-            "day": "Day 1",
-            "details": "Arrival at Dubai Airport (DXB) and a private transfer to your hotel. Check in and spend the rest of the day at your leisure."
-          },
-          {
-            "day": "Day 2",
-            "details": "In the morning, embark on a half-day Dubai city tour on a shared basis. In the evening, enjoy a relaxing Creek Dhow Cruise with a delicious dinner."
-          },
-          {
-            "day": "Day 3",
-            "details": "Go for a full-day excursion to Abu Dhabi on a shared basis, which includes a city tour and entry to the thrilling Ferrari World."
-          },
-          {
-            "day": "Day 4",
-            "details": "The afternoon is reserved for a classic Dubai Desert Safari. Enjoy dune bashing, traditional entertainment, and a delicious BBQ dinner at the camp."
-          },
-          {
-            "day": "Day 5",
-            "details": "Visit the colorful Miracle Garden and the vibrant Global Village (seasonal). In the evening, head to the Burj Khalifa for a visit to the 124th floor, the Dubai Aquarium, and the Underwater Zoo."
-          },
-          {
-            "day": "Day 6",
-            "details": "After breakfast, a private vehicle will transfer you to Dubai Airport for your onward journey."
-          }
-        ]
+  packages: [
+    {
+      "title": "Dubai & Abu Dhabi: The Grand Extravaganza",
+      "duration": "6 Days / 5 Nights",
+      "travelDate": "January 7th, 2026",
+      "overview": "Experience the perfect blend of luxury, adventure, and culture with our exclusive Dubai Travel Package! This journey covers iconic attractions of Dubai and Abu Dhabi — from the thrilling desert safari and Ferrari World to breathtaking views at the Burj Khalifa and Dubai Frame. Also included are the vibrant Miracle Garden, Global Village, and the awe-inspiring Museum of the Future.",
+      "inclusions": [
+        "Return Flights (Bangalore – Dubai – Bangalore)",
+        "UAE Visa & Insurance",
+        "4-Star Hotel Accommodation with Breakfast",
+        "All Tours and Transfers in AC Coach",
+        "Desert Safari with BBQ Dinner",
+        "Dhow Cruise with Dinner",
+        "Dubai City Tour",
+        "Burj Khalifa 124th Floor Entry",
+        "Dubai Frame Entry",
+        "Museum of the Future Entry",
+        "Abu Dhabi City Tour with Ferrari World Entry",
+        "Miracle Garden and Global Village Access",
+        "Private Airport Transfers (DXB)"
+      ],
+      "exclusions": [
+        "Personal expenses such as tips, shopping, or laundry",
+        "Meals not mentioned in inclusions",
+        "Optional activities or upgrades",
+        "Travel/medical insurance (beyond package coverage)",
+        "Any increase in taxes or fuel surcharges post booking"
+      ],
+      "price": "₹96,000/- (Offer Price, all-inclusive)",
+      "oldPrice": "₹1,15,000/-",
+      "rating": 4.9,
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "details": "Arrival at Dubai International Airport. Meet and greet by our representative. Private transfer to hotel and check-in. Evening free for leisure and exploring nearby attractions."
+        },
+        {
+          "day": "Day 2",
+          "details": "Enjoy a half-day Dubai City Tour visiting key attractions including the Dubai Frame and the Museum of the Future. In the evening, enjoy a serene Dhow Cruise along Dubai Creek with dinner and live entertainment."
+        },
+        {
+          "day": "Day 3",
+          "details": "Full-day excursion to Abu Dhabi including city tour and entry to Ferrari World. Return to Dubai in the evening and relax at your hotel."
+        },
+        {
+          "day": "Day 4",
+          "details": "Morning at leisure. In the afternoon, head out for an exciting Desert Safari with dune bashing, traditional entertainment, and BBQ dinner under the stars."
+        },
+        {
+          "day": "Day 5",
+          "details": "Visit Miracle Garden and Global Village for a colorful cultural experience. Later, visit Burj Khalifa 124th floor for panoramic views of the city skyline."
+        },
+        {
+          "day": "Day 6",
+          "details": "After breakfast, check-out from the hotel and enjoy some free time for shopping. Private transfer to Dubai Airport for your return flight."
+        }
+      ]
       },
       {
         "title": "The Ultimate Dubai Grand Tour",
