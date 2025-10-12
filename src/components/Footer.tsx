@@ -1,5 +1,6 @@
 import { Mail, Phone, Facebook, Instagram, MapPin, MessageCircle } from "lucide-react";
-import Image from "@/assets/logo.png"; // if using Next.js (otherwise use <img>)
+import Image from "@/assets/logo.png"; // logo import
+import PrivacyPdf from "@/assets/Privacy_Policy.pdf";
 
 export const Footer = () => {
   return (
@@ -117,20 +118,25 @@ export const Footer = () => {
           </div>
 
           <div className="flex gap-6">
+            {/* Use imported module as href - download attribute hints to save */}
             <a
-              href="Privacy_Policy.pdf"
+              href={PrivacyPdf}
               download="MantraMiles-Privacy-Policy.pdf"
               className="hover:text-primary-foreground"
               aria-label="Download Privacy Policy"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Privacy Policy
             </a>
 
             <a
-              href="Privacy_Policy.pdf"
+              href={PrivacyPdf}
               download="MantraMiles-Terms-Of-Use.pdf"
               className="hover:text-primary-foreground"
               aria-label="Download Terms of Use"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Terms of Use
             </a>
