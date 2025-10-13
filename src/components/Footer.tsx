@@ -50,8 +50,8 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:mantramiles.01@gmail.com" className="hover:text-primary-foreground">
-                  mantramiles.01@gmail.com
+                <a href="mailto:connect@mantramiles.in" className="hover:text-primary-foreground">
+                  connect@mantramiles.in
                 </a>
               </div>
 

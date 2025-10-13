@@ -220,7 +220,7 @@ export const EnquirySection = () => {
                   <Mail className="w-5 h-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium text-foreground">Email Us</p>
-                    <p className="text-muted-foreground">connect@mantramiles.com</p>
+                    <p className="text-muted-foreground">connect@mantramiles.in</p>
                   </div>
                 </div>
 

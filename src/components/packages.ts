@@ -227,7 +227,7 @@ export const packagesData = [
     duration: "7 Days / 6 Nights",
     description:
       "Discover Odisha and Bengal’s spiritual and cultural gems with visits to Lingaraj, Konark Sun Temple, Jagannath Temple, Chilika Lake, Gangasagar and Mayapur. A soulful journey through India’s heritage, scripture, and devotional traditions — featuring temple darshans, heritage villages, and key Vaishnava & Shaiva sites.",
-    price: "₹49,000/-",
+    price: "₹13,500*/-",
     rating: 4.6,
     type: "Domestic",
     coverImage: puriImage,
