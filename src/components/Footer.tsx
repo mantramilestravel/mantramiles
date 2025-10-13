@@ -1,6 +1,7 @@
 import React from "react";
 import { Mail, Phone, Facebook, Instagram, MapPin, MessageCircle } from "lucide-react";
 import Image from "@/assets/logo.png"; // logo import
+import { Link } from "react-router-dom";
 
 export const Footer: React.FC = () => {
   return (
@@ -142,8 +143,8 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center gap-2">
             <div className="flex gap-6">
               {/* internal routes (open in same tab) */}
-              <a href="/privacy" className="hover:text-primary-foreground" aria-label="View Privacy Policy">Privacy Policy</a>
-              <a href="/terms" className="hover:text-primary-foreground" aria-label="View Terms of Use">Terms of Use</a>
+              <Link to="/privacy" className="hover:text-primary-foreground" aria-label="View Privacy Policy">Privacy Policy </Link>
+              <Link to="/terms" className="hover:text-primary-foreground" aria-label="View Terms of Use">Terms of Use</Link>
             </div>
 
             <div className="hidden sm:block border-l border-primary-foreground/20 h-6 mx-4" />
