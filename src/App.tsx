@@ -1,8 +1,11 @@
+import React, { useEffect } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Index from "./pages/Index";
 import PackageDetails from "@/pages/PackageDetails";
 import PaymentGateway from "@/pages/PaymentGateway";
@@ -15,33 +18,63 @@ import TermsAndConditions from "@/components/TermsAndConditions";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <MetaPixelProvider autoInitialize={true}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
+const App: React.FC = () => {
+  // Ensure a single canonical favicon at runtime (non-invasive — no index.html edit required)
+  useEffect(() => {
+    const canonical = "/favicon.ico"; // change to "/favicon.ico" if you prefer
+    // find existing icon link
+    let link = document.querySelector("link[rel*='icon']") as HTMLLinkElement | null;
+    const prevHref = link ? link.getAttribute("href") : null;
 
-        <BrowserRouter>
-          <ScrollToTop />
+    if (!link) {
+      link = document.createElement("link");
+      link.setAttribute("rel", "icon");
+      document.head.appendChild(link);
+    }
+    link.setAttribute("href", canonical);
 
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/package/:id" element={<PackageDetails />} />
-            <Route path="/payment/:id" element={<PaymentGateway />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<TermsAndConditions />} />
-          </Routes>
+    // Also ensure apple-touch-icon (if present) points to a canonical file
+    const apple = document.querySelector("link[rel='apple-touch-icon']") as HTMLLinkElement | null;
+    if (apple) apple.setAttribute("href", "/apple-touch-icon.png");
 
-          {/* Meta Pixel Notice Banner */}
-          <MetaPixelNoticeBanner />
-        </BrowserRouter>
+    return () => {
+      // restore previous favicon when unmounting (rare for App but safe)
+      if (!link) return;
+      if (prevHref) link.setAttribute("href", prevHref);
+      else link.parentNode?.removeChild(link);
+    };
+  }, []);
 
-      </TooltipProvider>
-    </MetaPixelProvider>
-  </QueryClientProvider>
-);
+  return (
+    <QueryClientProvider client={queryClient}>
+      <MetaPixelProvider autoInitialize={true}>
+        <TooltipProvider>
+          {/* UI toasters */}
+          <Toaster />
+          <Sonner />
+
+          <BrowserRouter>
+            {/* scroll to top on route change */}
+            <ScrollToTop />
+
+            {/* App routes */}
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/package/:id" element={<PackageDetails />} />
+              <Route path="/payment/:id" element={<PaymentGateway />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsAndConditions />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+
+            {/* Global notice (Meta Pixel consent banner) */}
+            <MetaPixelNoticeBanner />
+          </BrowserRouter>
+        </TooltipProvider>
+      </MetaPixelProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
