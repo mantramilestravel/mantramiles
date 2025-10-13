@@ -10,6 +10,8 @@ import Contact from "@/pages/Contact";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
 import { MetaPixelProvider, MetaPixelNoticeBanner } from "@/contexts/MetaPixelContext";
+import PrivacyPolicy from "@/components/PrivacyPolicy";
+import TermsAndConditions from "@/components/TermsAndConditions";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +31,8 @@ const App = () => (
             <Route path="/payment/:id" element={<PaymentGateway />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsAndConditions />} />
           </Routes>
 
           {/* Meta Pixel Notice Banner */}

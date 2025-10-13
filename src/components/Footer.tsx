@@ -1,68 +1,91 @@
+import React from "react";
 import { Mail, Phone, Facebook, Instagram, MapPin, MessageCircle } from "lucide-react";
 import Image from "@/assets/logo.png"; // logo import
-import PrivacyPdf from "@/assets/Privacy_Policy.pdf";
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            {/* Logo */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <img
                 src={Image}
-                alt="MantraMiles Logo"
-                width={50}
-                height={50}
+                alt="Mantra Miles Logo"
+                width={48}
+                height={48}
                 className="rounded-md"
               />
-              <h3 className="text-xl font-bold">Mantra Miles</h3>
+              <div>
+                <h3 className="text-lg font-bold">Mantra Miles</h3>
+                <p className="text-xs text-primary-foreground/80">Creating unforgettable journeys since 2015</p>
+              </div>
             </div>
 
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Creating unforgettable journeys and memories that last a lifetime.
-              Your trusted travel companion for over a decade.
+              Your trusted travel companion — personalised itineraries, handpicked stays and local expertise.
             </p>
 
-            <div className="flex items-center gap-2 text-sm">
-              <MapPin className="h-4 w-4" />
-              <span>343, Sir M Visveswaraiah Layout, 5th Block, Bangalore - 560110</span>
+            <div className="flex items-start gap-2 text-sm">
+              <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
+              <address className="not-italic">
+                343, Sir M Visveswaraiah Layout, 5th Block
+                <br />
+                Bangalore – 560110
+              </address>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
+          <nav aria-label="Footer quick links" className="space-y-4">
             <h4 className="font-semibold">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="/" className="hover:text-primary-foreground">Home</a></li>
-              <li><a href="#domestic" className="hover:text-primary-foreground">Domestic</a></li>
-              <li><a href="#international" className="hover:text-primary-foreground">International</a></li>
-              <li><a href="#about" className="hover:text-primary-foreground">About Us</a></li>
-              <li><a href="#contact" className="hover:text-primary-foreground">Contact</a></li>
+              <li>
+                <a href="/" className="hover:text-primary-foreground" aria-label="Go to Home">Home</a>
+              </li>
+              <li>
+                <a href="#domestic" className="hover:text-primary-foreground" aria-label="View Domestic tours">Domestic</a>
+              </li>
+              <li>
+                <a href="#international" className="hover:text-primary-foreground" aria-label="View International tours">International</a>
+              </li>
+              <li>
+                <a href="#about" className="hover:text-primary-foreground" aria-label="About Us section">About Us</a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-primary-foreground" aria-label="Contact section">Contact</a>
+              </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Contact Info */}
           <div className="space-y-4">
             <h4 className="font-semibold">Contact Info</h4>
+
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:connect@mantramiles.in" className="hover:text-primary-foreground">
+                <a
+                  href="mailto:connect@mantramiles.in"
+                  className="hover:text-primary-foreground"
+                  aria-label="Email Mantra Miles"
+                >
                   connect@mantramiles.in
                 </a>
               </div>
 
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <a href="tel:+919972816108" className="hover:text-primary-foreground">
+                <a
+                  href="tel:+919972816108"
+                  className="hover:text-primary-foreground"
+                  aria-label="Call Mantra Miles"
+                >
                   +91 99728 16108
                 </a>
               </div>
 
-              {/* WhatsApp */}
               <div className="flex items-center gap-2">
                 <MessageCircle className="h-4 w-4 text-green-500" />
                 <a
@@ -70,6 +93,7 @@ export const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary-foreground"
+                  aria-label="Chat on WhatsApp"
                 >
                   +91 99728 16108
                 </a>
@@ -103,43 +127,30 @@ export const Footer = () => {
             </div>
 
             <p className="text-xs text-primary-foreground/60">
-              Share your travel stories with #MantraMiles
+              Share your travel stories with <span className="font-medium">#MantraMiles</span>
             </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <div className="text-primary-foreground/80">
-            © 2025 Mantra Miles. All rights reserved.
-            <br />
-            Designed by Pramod Ramamurthy - 9739020703
-            <br />
+          <div className="text-primary-foreground/80 text-center md:text-left">
+            <div>© 2025 Mantra Miles. All rights reserved.</div>
+            <div className="mt-1">Designed by <span className="font-medium">Pramod Ramamurthy</span> — 9739020703</div>
           </div>
 
-          <div className="flex gap-6">
-            {/* Use imported module as href - download attribute hints to save */}
-            <a
-              href={PrivacyPdf}
-              download="MantraMiles-Privacy-Policy.pdf"
-              className="hover:text-primary-foreground"
-              aria-label="Download Privacy Policy"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Privacy Policy
-            </a>
+          <div className="flex flex-col sm:flex-row items-center gap-2">
+            <div className="flex gap-6">
+              {/* internal routes (open in same tab) */}
+              <a href="/privacy" className="hover:text-primary-foreground" aria-label="View Privacy Policy">Privacy Policy</a>
+              <a href="/terms" className="hover:text-primary-foreground" aria-label="View Terms of Use">Terms of Use</a>
+            </div>
 
-            <a
-              href={PrivacyPdf}
-              download="MantraMiles-Terms-Of-Use.pdf"
-              className="hover:text-primary-foreground"
-              aria-label="Download Terms of Use"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Terms of Use
-            </a>
+            <div className="hidden sm:block border-l border-primary-foreground/20 h-6 mx-4" />
+
+            <div className="text-xs text-primary-foreground/60 text-center sm:text-left">
+              <div>Ullal Lake Trail, Sir M Visveswaraiah Layout, 5th Block, Bangalore – 560091</div>
+            </div>
           </div>
         </div>
       </div>
