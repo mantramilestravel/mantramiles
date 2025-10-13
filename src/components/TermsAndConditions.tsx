@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const TermsAndConditions = () => {
+  useEffect(() => {
+    const newHref = "/favicon.ico"; // or /favicon-v2.ico
+    let link: HTMLLinkElement | null = document.querySelector("link[rel*='icon']");
+    const prevHref = link ? link.getAttribute("href") : null;
+    if (!link) {
+      link = document.createElement("link");
+      link.setAttribute("rel", "icon");
+      document.head.appendChild(link);
+    }
+    link.setAttribute("href", newHref);
+    return () => {
+      if (!link) return;
+      if (prevHref) link.setAttribute("href", prevHref);
+      else link.parentNode?.removeChild(link);
+    };
+  }, []);
   return (
     <div className="max-w-4xl mx-auto px-6 py-12 text-gray-800 leading-relaxed">
       <h1 className="text-3xl font-bold mb-4 text-primary">Terms & Conditions</h1>
