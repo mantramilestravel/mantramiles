@@ -1,9 +1,22 @@
 import React from "react";
 import { Mail, Phone, Facebook, Instagram, MapPin, MessageCircle } from "lucide-react";
-import Image from "@/assets/logo.png"; // logo import
-import { Link } from "react-router-dom";
+import Image from "@/assets/logo.png";
+import { useNavigate } from "react-router-dom"; // <-- useNavigate instead of Link
 
 export const Footer: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleNav = (e: React.MouseEvent, to: string) => {
+    e.preventDefault();
+    // Prefer react-router navigation for SPA behaviour
+    try {
+      navigate(to);
+    } catch {
+      // Fallback if router not available for some reason
+      window.location.href = to;
+    }
+  };
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-6xl mx-auto px-4 py-12">
@@ -142,9 +155,24 @@ export const Footer: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row items-center gap-2">
             <div className="flex gap-6">
-              {/* internal routes (open in same tab) */}
-              <Link to="/privacy" className="hover:text-primary-foreground" aria-label="View Privacy Policy">Privacy Policy </Link>
-              <Link to="/terms" className="hover:text-primary-foreground" aria-label="View Terms of Use">Terms of Use</Link>
+              {/* use onClick to ensure same-tab SPA navigation */}
+              <a
+                href="/privacy"
+                onClick={(e) => handleNav(e, "/privacy")}
+                className="hover:text-primary-foreground"
+                aria-label="View Privacy Policy"
+              >
+                Privacy Policy
+              </a>
+
+              <a
+                href="/terms"
+                onClick={(e) => handleNav(e, "/terms")}
+                className="hover:text-primary-foreground"
+                aria-label="View Terms of Use"
+              >
+                Terms of Use
+              </a>
             </div>
 
             <div className="hidden sm:block border-l border-primary-foreground/20 h-6 mx-4" />
