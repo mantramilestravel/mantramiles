@@ -66,6 +66,7 @@ export const packagesData = [
       "Participants should be medically fit for moderate walking/hill paths",
       "Company not liable for delays or disruptions due to natural causes or local restrictions"
     ],
+    pdf: "/itinerary/ahobilam.pdf",
     itinerary: [
       {
         day: "Day 1",
@@ -232,6 +233,7 @@ export const packagesData = [
     type: "Domestic",
     coverImage: puriImage,
     images: puriImages,
+    pdf: "/itinerary/jagannathpuri.pdf",
     inclusions: [
       "Flights (Bangalore – Bhubaneswar; Kolkata – Bangalore) as per itinerary",
       "Deluxe hotel stays (as specified)",
@@ -377,6 +379,7 @@ export const packagesData = [
       "Advance payment required to confirm booking.",
       "Itinerary subject to change due to flight schedule, weather, or temple timings."
     ],
+    pdf: "/itinerary/prayagraj_ayodhya_kashi.pdf",
     itinerary: [
       {
         day: "Day 1",

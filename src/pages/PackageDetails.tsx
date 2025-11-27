@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import jsPDF from "jspdf";
-
+import PDFViewer from "@/components/PDFViewer";
 import { packagesData } from "@/components/packages";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -36,6 +35,7 @@ type PackageType = {
   highlights?: string[];
   inclusions?: string[];
   exclusions?: string[];
+  pdf?: string;
   terms?: string[];
   itinerary?: ItineraryItem[];
 };
@@ -45,9 +45,23 @@ export default function PackageDetails(): JSX.Element {
   const navigate = useNavigate();
   const { trackPackageView, trackCustomizeProduct, isEnabled } = useMetaPixel();
   const pkg = packagesData.find((p: PackageType) => p.id === id) || (packagesData[0] as PackageType);
+  const [pdfViewer, setPdfViewer] = useState<{ isOpen: boolean; pdfUrl: string; title: string }>({
+    isOpen: false,
+    pdfUrl: '',
+    title: ''
+  });
 
   const [modalIndex, setModalIndex] = useState<number | null>(null);
   const [hasTrackedView, setHasTrackedView] = useState(false);
+
+  // PDF viewer functions
+  const openPdfViewer = async (pdfUrl: string, title: string) => {
+    setPdfViewer({ isOpen: true, pdfUrl, title });
+  };
+
+  const closePdfViewer = () => {
+    setPdfViewer({ isOpen: false, pdfUrl: '', title: '' });
+  };
 
   // Helper function to get browser fingerprinting data
   const getBrowserData = () => {
@@ -93,9 +107,9 @@ export default function PackageDetails(): JSX.Element {
         currency: 'INR',
         duration: pkg.duration
       };
-      
+
       const fallbackUserData = createFallbackUserData();
-      
+
       try {
         trackPackageView(packageInfo, fallbackUserData);
         setHasTrackedView(true);
@@ -119,102 +133,6 @@ export default function PackageDetails(): JSX.Element {
   }, [modalIndex, pkg.images.length]);
 
   if (!pkg) return <div className="py-24 text-center">Package not found</div>;
-
-  // PDF generation - paginate if many items
-  const handleDownloadPDF = async () => {
-    // Track CustomizeProduct event for PDF download
-    if (isEnabled && pkg) {
-      const packageInfo = {
-        id: pkg.id,
-        name: pkg.name,
-        category: pkg.type || 'travel_package',
-        price: parseFloat(pkg.price.replace(/[^\d.]/g, '')) || 0,
-        currency: 'INR',
-        duration: pkg.duration
-      };
-      
-      const fallbackUserData = createFallbackUserData();
-      
-      try {
-        await trackCustomizeProduct(fallbackUserData, {
-          packageId: packageInfo.id,
-          packageName: packageInfo.name,
-          packageCategory: packageInfo.category,
-          packagePrice: packageInfo.price,
-          currency: packageInfo.currency
-        });
-      } catch (error) {
-        console.warn('Meta Pixel tracking failed for customize product:', error);
-      }
-    }
-    const doc = new jsPDF({ unit: "pt", format: "a4" });
-    const margin = 40;
-    let y = 60;
-
-    doc.setFontSize(18);
-    doc.text(pkg.name, margin, y);
-    y += 26;
-
-    doc.setFontSize(12);
-    doc.text(`Duration: ${pkg.duration}`, margin, y);
-    y += 18;
-    doc.text(`Price: ${pkg.price}`, margin, y);
-    y += 30;
-
-    doc.setFontSize(14);
-    doc.text("Day-wise Itinerary:", margin, y);
-    y += 20;
-
-    doc.setFontSize(11);
-    const lineHeight = 16;
-    (pkg.itinerary || []).forEach((it, idx) => {
-      const text = `${it.day} — ${it.detail}`;
-      const splitted = doc.splitTextToSize(text, 520);
-      if (y + splitted.length * lineHeight > 800) {
-        doc.addPage();
-        y = 60;
-      }
-      doc.text(splitted, margin, y);
-      y += splitted.length * lineHeight + 6;
-    });
-
-    // Add a page for inclusions/exclusions/terms
-    doc.addPage();
-    y = 60;
-    doc.setFontSize(14);
-    doc.text("Inclusions", margin, y);
-    doc.setFontSize(11);
-    y += 18;
-    (pkg.inclusions || []).forEach((i) => {
-      const lines = doc.splitTextToSize(`• ${i}`, 520);
-      doc.text(lines, margin, y);
-      y += lines.length * lineHeight;
-    });
-
-    y += 10;
-    doc.setFontSize(14);
-    doc.text("Exclusions", margin, y);
-    doc.setFontSize(11);
-    y += 18;
-    (pkg.exclusions || []).forEach((i) => {
-      const lines = doc.splitTextToSize(`• ${i}`, 520);
-      doc.text(lines, margin, y);
-      y += lines.length * lineHeight;
-    });
-
-    y += 10;
-    doc.setFontSize(14);
-    doc.text("Terms & Conditions", margin, y);
-    doc.setFontSize(11);
-    y += 18;
-    (pkg.terms || []).forEach((i) => {
-      const lines = doc.splitTextToSize(`• ${i}`, 520);
-      doc.text(lines, margin, y);
-      y += lines.length * lineHeight;
-    });
-
-    doc.save(`${pkg.id}-itinerary.pdf`);
-  };
 
   // modal helpers
   const openModalAt = (index: number) => setModalIndex(index);
@@ -342,8 +260,8 @@ export default function PackageDetails(): JSX.Element {
               <QuoteDialog destination={pkg.name}>
                 <Button className="w-full mb-4 py-4 text-lg">Get Quote</Button>
               </QuoteDialog>
-              
-              <Button variant="outline" className="w-full py-4 text-lg" onClick={handleDownloadPDF}>
+
+              <Button variant="outline" className="w-full py-4 text-lg" onClick={() => openPdfViewer(pkg.pdf, pkg.name)}>
                 Download Itinerary
               </Button>
 
@@ -387,6 +305,17 @@ export default function PackageDetails(): JSX.Element {
           </button>
         </div>
       )}
+
+      {/* PDF Viewer */}
+      {pdfViewer.isOpen && (
+        <PDFViewer
+          isOpen={pdfViewer.isOpen}
+          pdfUrl={pdfViewer.pdfUrl}
+          title={pdfViewer.title}
+          onClose={closePdfViewer}
+        />
+      )}
+
     </div>
   );
 }
