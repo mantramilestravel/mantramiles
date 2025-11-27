@@ -149,7 +149,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ isOpen, onClose, pdfUrl, title })
 
         <div className="flex-1 overflow-auto p-2 space-y-4 bg-gray-50">
           {safePdfUrl === '#' ? (
-            <div className="flex h-full items-center justify-center text-gray-500">No PDF available</div>
+            <div className="flex h-full items-center justify-center text-gray-500">Itinerary not available. Please Try again Later or Contact Us.</div>
           ) : (
             <div className="flex-1 h-full bg-white rounded-md shadow-sm border border-gray-200">
               {/* Using native browser PDF viewer via iframe with #page and #zoom fragments */}

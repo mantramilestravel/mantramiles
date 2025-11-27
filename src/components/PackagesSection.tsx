@@ -1543,6 +1543,7 @@ const packageData = {
           "Personal expenses such as tips, shopping, and laundry"
         ],
         "price": "₹18,299*",
+        "pdf": "/itinerary/bali.pdf",
         "rating": null,
         "itinerary": [
           {
