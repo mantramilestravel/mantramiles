@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock, Check, X, Star, MapPin, ChevronDown, ChevronUp } from "lucide-react";
 import { QuoteDialog } from "@/components/QuoteDialog";
+import PDFViewer from "./PDFViewer";
 
 const packageData = {
   // Domestic Destinations
@@ -1244,133 +1245,65 @@ const packageData = {
   },
   dubai: {
     name: "Dubai",
-  packages: [
-    {
-      "title": "Dubai & Abu Dhabi: The Grand Extravaganza",
-      "duration": "6 Days / 5 Nights",
-      "travelDate": "January 7th, 2026",
-      "overview": "Experience the perfect blend of luxury, adventure, and culture with our exclusive Dubai Travel Package! This journey covers iconic attractions of Dubai and Abu Dhabi — from the thrilling desert safari and Ferrari World to breathtaking views at the Burj Khalifa and Dubai Frame. Also included are the vibrant Miracle Garden, Global Village, and the awe-inspiring Museum of the Future.",
-      "inclusions": [
-        "Return Flights (Bangalore – Dubai – Bangalore)",
-        "UAE Visa & Insurance",
-        "4-Star Hotel Accommodation with Breakfast",
-        "All Tours and Transfers in AC Coach",
-        "Desert Safari with BBQ Dinner",
-        "Dhow Cruise with Dinner",
-        "Dubai City Tour",
-        "Burj Khalifa 124th Floor Entry",
-        "Dubai Frame Entry",
-        "Museum of the Future Entry",
-        "Abu Dhabi City Tour with Ferrari World Entry",
-        "Miracle Garden and Global Village Access",
-        "Private Airport Transfers (DXB)"
-      ],
-      "exclusions": [
-        "Personal expenses such as tips, shopping, or laundry",
-        "Meals not mentioned in inclusions",
-        "Optional activities or upgrades",
-        "Travel/medical insurance (beyond package coverage)",
-        "Any increase in taxes or fuel surcharges post booking"
-      ],
-      "price": "₹96,000/- (Offer Price, all-inclusive)",
-      "oldPrice": "₹1,15,000/-",
-      "rating": 4.9,
-      "itinerary": [
-        {
-          "day": "Day 1",
-          "details": "Arrival at Dubai International Airport. Meet and greet by our representative. Private transfer to hotel and check-in. Evening free for leisure and exploring nearby attractions."
-        },
-        {
-          "day": "Day 2",
-          "details": "Enjoy a half-day Dubai City Tour visiting key attractions including the Dubai Frame and the Museum of the Future. In the evening, enjoy a serene Dhow Cruise along Dubai Creek with dinner and live entertainment."
-        },
-        {
-          "day": "Day 3",
-          "details": "Full-day excursion to Abu Dhabi including city tour and entry to Ferrari World. Return to Dubai in the evening and relax at your hotel."
-        },
-        {
-          "day": "Day 4",
-          "details": "Morning at leisure. In the afternoon, head out for an exciting Desert Safari with dune bashing, traditional entertainment, and BBQ dinner under the stars."
-        },
-        {
-          "day": "Day 5",
-          "details": "Visit Miracle Garden and Global Village for a colorful cultural experience. Later, visit Burj Khalifa 124th floor for panoramic views of the city skyline."
-        },
-        {
-          "day": "Day 6",
-          "details": "After breakfast, check-out from the hotel and enjoy some free time for shopping. Private transfer to Dubai Airport for your return flight."
-        }
-      ]
-      },
+    packages: [
       {
-        "title": "The Ultimate Dubai Grand Tour",
-        "duration": "10 Days / 9 Nights (Land Only)",
-        "overview": "Embark on the most comprehensive tour of Dubai and Abu Dhabi. This all-encompassing package leaves no stone unturned, covering thrilling desert adventures, iconic landmarks, futuristic museums, family-friendly theme parks, and marine life. From the heights of the Burj Khalifa to the underwater world of Atlantis and the snowy slopes of Ski Dubai, this itinerary promises an unforgettable journey.",
+        "title": "Dubai & Abu Dhabi: The Grand Extravaganza",
+        "duration": "6 Days / 5 Nights",
+        "travelDate": "January 7th, 2026",
+        "overview": "Experience the perfect blend of luxury, adventure, and culture with our exclusive Dubai Travel Package! This journey covers iconic attractions of Dubai and Abu Dhabi — from the thrilling desert safari and Ferrari World to breathtaking views at the Burj Khalifa and Dubai Frame. Also included are the vibrant Miracle Garden, Global Village, and the awe-inspiring Museum of the Future.",
         "inclusions": [
-          "Desert Safari with BBQ Dinner (Standard) - Shared Basis",
-          "Marina Dhow Cruise with Dinner - Shared Basis",
-          "Half-Day Dubai City Tour - Shared Basis",
-          "Burj Khalifa 124th Floor (Non-Prime Time) with Dubai Aquarium and Underwater Zoo with Penguin Cove (Regular Pass) - Shared Basis",
-          "Abu Dhabi City Tour with Ferrari World - Shared Basis",
-          "Museum of Future (Subject to Availability) - Private Basis",
-          "Dubai Frame - Shared Basis",
-          "Ski Dubai Snow Park - Snow Classic - Private Basis",
-          "Atlantis Aqua Venture and Lost Chamber Aquarium - Shared Basis",
-          "Dubai Parks 01 Day any 02 Parks (MotionGate, Legoland or Legoland Water Park) - Shared Basis",
-          "Private airport transfers from Dubai Airport (DXB) to hotel and vice versa"
+          "Return Flights (Bangalore – Dubai – Bangalore)",
+          "UAE Visa & Insurance",
+          "4-Star Hotel Accommodation with Breakfast",
+          "All Tours and Transfers in AC Coach",
+          "Desert Safari with BBQ Dinner",
+          "Dhow Cruise with Dinner",
+          "Dubai City Tour",
+          "Burj Khalifa 124th Floor Entry",
+          "Dubai Frame Entry",
+          "Museum of the Future Entry",
+          "Abu Dhabi City Tour with Ferrari World Entry",
+          "Miracle Garden and Global Village Access",
+          "Private Airport Transfers (DXB)"
         ],
         "exclusions": [
-          "International and domestic flights",
-          "Hotel accommodation",
-          "Visa services",
-          "Meals unless specified (only dinners are included on the safari and cruise)",
-          "Personal expenses such as tips, shopping, and laundry"
+          "Personal expenses such as tips, shopping, or laundry",
+          "Meals not mentioned in inclusions",
+          "Optional activities or upgrades",
+          "Travel/medical insurance (beyond package coverage)",
+          "Any increase in taxes or fuel surcharges post booking"
         ],
-        "price": "₹63,000*",
-        "rating": null,
+        "price": "₹96,000/- (Offer Price, all-inclusive)",
+        "oldPrice": "₹1,15,000/-",
+        "rating": 4.9,
+        "pdf": "/itinerary/dubai.pdf",
         "itinerary": [
           {
             "day": "Day 1",
-            "details": "Arrival at Dubai Airport (DXB) and a private transfer to your hotel. Check in and spend the rest of the day at your leisure."
+            "details": "Arrival at Dubai International Airport. Meet and greet by our representative. Private transfer to hotel and check-in. Evening free for leisure and exploring nearby attractions."
           },
           {
             "day": "Day 2",
-            "details": "Begin with a half-day Dubai City Tour to see the city's key landmarks. In the evening, enjoy a relaxing Marina Dhow Cruise with dinner."
+            "details": "Enjoy a half-day Dubai City Tour visiting key attractions including the Dubai Frame and the Museum of the Future. In the evening, enjoy a serene Dhow Cruise along Dubai Creek with dinner and live entertainment."
           },
           {
             "day": "Day 3",
-            "details": "Experience the famous Desert Safari. Enjoy thrilling dune bashing, camel riding, and traditional entertainment followed by a BBQ dinner at a desert camp."
+            "details": "Full-day excursion to Abu Dhabi including city tour and entry to Ferrari World. Return to Dubai in the evening and relax at your hotel."
           },
           {
             "day": "Day 4",
-            "details": "Embark on a full-day shared excursion to Abu Dhabi, including a city tour and a visit to the high-speed Ferrari World theme park."
+            "details": "Morning at leisure. In the afternoon, head out for an exciting Desert Safari with dune bashing, traditional entertainment, and BBQ dinner under the stars."
           },
           {
             "day": "Day 5",
-            "details": "Visit the Museum of the Future (subject to availability) and the iconic Dubai Frame for a unique perspective of the old and new city."
+            "details": "Visit Miracle Garden and Global Village for a colorful cultural experience. Later, visit Burj Khalifa 124th floor for panoramic views of the city skyline."
           },
           {
             "day": "Day 6",
-            "details": "Spend the day at Atlantis, The Palm. Enjoy the thrilling rides at Aquaventure Waterpark and explore the marine world at The Lost Chamber Aquarium."
-          },
-          {
-            "day": "Day 7",
-            "details": "Experience a winter wonderland in the desert at Ski Dubai Snow Park. Later, head to Dubai Parks to enjoy your first day at any two of the included parks."
-          },
-          {
-            "day": "Day 8",
-            "details": "Spend another full day at Dubai Parks, exploring the remaining two parks of your choice (MotionGate, Legoland or Legoland Water Park)."
-          },
-          {
-            "day": "Day 9",
-            "details": "A day at your leisure to go shopping, explore the souks, or revisit any favorite spots."
-          },
-          {
-            "day": "Day 10",
-            "details": "After breakfast, a private vehicle will transfer you to Dubai Airport for your onward journey."
+            "details": "After breakfast, check-out from the hotel and enjoy some free time for shopping. Private transfer to Dubai Airport for your return flight."
           }
         ]
-      }
+      },
     ]
   },
   thailand: {
@@ -1645,7 +1578,7 @@ interface PackagesSectionProps {
 }
 
 export const PackagesSection = ({ destination, onBack }: PackagesSectionProps) => {
-  const [openItinerary, setOpenItinerary] = useState<number | null>(null);
+  // const [openItinerary, setOpenItinerary] = useState<number | null>(null);
   const [openQuote, setOpenQuote] = useState(false);
   const [selectedPkg, setSelectedPkg] = useState<{ title: string; destination: string; price: string } | null>(null);
 
@@ -1654,6 +1587,21 @@ export const PackagesSection = ({ destination, onBack }: PackagesSectionProps) =
   const handleOpenQuote = (pkg: { title: string; price: string }) => {
     setSelectedPkg({ title: pkg.title, destination: destinationData.name, price: pkg.price });
     setOpenQuote(true);
+  };
+
+  const [pdfViewer, setPdfViewer] = useState<{ isOpen: boolean; pdfUrl: string; title: string }>({
+    isOpen: false,
+    pdfUrl: '',
+    title: ''
+  });
+
+  // PDF viewer functions
+  const openPdfViewer = async (pdfUrl: string, title: string) => {
+    setPdfViewer({ isOpen: true, pdfUrl, title });
+  };
+
+  const closePdfViewer = () => {
+    setPdfViewer({ isOpen: false, pdfUrl: '', title: '' });
   };
 
   if (!destinationData) {
@@ -1722,18 +1670,10 @@ export const PackagesSection = ({ destination, onBack }: PackagesSectionProps) =
                     <div className="flex gap-4">
                       <Button
                         variant="outline"
-                        className="flex-1"
-                        onClick={() => setOpenItinerary(openItinerary === index ? null : index)}
+                        className="flex-1 text-green-500"
+                        onClick={() => openPdfViewer(pkg.pdf, pkg.title)}
                       >
-                        {openItinerary === index ? (
-                          <>
-                            Hide Itinerary <ChevronUp className="ml-2 h-4 w-4" />
-                          </>
-                        ) : (
-                          <>
-                            See Full Itinerary <ChevronDown className="ml-2 h-4 w-4" />
-                          </>
-                        )}
+                        See Full Itinerary
                       </Button>
                       <QuoteDialog
                         destination={destinationData.name}
@@ -1787,7 +1727,7 @@ export const PackagesSection = ({ destination, onBack }: PackagesSectionProps) =
                 </div>
 
                 {/* Itinerary expand */}
-                {openItinerary === index && (
+                {/* {openItinerary === index && (
                   <div className="mt-6 border-t pt-6">
                     <h4 className="font-semibold text-foreground mb-4">Detailed Itinerary</h4>
                     <ul className="space-y-4">
@@ -1799,12 +1739,22 @@ export const PackagesSection = ({ destination, onBack }: PackagesSectionProps) =
                       ))}
                     </ul>
                   </div>
-                )}
+                )} */}
               </CardContent>
             </Card>
           ))}
         </div>
       </div>
+
+      {/* PDF Viewer */}
+      {pdfViewer.isOpen && (
+        <PDFViewer
+          isOpen={pdfViewer.isOpen}
+          pdfUrl={pdfViewer.pdfUrl}
+          title={pdfViewer.title}
+          onClose={closePdfViewer}
+        />
+      )}
 
       {/* Quote Dialog */}
     </section>
