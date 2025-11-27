@@ -262,7 +262,7 @@ export default function PackageDetails(): JSX.Element {
               </QuoteDialog>
 
               <Button variant="outline" className="w-full py-4 text-lg" onClick={() => openPdfViewer(pkg.pdf, pkg.name)}>
-                Download Itinerary
+                View Itinerary
               </Button>
 
               <div className="text-xs text-muted-foreground text-center mt-4">
