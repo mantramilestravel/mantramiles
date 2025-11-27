@@ -37,7 +37,6 @@ type PackageType = {
   exclusions?: string[];
   pdf?: string;
   terms?: string[];
-  itinerary?: ItineraryItem[];
 };
 
 export default function PackageDetails(): JSX.Element {
@@ -188,20 +187,6 @@ export default function PackageDetails(): JSX.Element {
       {/* Main grid: itinerary (left wide) + CTA (right) */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-          {/* Itinerary */}
-          <h2 className="text-3xl font-bold mb-6">Day-wise Itinerary</h2>
-          <div className="space-y-6 mb-8">
-            {(pkg.itinerary || []).map((it, idx) => (
-              <Card key={idx} className="shadow-md border-l-4 border-green-500 hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-lg font-semibold text-green-700">{it.day}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">{it.detail}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
 
           {/* Inclusions / Exclusions / Terms - AFTER itinerary */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
