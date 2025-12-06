@@ -243,7 +243,7 @@ export default function PackageDetails(): JSX.Element {
               </ul>
 
               <QuoteDialog destination={pkg.name}>
-                <Button className="w-full overflow-auto mb-4 py-4 text-lg">Get Quote</Button>
+                <Button className="w-full mb-4 py-4 text-lg">Get Quote</Button>
               </QuoteDialog>
 
               <Button variant="outline" className="w-full py-4 text-lg" onClick={() => openPdfViewer(pkg.pdf, pkg.name)}>
