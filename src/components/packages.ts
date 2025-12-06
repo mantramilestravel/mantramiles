@@ -150,6 +150,7 @@ export const packagesData = [
       "Itinerary subject to road/weather conditions",
       "Travelers advised to carry light woollens year-round"
     ],
+    pdf: "/itinerary/srirangam-namakkal.pdf",
   },
   {
     id: "srilanka-ramayana",
@@ -163,6 +164,7 @@ export const packagesData = [
     rating: 4.8,
     type: "International",
     tag: "Deluxe Package",
+    pdf: "/itinerary/bali.pdf",
     coverImage: srilankaImage,
     images: srilankaImages,
     inclusions: [
@@ -229,45 +231,10 @@ export const packagesData = [
       "Itinerary may change depending on temple timings, train/flight schedules or road conditions",
       "Valid ID required for hotel check-in"
     ],
-  }
-  ,
-  // {
-  //   id: "angkor-thailand",
-  //   name: "Angkor Wat & Thailand Discovery – Spiritual Meets Tropical - Jan 2026",
-  //   destinations: "Siem Reap • Angkor Wat • Phnom Penh • Bangkok • Pattaya",
-  //   duration: "8 Days / 7 Nights",
-  //   description:
-  //     "Explore the wonders of Southeast Asia from the grandeur of Angkor Wat in Cambodia to the vibrant streets of Bangkok and beaches of Pattaya. Witness cultural landmarks, royal palaces, and tropical escapes. A perfect fusion of history, adventure, and leisure.",
-  //   price: "₹1,10,000*",
-  //   rating: 4.9,
-  //   type: "International",
-  //   coverImage: angkorImage,
-  //   images: angkorImages,
-  //   inclusions: [
-  //     "Accommodation in 4-star hotels",
-  //     "Daily breakfast at hotels",
-  //     "All airport transfers and sightseeing in private coach",
-  //     "English-speaking local guides",
-  //     "Entrance fees to Angkor Wat, Royal Palace, and listed attractions"
-  //   ],
-  //   exclusions: [
-  //     "International airfare",
-  //     "Cambodia & Thailand visa fees",
-  //     "Lunches and dinners",
-  //     "Personal expenses, tips, and porterage",
-  //     "Optional shows/activities (Alcazar, water sports)"
-  //   ],
-  //   terms: [
-  //     "Passport must be valid for 6 months",
-  //     "Visa approval is traveler’s responsibility",
-  //     "Advance payment is non-refundable",
-  //     "Company not liable for delays due to traffic or flight changes",
-  //     "Itinerary may be shuffled depending on flight timings"
-  //   ],
-  // },
+  },
   {
-    id: "varanasi-ayodhya-pilgrimage",
-    name: "Varanasi & Ayodhya Divine Pilgrimage",
+    id: "kashi-ayodhya-pilgrimage",
+    name: "Kashi – Ayodhya – Prayag Pilgrimage",
     destinations: "Varanasi • Sarnath • Ayodhya",
     duration: "3 Days / 2 Nights",
     description:
@@ -321,6 +288,5 @@ export const packagesData = [
       }
     ]
   }
-
 ];
 export default packagesData;
