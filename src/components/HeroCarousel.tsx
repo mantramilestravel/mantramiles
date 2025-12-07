@@ -2,76 +2,66 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import angkorwat from "@/assets/image-asset.jpeg-DlCkxpEn.webp";
-import kedarnathTemple from "@/assets/kedarnath-temple.jpg";
-import badrinathTemple from "@/assets/badrinath-temple.jpg";
-import keralaBackwaters from "@/assets/kerala-backwaters.jpg";
-import gangotriTemple from "@/assets/gangotri-temple.jpg";
 import ayodhya from "@/assets/ayodhya_top.jpg";
-import swissAlps from "@/assets/swiss-alps-hero.jpg";
+import dubai from "@/assets/dubai_top.jpg";
+import kashmir from "@/assets/kashmir_top.jpg";
+import ahobilam from "@/assets/ahobilam_top.jpg";
+import puri from "@/assets/puri_top.jpg";
+import dhanur from "@/assets/danurMasa_top.jpg";
 
 const heroImages = [
   {
-    id: 1,
-    image: ayodhya,
-    title: "Varanasi With Ayodhya Ram lala Tour",
-    subtitle: "Join the most revered pilgrimage circuit in India . 3 days/2 nights. ",
-    highlight: "Bangalore Departure.",
-    cta: "Book Early & Save 10%",
-  },
-  {
-    id: 2,
-    image: kedarnathTemple,
-    title: "Kedarnath, Uttarakhand",
-    subtitle: "Sacred abode of Lord Shiva in the Himalayas",
-    highlight: "Spiritual Journey Awaits – Limited Seats",
+    id: 'dubai',
+    image: dubai,
+    title: "Dubai, UAE",
+    subtitle: "Explore Dubai: The Jewel of the Middle East",
+    highlight: "Experience the future of tourism with Dubai",
     cta: "Reserve My Seat",
   },
   {
-    id: 3,
-    image: keralaBackwaters,
-    title: "Kerala, India",
-    subtitle: "Cruise through serene backwaters",
-    highlight: "Winter 2025 Offers – Don’t Miss Out",
-    cta: "Book Early & Save 10%",
+    id: 'kashi-ayodhya-pilgrimage',
+    image: ayodhya,
+    title: "Varanasi & Ayodhya Ram Lala Pilgrimage",
+    subtitle: "Experience India’s most sacred spiritual circuit — 3 Days / 2 Nights",
+    highlight: "Departure from Bangalore",
+    cta: "Join the Pilgrimage",
   },
   {
-    id: 4,
-    image: badrinathTemple,
-    title: "Badrinath, Uttarakhand",
-    subtitle: "Divine temple of Lord Vishnu",
-    highlight: "Special 2025 Pilgrimage Packages",
-    cta: "Hurry Up – Enquire Now",
+    id: 'kashmir',
+    image: kashmir,
+    title: "Kashmir, India",
+    subtitle: "Celebrate Christmas in the snow-clad paradise of the Himalayas",
+    highlight: "Special Christmas 2025 Winter Tour",
+    cta: "Reserve My Seat",
   },
   {
-    id: 5,
-    image: gangotriTemple,
-    title: "Gangotri, Uttarakhand",
-    subtitle: "Sacred source of the River Ganga",
-    highlight: "Limited Seats for the year 2025",
+    id: 'ahobilam-narasimha-pilgrimage',
+    image: ahobilam,
+    title: "Ahobilam, Andhra Pradesh",
+    subtitle: "Journey to the sacred Nava-Narasimha temples",
+    highlight: "Special 2025 Pilgrimage Departures",
+    cta: "Enquire Now",
+  },
+  {
+    id: 'puri-jagannath',
+    image: puri,
+    title: "Jagannath Puri & Mayapur, India",
+    subtitle: "Experience the sacred journey from the holy city of Lord Jagannath to the spiritual heart of Mayapur",
+    highlight: "Includes visits to Kolkata, Puri, Bhubaneswar, Konark & Sri Mayapur Dham",
     cta: "Book My Seat",
   },
   {
-    id: 6,
-    image: angkorwat,
-    title: "Angkor Wat & Thailand Discovery – Spiritual Meets Tropical",
-    subtitle: "Experience the mystique of Cambodia’s Angkor Wat",
-    highlight: "A journey of contrasts and unforgettable memories",
-    cta: "Book Early & Save 10%",
+    id: 'dhanur-masa-triranga',
+    image: dhanur,
+    title: "Dhanur Masa Triranga Yatra, India",
+    subtitle: "Join the sacred journey across the three divine Ranga temples during the auspicious Dhanur Masa",
+    highlight: "Includes visits to Adi Ranga, Madhya Ranga, and Antya Ranga (Srirangam)",
+    cta: "Reserve My Seat",
   },
-  {
-    id: 7,
-    image: swissAlps, // make sure you import the Swiss Alps image
-    title: "Swiss Alps Retreat – Nature, Serenity & Adventure",
-    subtitle: "Breathe in the magic of snow-capped peaks and alpine charm",
-    highlight: "Where breathtaking landscapes meet soulful escapes",
-    cta: "Reserve Your Spot Today",
-  }
-
 ];
 
 interface HeroCarouselProps {
-  onDestinationClick: (destination: string) => void;
+  onDestinationClick: (destination: string, id?: string) => void;
 }
 
 export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onDestinationClick }) => {
@@ -89,11 +79,6 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onDestinationClick }
     const timer = setInterval(nextSlide, 6000);
     return () => clearInterval(timer);
   }, []);
-
-  const scrollToPackages = () => {
-    const section = document.getElementById("top-packages");
-    if (section) section.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section
@@ -135,7 +120,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onDestinationClick }
                   <Button
                     size="lg"
                     className="relative z-30 bg-primary text-white shadow-lg hover:scale-105 hover:shadow-xl transition-transform"
-                    onClick={scrollToPackages}
+                    onClick={() => onDestinationClick(item.title, item.id)}
                   >
                     {item.cta}
                   </Button>
@@ -174,8 +159,8 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onDestinationClick }
             key={index}
             aria-label={`Go to slide ${index + 1}`}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                ? "bg-white scale-125"
-                : "bg-white/50 hover:bg-white/70"
+              ? "bg-white scale-125"
+              : "bg-white/50 hover:bg-white/70"
               }`}
             onClick={() => setCurrentIndex(index)}
           />

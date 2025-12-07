@@ -12,14 +12,21 @@ import { Footer } from "@/components/Footer";
 import MainBlog, { BlogPostType } from "@/components/MainBlog";
 import BlogPost from "@/components/BlogPost";
 import PartnersAndCertificates from "@/components/PartnersAndCertificates";
+import { useNavigate } from "react-router-dom";
 
 
 const Index = () => {
+  const navigate = useNavigate();
   const [currentView, setCurrentView] = useState<'home' | 'packages'>('home');
   const [selectedDestination, setSelectedDestination] = useState<string>('');
   const [selectedBlog, setSelectedBlog] = useState<BlogPostType | null>(null);
 
-  const handleDestinationClick = (destination: string) => {
+  const handleDestinationClick = (destination: string, id?: string) => {
+    // console.log(destination, id);
+    if (id) {
+      navigate(`/package/${id}`);
+      return;
+    }
     setSelectedDestination(destination);
     setCurrentView('packages');
   };
@@ -62,13 +69,13 @@ const Index = () => {
   if (currentView === 'packages') {
     return (
       <div className="min-h-screen bg-background">
-        <Header 
-          onNavigate={handleNavigate} 
+        <Header
+          onNavigate={handleNavigate}
           currentView={currentView}
           onBackToHome={handleBackToHome}
         />
-        <PackagesSection 
-          destination={selectedDestination} 
+        <PackagesSection
+          destination={selectedDestination}
           onBack={handleBackToHome}
         />
       </div>
@@ -77,30 +84,30 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header 
-      onNavigate={handleNavigate} 
-      currentView={currentView}
-      onBackToHome={handleBackToHome}
+      <Header
+        onNavigate={handleNavigate}
+        currentView={currentView}
+        onBackToHome={handleBackToHome}
       />
       <HeroCarousel onDestinationClick={handleDestinationClick} />
       <div id="top-packages">
-      <TopPackagesSection />
+        <TopPackagesSection />
       </div>
       <PartnersAndCertificates />
       <div>
-      <MainBlog onBlogClick={handleBlogClick} />
+        <MainBlog onBlogClick={handleBlogClick} />
       </div>
       <div id="destinations">
-      <DestinationTabs onDestinationClick={handleDestinationClick} />
+        <DestinationTabs onDestinationClick={handleDestinationClick} />
       </div>
       <StatsSection />
       <TestimonialsSection />
       <div id="about">
-      <AboutSection />
+        <AboutSection />
       </div>
       <EnquirySection />
       <div id="footer">
-      <Footer />
+        <Footer />
       </div>
     </div>
   );

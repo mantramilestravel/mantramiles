@@ -15,6 +15,7 @@ type PackageType = {
   duration: string;
   description: string;
   price: string;
+  Oldprice?: string;
   rating: number;
   type: string;
   tag?: string;
@@ -53,7 +54,7 @@ export const TopPackagesSection = () => {
 
   const handleWishlistToggle = async (pkg: PackageType) => {
     const isWishlisted = wishlistedItems.has(pkg.id);
-    
+
     if (isWishlisted) {
       setWishlistedItems(prev => {
         const newSet = new Set(prev);
@@ -66,7 +67,7 @@ export const TopPackagesSection = () => {
       });
     } else {
       setWishlistedItems(prev => new Set(prev).add(pkg.id));
-      
+
       // Track AddToWishlist event with fallback user data
       if (isEnabled) {
         const packageInfo = {
@@ -76,10 +77,10 @@ export const TopPackagesSection = () => {
           price: parseInt(pkg.price.replace(/[^\d]/g, '')),
           currency: 'INR'
         };
-        
+
         // Get browser fingerprinting data for anonymous tracking
         const browserData = getBrowserData();
-        
+
         // Create fallback user data with browser fingerprinting
         const fallbackUserData: import('@/types/metaPixel').UserFormData = {
           // Use client ID as external ID for anonymous users
@@ -90,7 +91,7 @@ export const TopPackagesSection = () => {
           // Include user agent for better matching
           ...(browserData.userAgent && { client_user_agent: browserData.userAgent })
         };
-        
+
         try {
           await trackWishlistAdd(packageInfo, fallbackUserData);
         } catch (error) {
@@ -98,7 +99,7 @@ export const TopPackagesSection = () => {
           // Continue with the UI update even if tracking fails
         }
       }
-      
+
       toast({
         title: "Added to Wishlist",
         description: `${pkg.name} has been added to your wishlist.`,
@@ -141,17 +142,15 @@ export const TopPackagesSection = () => {
                       e.stopPropagation();
                       handleWishlistToggle(pkg);
                     }}
-                    className={`p-2 rounded-full transition-all duration-200 ${
-                      wishlistedItems.has(pkg.id)
-                        ? 'bg-red-500 text-white shadow-lg'
-                        : 'bg-white/90 text-gray-600 hover:bg-red-50 hover:text-red-500'
-                    }`}
+                    className={`p-2 rounded-full transition-all duration-200 ${wishlistedItems.has(pkg.id)
+                      ? 'bg-red-500 text-white shadow-lg'
+                      : 'bg-white/90 text-gray-600 hover:bg-red-50 hover:text-red-500'
+                      }`}
                     title={wishlistedItems.has(pkg.id) ? 'Remove from wishlist' : 'Add to wishlist'}
                   >
-                    <Heart 
-                      className={`w-4 h-4 transition-all ${
-                        wishlistedItems.has(pkg.id) ? 'fill-current' : ''
-                      }`} 
+                    <Heart
+                      className={`w-4 h-4 transition-all ${wishlistedItems.has(pkg.id) ? 'fill-current' : ''
+                        }`}
                     />
                   </button>
                   <div className="flex items-center gap-1 bg-white/90 rounded-full px-2 py-1 text-sm font-medium text-gray-800 shadow">
@@ -161,7 +160,10 @@ export const TopPackagesSection = () => {
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-white">
                   <h3 className="text-lg font-bold">{pkg.name}</h3>
-                  <p className="text-sm font-semibold text-emerald-300">From {pkg.price}</p>
+                  <Badge className="font-semibold text-white">
+                    {pkg.Oldprice && <span className="text-white text-xs line-through pr-4">{pkg.Oldprice}</span>}
+                    <span className="text-white font-bold text-base">{pkg.price}</span>
+                  </Badge>
                 </div>
               </div>
 

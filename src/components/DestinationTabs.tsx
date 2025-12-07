@@ -12,12 +12,12 @@ import keralaImage from "@/assets/kerala.jpg";
 import rajasthanImage from "@/assets/rajasthan.jpg";
 import himachalImage from "@/assets/himachal.jpg";
 import northeastImage from "@/assets/northeast.jpg";
-import kashmirImage from "@/assets/kashmir.jpeg";
+import kashmirImage from "@/assets/kashmir_top.jpg";
 import gujaratImage from "@/assets/gujarat.jpg";
 import andamanImage from "@/assets/andaman.jpg";
 
 // Import International Destinations Images
-import srilankaImage from "@/assets/packages/srilanka/srilanka5.webp";
+import srilankaImage from "@/assets/srilanka_top.png";
 import switzerlandImage from "@/assets/switzerland.jpeg";
 import vietnamImage from "@/assets/vietnam.jpg";
 import dubaiImage from "@/assets/dubai.jpg";
