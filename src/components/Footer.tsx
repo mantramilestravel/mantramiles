@@ -44,9 +44,11 @@ export const Footer: React.FC = () => {
             <div className="flex items-start gap-2 text-sm">
               <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
               <address className="not-italic">
-                343, Sir M Visveswaraiah Layout, 5th Block
+                Mantra Miles - A Unit of Victory Flag Journey, Ground Floor,
                 <br />
-                Bangalore – 560110
+                F2 Ruby Enclave Apartment 5th cross,
+                <br />
+                {"Adarsh Nagar, Nagarbhavi, 560072."}
               </address>
             </div>
           </div>
@@ -150,7 +152,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <div className="text-primary-foreground/80 text-center md:text-left">
             <div>© 2025 Mantra Miles. All rights reserved.</div>
-            <div className="mt-1">Designed by <span className="font-medium">Pramod Ramamurthy</span> — 9739020703</div>
+            <div className="mt-1 hover:text-black cursor-pointer" onClick={() => window.open("https://wa.me/27731108711", "_blank")}>Designed by <span className="font-medium">NamelesTek</span> — +27731108711</div>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-2">

@@ -177,7 +177,6 @@ export const packagesData = [
       "Round-trip coach transport from Bangalore",
       "Accommodation at lodges in Ahobilam (as per the itinerary)",
       "Packed breakfasts/lunches/dinners as specified in the itinerary",
-      "Local transfers (bus/jeep) for Upper Ahobilam sightseeing",
       "Guided darshans and temple briefings",
       "Support from local coordinators and puja/arrangement assistance"
     ],
@@ -186,7 +185,6 @@ export const packagesData = [
       "Travel insurance",
       "Any meals or services not explicitly listed in inclusions",
       "Expenses arising from weather-related or road delays",
-      "Airfare/train fare to Bangalore (if applicable)"
     ],
     terms: [
       "Pilgrims must carry valid government ID (Aadhaar/PAN/Passport) for verification",

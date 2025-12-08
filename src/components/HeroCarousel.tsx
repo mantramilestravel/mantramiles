@@ -22,7 +22,7 @@ const heroImages = [
     id: 'kashi-ayodhya-pilgrimage',
     image: ayodhya,
     title: "Varanasi & Ayodhya Ram Lala Pilgrimage",
-    subtitle: "Experience India’s most sacred spiritual circuit — 3 Days / 2 Nights",
+    subtitle: "Experience India`s most sacred spiritual circuit — 3 Days / 2 Nights",
     highlight: "Departure from Bangalore",
     cta: "Join the Pilgrimage",
   },
