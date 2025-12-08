@@ -229,8 +229,11 @@ export const EnquirySection = () => {
                   <div>
                     <p className="font-medium text-foreground">Visit Us</p>
                     <p className="text-muted-foreground">
-                      343, Sir M Visveswaraiah Layout, <br />
-                      5th Block, Bangalore - 560110 <br />
+                      Mantra Miles - A Unit of Victory Flag Journey, Ground Floor,
+                      <br />
+                      F2 Ruby Enclave Apartment 5th cross,
+                      <br />
+                      {"Adarsh Nagar, Nagarbhavi, 560072."}
                     </p>
                   </div>
                 </div>

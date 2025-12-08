@@ -35,11 +35,11 @@ export const packagesData = [
   {
     id: "dubai",
     name: "Dubai & Abu Dhabi: The Grand Extravaganza",
-    destinations: "Dubai • Abu Dhabi",
+    destinations: "Dubai • Abu Dhabi • Sharjah",
     duration: "6 Days / 5 Nights",
     description:
-      "Experience the perfect blend of luxury, adventure, and culture with our exclusive Dubai Travel Package! This journey covers iconic attractions of Dubai and Abu Dhabi — from the thrilling desert safari and Ferrari World to breathtaking views at the Burj Khalifa and Dubai Frame. Also included are the vibrant Miracle Garden, Global Village, and the awe-inspiring Museum of the Future.",
-    price: "₹96,000/-",
+      "Experience the perfect blend of luxury, adventure, and culture with our exclusive Dubai Travel Package! This journey covers iconic attractions of Dubai, Sharjah and Abu Dhabi — from the thrilling desert safari and Ferrari World to breathtaking views at the Burj Khalifa and Dubai Frame. Also included are the vibrant Miracle Garden, Global Village, and the awe-inspiring Museum of the Future.",
+    price: "₹1,09,900/-",
     rating: 4.9,
     type: "International",
     coverImage: dubaiImage,
