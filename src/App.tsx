@@ -21,7 +21,7 @@ const queryClient = new QueryClient();
 const App: React.FC = () => {
   // Ensure a single canonical favicon at runtime (non-invasive — no index.html edit required)
   useEffect(() => {
-    const canonical = "/favicon1.png"; // change to "/favicon.ico" if you prefer
+    const canonical = "/favicon.png"; // change to "/favicon.ico" if you prefer
     // find existing icon link
     let link = document.querySelector("link[rel*='icon']") as HTMLLinkElement | null;
     const prevHref = link ? link.getAttribute("href") : null;
