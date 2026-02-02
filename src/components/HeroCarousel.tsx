@@ -7,7 +7,7 @@ import dubai from "@/assets/dubai_top.jpg";
 import kashmir from "@/assets/kashmir_top.jpg";
 import ahobilam from "@/assets/ahobilam_top.jpg";
 import puri from "@/assets/puri_top.jpg";
-import dhanur from "@/assets/danurMasa_top.jpg";
+import kamakya from "@/assets/kamakya_top1.jpg";
 
 const heroImages = [
   {
@@ -51,13 +51,13 @@ const heroImages = [
     cta: "Book My Seat",
   },
   {
-    id: 'dhanur-masa-triranga',
-    image: dhanur,
-    title: "Dhanur Masa Triranga Yatra, India",
-    subtitle: "Join the sacred journey across the three divine Ranga temples during the auspicious Dhanur Masa",
-    highlight: "Includes visits to Adi Ranga, Madhya Ranga, and Antya Ranga (Srirangam)",
-    cta: "Reserve My Seat",
-  },
+  id: 'kamakhya-shillong-kaziranga',
+  image: kamakya, 
+  title: "Kamakhya – Shillong – Kaziranga Sacred Nature Yatra",
+  subtitle: "A soulful journey through Shakti temples, misty hills, living root bridges, pristine rivers, and wild forests",
+  highlight: "Kamakhya Shakti Peetha • Living Root Bridges • Dawki River • Cherrapunji • Kaziranga National Park",
+  cta: "Reserve My Seat"
+},
 ];
 
 interface HeroCarouselProps {

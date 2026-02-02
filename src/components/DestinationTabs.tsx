@@ -22,7 +22,7 @@ import switzerlandImage from "@/assets/switzerland.jpeg";
 import vietnamImage from "@/assets/vietnam.jpg";
 import dubaiImage from "@/assets/dubai.jpg";
 import thailandImage from "@/assets/thailand.jpg";
-import australiaImage from "@/assets/australia.png";
+import kasakistanImage from "@/assets/kasakistan.jpg";
 import singaporeImage from "@/assets/singapore.jpg";
 import baliImage from "@/assets/bali.jpeg";
 
@@ -41,11 +41,11 @@ const domesticDestinations = [
 // International Destinations
 const internationalDestinations = [
   { id: "srilanka", name: "Sri Lanka", tagline: "Tropical paradise awaits", image: srilankaImage },
-  { id: "switzerland", name: "Switzerland", tagline: "Alpine beauty & luxury", image: switzerlandImage },
-  { id: "vietnam", name: "Vietnam", tagline: "Heritage meets modern vibes", image: vietnamImage },
+  { id: "switzerland", name: "Europe", tagline: "Mountain beauty & luxury", image: switzerlandImage },
+  { id: "asia", name: "Vietnam", tagline: "Heritage meets modern vibes", image: vietnamImage },
   { id: "dubai", name: "Dubai", tagline: "Luxury & innovation", image: dubaiImage },
   { id: "thailand", name: "Thailand", tagline: "Land of smiles & temples", image: thailandImage },
-  { id: "australia", name: "Australia", tagline: "Nature, beaches & adventure", image: australiaImage },
+  { id: "kazakistan", name: "Central Asia", tagline: "Nature, beaches & adventure", image: kasakistanImage },
   { id: "singapore", name: "Singapore", tagline: "Tradition meets innovation", image: singaporeImage },
   { id: "bali", name: "Bali", tagline: "Island of gods & beaches", image: baliImage }
 ];

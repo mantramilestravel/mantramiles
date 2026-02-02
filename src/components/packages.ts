@@ -3,7 +3,7 @@ import puriImage from "@/assets/puri_top.jpg";
 import dubaiImage from "@/assets/dubai_top.jpg";
 import varanasiAyodhyaImage from "@/assets/ayodhya_top.jpg";
 import kashmirImage from "@/assets/kashmir_top.jpg";
-import danurMasaImage from "@/assets/danurMasa_top.jpg";
+import kamakyaImage from "@/assets/kamakya_top1.jpg";
 
 
 interface ImageModule {
@@ -28,6 +28,9 @@ const varanasiAyodhyaImages = Object.values(
 const dubaiImages = Object.values(
   import.meta.glob('@/assets/packages/dubai/*.{jpg,jpeg,png,webp,svg}', { eager: true })
 ).map((module: ImageModule) => module.default);
+const kamakyaImages = Object.values(
+  import.meta.glob('@/assets/packages/kamakya/*.{jpg,jpeg,png,webp,svg}', { eager: true })
+).map((module: ImageModule) => module.default);
 
 
 
@@ -40,6 +43,7 @@ export const packagesData = [
     description:
       "Experience the perfect blend of luxury, adventure, and culture with our exclusive Dubai Travel Package! This journey covers iconic attractions of Dubai, Sharjah and Abu Dhabi — from the thrilling desert safari and Ferrari World to breathtaking views at the Burj Khalifa and Dubai Frame. Also included are the vibrant Miracle Garden, Global Village, and the awe-inspiring Museum of the Future.",
     price: "₹1,09,900/-",
+    Oldprice: "₹1,49,900/-",
     rating: 4.9,
     type: "International",
     coverImage: dubaiImage,
@@ -83,8 +87,8 @@ export const packagesData = [
     duration: "4 Days / 3 Nights",
     description:
       "Embark on a spiritually enriching 4-day journey to Prayagraj and Ayodhya, designed for comfort, devotion, and a deeply immersive pilgrimage experience. This yatra blends sacred rituals, temple visits, serene sightseeing, and balanced rest—ideal for families, seniors, and first-time pilgrims.",
-    price: "₹32,999/-",
-    Oldprice: "₹36,000/-",
+    price: "₹18,999/-",
+    Oldprice: "₹32,999/-",
     rating: 4.8,
     type: "Domestic",
     pdf: "/itinerary/prayagraj_ayodhya_kashi.pdf",
@@ -165,7 +169,7 @@ export const packagesData = [
     duration: "2 Days / 1 Night",
     description:
       "Ahobilam Yatra is a sacred pilgrimage to the mystical hills of the Nallamala Forest, home to the nine divine forms of Lord Narasimha. Surrounded by pristine nature, waterfalls, and ancient temples, this journey offers a powerful blend of spirituality and adventure. Mantra Mile organizes guided tours to Ahobilam, providing a seamless and enriching experience as you explore the Nava-Narasimha shrines, discover their legends, and immerse yourself in the unique spiritual atmosphere of this holy land.",
-    price: "₹5,999/-",
+    price: "₹6,499/-",
     Oldprice: "₹7,499/-",
     rating: 4.7,
     type: "Domestic",
@@ -202,7 +206,7 @@ export const packagesData = [
     duration: "7 Days / 6 Nights",
     description:
       "Discover Odisha and Bengal’s spiritual and cultural gems with visits to Lingaraj, Konark Sun Temple, Jagannath Temple, Chilika Lake, Gangasagar and Mayapur. A soulful journey through India’s heritage, scripture, and devotional traditions — featuring temple darshans, heritage villages, and key Vaishnava & Shaiva sites.",
-    price: "₹49,000/-",
+    price: "₹49,000* & 13,500* INR (Train Package)",
     rating: 4.6,
     type: "Domestic",
     coverImage: puriImage,
@@ -233,42 +237,46 @@ export const packagesData = [
     ],
   },
   {
-    id: "dhanur-masa-triranga",
-    name: "Dhanur Masa Triranga Yatra",
+    id: "kamakhya-shillong-kaziranga",
+    name: "Kamakhya – Shillong – Kaziranga Sacred Nature Yatra",
     destinations:
-      "Bengaluru •  Adi Ranga • Madhya Ranga • Antya Ranga (Srirangam)",
-    duration: "2 Days / 1 Night",
+      "Guwahati • Kamakhya • Shillong • Mawlynnong • Dawki • Cherrapunji • Kaziranga National Park",
+    duration: "8 Days / 7 Nights",
     description:
-      "Embark on a spiritually transformative 2-day pilgrimage that covers the three sacred Rangas — Adi Ranga, Madhya Ranga, and Antya Ranga — culminating with the powerful blessings of Namakkal Hanuman and Narasimha Swamy. This yatra is designed for devotees seeking deep connection, divine energy, and an unforgettable spiritual experience.",
-    price: "₹7,499/-",
-    Oldprice: "₹8,600/-",
-    rating: 4.8,
+      "A soulful and immersive journey through powerful Shakti temples, misty Himalayan hills, living root bridges, crystal-clear rivers, and wild forests of Northeast India. This yatra blends deep spiritual experiences at Kamakhya with conscious slow travel through Meghalaya’s natural wonders and the rich wildlife of Kaziranga — designed not just to see places, but to truly feel their spirit.",
+    price: "₹35,000/-",
+    Oldprice: "₹40,000/-",
+    rating: 4.9,
     type: "Domestic",
-    tag: "Deluxe Package",
-    pdf: "/itinerary/srirangam-namakkal.pdf",
-    coverImage: danurMasaImage,
-    images: danurMasaImages,
+    tag: "Flag Journey",
+    pdf: "/itinerary/kamakhya.pdf",
+    coverImage: kamakyaImage,
+    images: kamakyaImages,
     inclusions: [
-      "AC Tempo Traveller for the entire journey",
-      "Comfortable twin-sharing accommodation",
-      "All sightseeing as per itinerary",
-      "Pure vegetarian meals (Breakfast, Lunch & Dinner)",
-      "Experienced tour guide throughout the yatra",
-      "Service and professional charges",
-      "Taxes, tolls, parking, and driver allowance",
+      "Non-AC Bus / Coaster Bus for entire journey",
+      "7 nights accommodation in clean, comfortable 3★ or similar hotels",
+      "All meals included – Breakfast, Lunch & Dinner (Pure Vegetarian)",
+      "All transfers and sightseeing as per itinerary",
+      "Dedicated Mantra Miles Tour Manager / Yatra Leader",
+      "Spiritual & cultural guidance throughout the journey",
+      "Conscious, slow-travel approach",
+      "Taxes, tolls, parking, and driver allowance",
     ],
     exclusions: [
-      "Donations at temples",
-      "Special entry tickets",
+      "Jeep Safari / Elephant Safari charges at Kaziranga (direct payment)",
       "Personal expenses (shopping, snacks, tips, etc.)",
-      "Anything not mentioned under “Inclusions”",
+      "Travel insurance",
+      "GST / applicable taxes",
+      "Any sightseeing not mentioned in the itinerary",
     ],
     terms: [
-      "Passport must be valid for at least 6 months from travel date",
-      "Registration closes by the announced last date or until seats are full",
-      "Advance payment of 60% required at registration; balance 40% one week before departure",
-      "Non-refundable advance once registered",
-      "Itinerary subject to change based on local conditions or Yatra Director’s discretion"
+      "Original photo ID mandatory with 2 photocopies",
+      "Foreign nationals may incur additional charges",
+      "Seats allotted on a first-come, first-served basis",
+      "Advance payment of 60% required at registration; balance 40% two weeks before departure",
+      "Once registered, advance amount is non-refundable",
+      "Itinerary subject to change due to weather or unforeseen circumstances",
+      "Decision of the Yatra Director will be final and binding",
     ],
   },
 ];

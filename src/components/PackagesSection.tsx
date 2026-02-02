@@ -996,249 +996,618 @@ const packageData = {
     ]
   },
   switzerland: {
-    name: "Switzerland",
+    name: "Europe",
     packages: [
       {
-        "title": "Classic Swiss Alpine & Lake Adventure",
-        "duration": "7 Days / 6 Nights",
-        "overview": "This classic itinerary is perfect for first-time visitors to Switzerland. It focuses on the most iconic and accessible regions, combining the vibrant city life of Zurich and the charming lakeside town of Lucerne with the breathtaking mountain scenery of the Jungfrau region from Interlaken.",
-        "inclusions": [
-          "6 nights accommodation in 3-4 star hotels",
-          "Daily breakfast",
-          "Train travel between cities",
-          "Excursion to Jungfraujoch & Mount Titlis",
-          "Public transportation passes (e.g., Swiss Travel Pass)"
+        title: "Ultimate Europe Grand Tour",
+        duration: "18 Nights / 19 Days",
+        overview:
+          "A thoughtfully curated European journey covering iconic cities, cultural landmarks, scenic landscapes, and spiritual touchpoints across the UK, Western Europe, Switzerland, and Italy. Designed for travellers seeking comfort, clarity, and meaning, this tour blends guided exploration, premium travel, and seamless logistics for a truly immersive European experience.",
+        inclusions: [
+          "To & fro international flights (Into London & out of Rome)",
+          "18 nights accommodation in premium 4-star hotels (Twin/Double sharing)",
+          "Daily Breakfast, Lunch & Dinner",
+          "Deluxe air-conditioned coach for all transfers and sightseeing",
+          "Guided sightseeing as per itinerary",
+          "Experienced bilingual (English & Hindi) Tour Manager",
+          "Medical insurance for travellers up to 60 years",
+          "One bottle of mineral water per person per day",
+          "All hotel taxes and service charges"
         ],
-        "exclusions": [
-          "International and domestic flights",
-          "Schengen visa fees",
-          "Meals not mentioned in the itinerary",
-          "Optional activities, personal expenses, and tips",
-          "Entrance fees to attractions unless specified"
+        exclusions: [
+          "Tips (EUR 3 per person per day)",
+          "Visa fees and personal expenses",
+          "Laundry, phone calls, beverages",
+          "Any cost arising due to force majeure or personal emergencies",
+          "Anything not mentioned under inclusions"
         ],
-        "price": "₹1,20,000*",
-        "rating": null,
-        "itinerary": [
+        price: "₹X,XX,XXX*",
+        rating: null,
+        itinerary: [
           {
-            "day": "Day 1",
-            "details": "Arrive at Zurich Airport (ZRH). Take a train to your hotel. After checking in, explore the city at your leisure. Walk along Bahnhofstrasse, stroll through the Old Town (Altstadt), and enjoy the beautiful Lake Zurich. Overnight stay in Zurich."
+            day: "Day 1",
+            details:
+              "Arrive in London. Meet your Mantra Miles Tour Manager and proceed for a panoramic city tour covering St. Paul’s Cathedral, Big Ben, Parliament House, Westminster Abbey, and Buckingham Palace. Overnight stay in London."
           },
           {
-            "day": "Day 2",
-            "details": "After breakfast, embark on a half-day tour of Zurich, including a visit to the medieval town of Stein am Rhein and Europe's largest waterfall, the Rhine Falls. Return to Zurich in the evening. Overnight stay in Zurich."
+            day: "Day 2",
+            details:
+              "Guided city tour of London with a local expert. Visit Hyde Park, Trafalgar Square, Piccadilly Circus, Tower Bridge, enjoy a ride on the London Eye, and visit Madame Tussauds Wax Museum. Overnight in London."
           },
           {
-            "day": "Day 3",
-            "details": "After breakfast, take a scenic train journey to Lucerne. Check in to your hotel and then proceed for an excursion to Mount Titlis. Experience the world's first revolving cable car and the thrilling Cliff Walk. Return to Lucerne in the evening. Overnight stay in Lucerne."
+            day: "Day 3",
+            details:
+              "Visit Lord’s Cricket Stadium, proceed to Oxford for an orientation tour of the historic university town. Continue to Manchester for a panoramic city tour. Overnight in Manchester."
           },
           {
-            "day": "Day 4",
-            "details": "Explore Lucerne at your leisure. Walk across the famous Chapel Bridge, visit the Lion Monument, or take a scenic cruise on Lake Lucerne. You can also opt for an excursion to Mount Pilatus for more panoramic views. Overnight stay in Lucerne."
+            day: "Day 4",
+            details:
+              "Scenic drive to the Lake District. Enjoy a cruise on Lake Windermere. Proceed to Glasgow for a city orientation tour. Overnight in Glasgow."
           },
           {
-            "day": "Day 5",
-            "details": "After breakfast, take a scenic train to Interlaken. After checking in, head out for a full-day excursion to Jungfraujoch, the 'Top of Europe.' Ride the cogwheel train through the Eiger mountain to Europe's highest railway station. Explore the Ice Palace and enjoy the panoramic views. Overnight stay in Interlaken."
+            day: "Day 5",
+            details:
+              "Explore the Scottish Highlands including Loch Ness, Glen Coe, Fort Augustus, and the scenic village of Luss on the banks of Loch Lomond. Return to Glasgow for overnight stay."
           },
           {
-            "day": "Day 6",
-            "details": "Spend the day exploring the beautiful Interlaken region. Visit the charming villages of Grindelwald or Lauterbrunnen, hike to one of the 72 waterfalls, or go paragliding for an exhilarating experience. You can also take a cruise on Lake Thun or Lake Brienz. Overnight stay in Interlaken."
+            day: "Day 6",
+            details:
+              "Drive to Edinburgh. Visit Edinburgh Castle and explore the Royal Mile. Later proceed to Birmingham. Overnight stay in Birmingham."
           },
           {
-            "day": "Day 7",
-            "details": "After breakfast, take a train to Zurich Airport for your departure, carrying with you memories of your Swiss adventure."
+            day: "Day 7",
+            details:
+              "City tour of Birmingham including Symphony Hall and Victoria Square. Visit Shri Venkateswara (Balaji) Temple. Board overnight cruise to the Netherlands."
+          },
+          {
+            day: "Day 8",
+            details:
+              "Arrive in the Netherlands. Enjoy a canal cruise in Amsterdam. Visit a cheese and wooden shoe factory. Photo stops at Madame Tussauds, Atomium, and Manneken Pis. Overnight in the Netherlands."
+          },
+          {
+            day: "Day 9",
+            details:
+              "Orientation tour of Brussels. Proceed to Paris and enjoy a romantic Seine River Cruise. Overnight in Paris."
+          },
+          {
+            day: "Day 10",
+            details:
+              "Guided city tour of Paris covering Arc de Triomphe, Champs-Élysées, Concorde Square, and Opera House. Visit the Palace of Versailles. Overnight in Paris."
+          },
+          {
+            day: "Day 11",
+            details:
+              "Ascend the Eiffel Tower (or Montparnasse Tower). Drive to Strasbourg for an orientation tour including Notre Dame Cathedral and Old Town. Overnight in Strasbourg."
+          },
+          {
+            day: "Day 12",
+            details:
+              "Visit the Black Forest and enjoy a cuckoo clock demonstration. View Rhine Falls at Schaffhausen. Proceed to Switzerland for overnight stay."
+          },
+          {
+            day: "Day 13",
+            details:
+              "Cable car ride to Mt. Titlis. Visit the Glacier Cave and Cliff Walk. Orientation tour of Lucerne. Overnight in Switzerland."
+          },
+          {
+            day: "Day 14",
+            details:
+              "Travel on the scenic Golden Pass Train to Gstaad. Visit Montreux. Overnight in Switzerland."
+          },
+          {
+            day: "Day 15",
+            details:
+              "Visit Vaduz, capital of Liechtenstein. Experience Swarovski Crystal World. Orientation tour of Innsbruck. Overnight in Austria."
+          },
+          {
+            day: "Day 16",
+            details:
+              "Proceed to Venice. Enjoy a private boat ride to St. Mark’s Square. Visit Basilica di San Marco, Doge’s Palace, and Murano Glass Factory. Overnight in Ferrara region."
+          },
+          {
+            day: "Day 17",
+            details:
+              "Visit the Leaning Tower of Pisa. Guided tour of Florence covering the Duomo, Piazza della Signoria, and Ponte Vecchio. Overnight in Tuscany."
+          },
+          {
+            day: "Day 18",
+            details:
+              "Guided city tour of Rome. Visit the Colosseum, Trevi Fountain, Vatican Museums, Sistine Chapel, and St. Peter’s Basilica. Overnight in Rome."
+          },
+          {
+            day: "Day 19",
+            details:
+              "After breakfast, transfer to the airport for return flight home with unforgettable memories curated by Mantra Miles Tour."
           }
         ]
       },
       {
-        "title": "Swiss Panorama & Glacier Express",
-        "duration": "9 Days / 8 Nights",
-        "overview": "This extended itinerary takes you on a grand tour of Switzerland, from the central mountains to the picturesque lakes and the iconic Matterhorn. It includes a journey on one of Switzerland's most famous panoramic trains, the Glacier Express.",
-        "inclusions": [
-          "8 nights accommodation in 3-4 star hotels",
-          "Daily breakfast",
-          "Train travel between cities",
-          "Glacier Express journey (partially)",
-          "Excursions as per the itinerary",
-          "Swiss Travel Pass"
+        title: "Unbeatable Europe 2026",
+        duration: "7 Nights / 8 Days",
+        countriesCovered: [
+          "France",
+          "Belgium",
+          "Netherlands",
+          "Germany",
+          "Switzerland"
         ],
-        "exclusions": [
-          "International and domestic flights",
-          "Schengen visa fees",
-          "Meals not mentioned in the itinerary",
-          "Optional activities, personal expenses, and tips",
-          "Entrance fees to attractions unless specified"
+        overview:
+          "A perfectly curated European holiday offering a rich blend of culture, stunning landscapes, iconic monuments, and unforgettable experiences—wrapped in comfort, scenic journeys, Indian meals, and premium accommodations. From the romance of Paris to the charm of Amsterdam, the Black Forest villages, Rhine Falls, and snow-covered Mt. Titlis, this journey promises memories that last a lifetime.",
+        inclusions: [
+          "Return economy class airfare ex-Bangalore",
+          "Applicable airline taxes",
+          "Schengen Tourist Visa assistance & processing",
+          "Travel insurance for passengers below 60 years",
+          "7 nights accommodation in premium hotels",
+          "Daily buffet breakfast",
+          "06 Indian lunches (Veg / Non-Veg / Jain)",
+          "07 Indian dinners (Veg / Non-Veg / Jain)",
+          "All sightseeing and transfers by air-conditioned coach",
+          "Golden Pass scenic train journey",
+          "Professional Mantra Miles Tour Manager throughout the tour"
         ],
-        "price": "₹1,85,000*",
-        "rating": null,
-        "itinerary": [
+        exclusions: [
+          "5% TCS",
+          "Tips for drivers and guides",
+          "Personal expenses (laundry, beverages, shopping, etc.)",
+          "Meals not mentioned in inclusions",
+          "Early check-in / late check-out charges",
+          "City taxes payable directly at hotels",
+          "Optional tours and upgrades",
+          "Expenses due to force majeure circumstances",
+          "Anything not mentioned under inclusions"
+        ],
+        price: "₹X,XX,XXX*",
+        rating: null,
+        itinerary: [
           {
-            "day": "Day 1",
-            "details": "Arrive at Zurich or Geneva Airport and take a train to Lucerne. Check in and spend the afternoon exploring the city, including the iconic Chapel Bridge and the Old Town. Overnight stay in Lucerne."
+            day: "Day 1",
+            details:
+              "Arrive in Paris. Meet the Mantra Miles Tour Manager and transfer to the hotel. Enjoy a romantic Seine River cruise passing landmarks such as Notre Dame Cathedral, Eiffel Tower, Louvre Museum, and Musée d’Orsay. Overnight in Paris. (Dinner)"
           },
           {
-            "day": "Day 2",
-            "details": "Enjoy a full day in Lucerne with an excursion to Mount Pilatus, taking the famous 'Golden Round Trip' which includes a boat cruise, the world's steepest cogwheel railway, and a cable car ride. Overnight stay in Lucerne."
+            day: "Day 2",
+            details:
+              "Guided city tour of Paris covering Place Vendôme, Opera Garnier, Musée d’Orsay, Place de la Concorde, Champs-Élysées, Arc de Triomphe, Alexander Bridge, and Les Invalides. Visit the Eiffel Tower (2nd level) and Fragonard Perfumery. Overnight in Paris. (Breakfast, Lunch, Dinner)"
           },
           {
-            "day": "Day 3",
-            "details": "After breakfast, take the scenic train ride to Interlaken, a town nestled between two turquoise lakes. Take a funicular to Harder Kulm for a panoramic view of the town and the Eiger, Mönch, and Jungfrau mountains. Overnight stay in Interlaken."
+            day: "Day 3",
+            details:
+              "Proceed to Brussels. Visit Grand Place, Manneken Pis, drive past St. Michael’s Church, and photo stop at Atomium. Continue to the Netherlands. Visit Keukenhof Gardens (till 15 May) or Madurodam (from 16 May). Overnight in Netherlands. (Breakfast, Lunch, Dinner)"
           },
           {
-            "day": "Day 4",
-            "details": "A full day to explore the Jungfrau region. Visit the scenic village of Lauterbrunnen, with its 72 waterfalls, and take a cable car to Mürren or Schilthorn for breathtaking views. Overnight stay in Interlaken."
+            day: "Day 4",
+            details:
+              "Explore Amsterdam with a glass-topped canal cruise. Later drive to Cologne and visit the iconic Cologne Cathedral, a UNESCO World Heritage Site. Overnight in Germany. (Breakfast, Lunch, Dinner)"
           },
           {
-            "day": "Day 5",
-            "details": "Take the train to Zermatt, a car-free alpine village at the foot of the mighty Matterhorn. Check in to your hotel and spend the rest of the day relaxing and enjoying the tranquil atmosphere. Overnight stay in Zermatt."
+            day: "Day 5",
+            details:
+              "Drive through the scenic Black Forest region. Visit a cuckoo clock workshop. Continue to Switzerland to witness the majestic Rhine Falls at Schaffhausen. Overnight in Central Switzerland. (Breakfast, Lunch, Dinner)"
           },
           {
-            "day": "Day 6",
-            "details": "Take a cable car to the Matterhorn Glacier Paradise, the highest cable car station in Europe, for unparalleled views of the surrounding glaciers and peaks. You can also take a train to Gornergrat for a different perspective of the Matterhorn. Overnight stay in Zermatt."
+            day: "Day 6",
+            details:
+              "Ascend Mt. Titlis via cable cars including the Rotair. Enjoy snow landscapes, ice caves, and the Cliff Walk. Visit Lucerne, see the Lion Monument and Kapell Bridge, enjoy shopping time, and take a scenic Lake Lucerne cruise. Overnight in Central Switzerland. (Breakfast, Lunch, Dinner)"
           },
           {
-            "day": "Day 7",
-            "details": "This morning, board the world-famous Glacier Express for a spectacular journey through the Swiss Alps. The scenic route takes you from Zermatt to St. Moritz, but you will disembark earlier at Visp to change trains for your final destination, Geneva. Overnight stay in Geneva."
+            day: "Day 7",
+            details:
+              "Enjoy a scenic Golden Pass train journey from Zweisimmen to Gstaad. Explore Gstaad village and enjoy photo stops including DDLJ Bridge. Proceed to Bern for an orientation tour. Overnight in Central Switzerland. (Breakfast, Lunch, Dinner)"
           },
           {
-            "day": "Day 8",
-            "details": "Enjoy a city tour of Geneva, visiting landmarks like the Jet d'Eau, the Flower Clock, and the United Nations headquarters. Take a stroll along Lake Geneva or visit the charming Old Town. Overnight stay in Geneva."
-          },
-          {
-            "day": "Day 9",
-            "details": "After breakfast, transfer to Geneva Airport (GVA) for your departure."
+            day: "Day 8",
+            details:
+              "After breakfast, transfer to the airport for return flight with beautiful memories of Europe. (Breakfast)"
           }
+        ],
+        paymentTerms: [
+          "INR 1,00,000 per person non-refundable deposit at booking",
+          "Balance payment due 28 days before departure",
+          "ROE applicable at final payment"
+        ],
+        cancellationPolicy: [
+          "45–30 days before departure: Deposit non-refundable",
+          "29 days or less before departure: 100% tour cost non-refundable"
+        ],
+        importantNotes: [
+          "Minimum 20 adult passengers required to operate the tour",
+          "Standard hotel check-in 15:00 hrs and check-out 11:00 hrs",
+          "No seat allocation in coach or flights (first-come basis)",
+          "Luggage allowance as per airline policy",
+          "Itinerary subject to change due to operational or weather conditions",
+          "No refund for unutilized services"
         ]
-      }
+      },
+      {
+        title: "Unbelievable Europe - 2026",
+        subtitle: "A Signature Mantra Miles Journey",
+        duration: "12 Days / 11 Nights",
+        countriesCovered: [
+          "France",
+          "Belgium",
+          "Netherlands",
+          "Germany",
+          "Switzerland",
+          "Liechtenstein",
+          "Austria",
+          "Italy"
+        ],
+        overview:
+          "A spectacular journey across 8 breathtaking European countries, blending culture, history, scenic landscapes, iconic landmarks, premium experiences, and curated comfort. Thoughtfully designed by Mantra Miles Tour, this itinerary balances immersive sightseeing, scenic train journeys, Indian meals, and seamless travel—creating a deeply enriching European experience.",
+        inclusions: [
+          "Return economy-class airfare ex-Bangalore",
+          "Applicable airline taxes at time of booking",
+          "Schengen Tourist Visa assistance",
+          "Travel insurance for travellers below 60 years",
+          "11 nights accommodation in premium hotels (twin sharing)",
+          "Daily continental breakfast",
+          "10 Indian lunches (Veg / Non-Veg / Jain)",
+          "11 Indian dinners (Veg / Non-Veg / Jain)",
+          "All sightseeing, guided tours, cruises, monuments, and attractions as per itinerary",
+          "Golden Pass scenic train journey",
+          "Private boat transfer in Venice",
+          "All transfers by air-conditioned coach",
+          "Professional Mantra Miles Tour Manager throughout the tour"
+        ],
+        exclusions: [
+          "5% TCS (Tax Collected at Source)",
+          "Personal expenses and tips",
+          "Meals not mentioned under inclusions",
+          "City taxes payable directly at hotels",
+          "Optional tours and upgrades",
+          "Expenses arising from force majeure circumstances",
+          "Anything not mentioned under inclusions"
+        ],
+        price: "₹X,XX,XXX*",
+        rating: null,
+        itinerary: [
+          {
+            day: "Day 1",
+            details:
+              "Arrive in Paris and meet the Mantra Miles Tour Professional. Assistance with hotel check-in. In the evening, enjoy a romantic Seine River Cruise passing Notre Dame, Eiffel Tower, Louvre Museum, and Orsay Museum. Overnight in Paris. (Dinner)"
+          },
+          {
+            day: "Day 2",
+            details:
+              "Guided city tour of Paris covering Place Vendôme, Opéra Garnier, Musée d’Orsay, Place de la Concorde, Champs-Élysées, Arc de Triomphe, Alexander Bridge, and Les Invalides. Visit the Eiffel Tower (2nd level) and Fragonard Perfumery. Overnight in Paris. (Breakfast, Lunch, Dinner)"
+          },
+          {
+            day: "Day 3",
+            details:
+              "Travel to Brussels. Visit Grand Place, Manneken Pis, and enjoy a photo stop at the Atomium. Continue to the Netherlands for a visit to Keukenhof Gardens (seasonal) or Madurodam. Overnight in Netherlands. (Breakfast, Lunch, Dinner)"
+          },
+          {
+            day: "Day 4",
+            details:
+              "Explore Amsterdam with a scenic canal cruise. Later proceed to Cologne and view the iconic Cologne Cathedral, a UNESCO World Heritage Site. Overnight in Germany. (Breakfast, Lunch, Dinner)"
+          },
+          {
+            day: "Day 5",
+            details:
+              "Journey through the Black Forest and witness a traditional cuckoo-clock demonstration. Continue to Switzerland to see the magnificent Rhine Falls at Schaffhausen. Overnight in Central Switzerland. (Breakfast, Lunch, Dinner)"
+          },
+          {
+            day: "Day 6",
+            details:
+              "Ascend Mt. Titlis via cable cars including the Rotair to 3,020 metres. Enjoy snow activities, Ice Grotto, and the Cliff Walk. Later tour Lucerne, visit the Lion Monument, Kapellbrücke, and enjoy a Lake Lucerne Cruise. Overnight in Central Switzerland. (Breakfast, Lunch, Dinner)"
+          },
+          {
+            day: "Day 7",
+            details:
+              "Enjoy a scenic Golden Pass Train journey from Zweisimmen to Gstaad. Explore the alpine village and proceed to Bern for an orientation tour of the Swiss capital. Overnight in Central Switzerland. (Breakfast, Lunch, Dinner)"
+          },
+          {
+            day: "Day 8",
+            details:
+              "Visit Vaduz, the capital of Liechtenstein. Continue to Wattens to explore the Swarovski Crystal World. Orientation tour of Innsbruck including the Golden Roof and Maria-Theresien-Strasse. Overnight in Austria / Switzerland region. (Breakfast, Lunch, Dinner)"
+          },
+          {
+            day: "Day 9",
+            details:
+              "Arrive in Venice and travel by private boat to St. Mark’s Square. View St. Mark’s Basilica, Doge’s Palace, and Bridge of Sighs. Visit a Murano Glass Factory and enjoy a romantic Gondola Ride. Overnight in Padova / Bologna region. (Breakfast, Lunch, Dinner)"
+          },
+          {
+            day: "Day 10",
+            details:
+              "Guided walking tour of Florence covering the Duomo, Piazza della Signoria, Palazzo Vecchio, and Ponte Vecchio. Continue to Pisa to view the Leaning Tower at the Square of Miracles. Overnight in Tuscany. (Breakfast, Lunch, Dinner)"
+          },
+          {
+            day: "Day 11",
+            details:
+              "Guided city tour of Rome. Visit Vatican City including Vatican Museums, Sistine Chapel, and St. Peter’s Basilica. View the Colosseum, Trevi Fountain, Roman Forum, and Victor Emmanuel Monument. Overnight in Rome. (Breakfast, Lunch, Dinner)"
+          },
+          {
+            day: "Day 12",
+            details:
+              "After breakfast, transfer to Rome Airport for return flight home, concluding the Unbelievable Europe journey with lasting memories. (Breakfast)"
+          }
+        ],
+        paymentTerms: [
+          "₹1,00,000 per person non-refundable deposit at booking",
+          "Balance payment due 28 days prior to departure",
+          "ROE calculated at final payment"
+        ],
+        cancellationPolicy: [
+          "45–30 days prior to departure: Deposit non-refundable",
+          "29 days or less prior to departure: 100% tour cost non-refundable"
+        ],
+        importantNotes: [
+          "Minimum 20 adult participants required to operate the tour",
+          "Tour cost is per person on twin-sharing basis",
+          "Hotels, itinerary sequence, and sightseeing may change due to operational or weather conditions",
+          "Passport, visa, immigration, and airline rules apply",
+          "No refund for unutilized services"
+        ]
+      },
+      {
+      title: "Wonders of Europe",
+      subtitle: "Best Seller | Ideal for First-Time Europe Travelers",
+      duration: "13 Days / 12 Nights",
+      destinations: [
+        "Paris (3 Nights)",
+        "Amsterdam (1 Night)",
+        "Frankfurt (1 Night)",
+        "Zurich (3 Nights)",
+        "Innsbruck (1 Night)",
+        "Padova (1 Night)",
+        "Arezzo / Tuscany (2 Nights)"
+      ],
+      overview:
+        "Discover Europe the smart and comfortable way with Mantra Miles Tour’s bestselling 13-day European group tour. Designed especially for first-time travelers, this medium-paced itinerary blends iconic landmarks, scenic landscapes, Indian meals, well-located 4-star hotels, and expert tour management—ensuring a seamless, enriching, and memorable European holiday.",
+      inclusions: [
+        "Return economy class airfare ex-Bangalore with applicable taxes",
+        "Schengen Tourist Visa assistance",
+        "Travel insurance for passengers below 60 years",
+        "12 nights accommodation in well-located 4★ hotels",
+        "12 continental breakfasts",
+        "11 Indian lunches",
+        "12 Indian dinners (Veg / Non-Veg / Jain – subject to availability)",
+        "All sightseeing and transfers by deluxe air-conditioned coach",
+        "Paris city tour with Eiffel Tower (2nd level) & Seine River Cruise",
+        "Full-day Disneyland Paris (1 Park)",
+        "Brussels city visit with Grand Place, Manneken Pis & Atomium photo stop",
+        "Amsterdam canal cruise",
+        "Keukenhof Gardens (seasonal) or Zaanse Schans",
+        "Cologne Cathedral visit",
+        "Black Forest drive with cuckoo clock experience",
+        "Rhine Falls at Schaffhausen",
+        "Mt. Titlis excursion with Rotair cable car",
+        "Lucerne city orientation tour",
+        "Optional Jungfraujoch – Top of Europe excursion",
+        "Vaduz toy train ride (Liechtenstein)",
+        "Swarovski Crystal Museum visit",
+        "Innsbruck orientation tour",
+        "Venice private boat transfer & Gondola ride",
+        "Pisa Leaning Tower photo stop",
+        "Florence guided city tour & Piazzale Michelangelo viewpoint",
+        "Rome & Vatican City guided tour including St. Peter’s Basilica",
+        "Professional Mantra Miles Tour Manager throughout the journey"
+      ],
+      exclusions: [
+        "5% TCS",
+        "Tips for drivers and guides",
+        "Personal expenses (laundry, minibar, shopping, etc.)",
+        "Meals not mentioned in the itinerary",
+        "Hotel city taxes (payable directly)",
+        "Optional tours and activities",
+        "Early check-in / late check-out charges",
+        "Expenses due to flight delays, weather, natural calamities, strikes, or force majeure",
+        "Anything not mentioned under inclusions"
+      ],
+      hotels: [
+        { city: "Paris", nights: 3, name: "Mercure Paris Roissy Charles de Gaulle or similar" },
+        { city: "Amsterdam", nights: 1, name: "Park Plaza Amsterdam Airport or similar" },
+        { city: "Frankfurt", nights: 1, name: "Elaya Hotel Frankfurt Oberursel or similar" },
+        { city: "Zurich", nights: 3, name: "Radisson Hotel & Suites Zurich or similar" },
+        { city: "Innsbruck", nights: 1, name: "Hotel Alpenkönig Tirol or similar" },
+        { city: "Padova", nights: 1, name: "UNAWAY Hotel Occhiobello or similar" },
+        { city: "Arezzo", nights: 2, name: "Hotel Forum or similar" }
+      ],
+      price: "₹X,XX,XXX*",
+      pdf: "/itinerary/europewonders.pdf",
+      rating: null,
+      itinerary: [
+        {
+          day: "Day 1",
+          details:
+            "Arrive in Paris. Meet your Tour Manager and transfer to the hotel. Rest of the day at leisure. Overnight in Paris. (Dinner)"
+        },
+        {
+          day: "Day 2",
+          details:
+            "Guided Paris city tour covering Place Vendôme, Opera Garnier, Musée d’Orsay, Place de la Concorde, Champs-Élysées, Arc de Triomphe, Alexander Bridge, and Les Invalides. Visit Eiffel Tower (2nd level) and enjoy a romantic Seine River Cruise. Overnight in Paris. (Breakfast, Lunch, Dinner)"
+        },
+        {
+          day: "Day 3",
+          details:
+            "Full-day at Disneyland Paris. Choose between Disneyland Park or Walt Disney Studios Park. Overnight in Paris. (Breakfast, Packed Lunch, Dinner)"
+        },
+        {
+          day: "Day 4",
+          details:
+            "Drive to Brussels. Visit Grand Place, Manneken Pis, and Atomium photo stop. Continue to Amsterdam. Evening at leisure. Overnight in Amsterdam. (Breakfast, Lunch, Dinner)"
+        },
+        {
+          day: "Day 5",
+          details:
+            "Amsterdam canal cruise. Visit Keukenhof Gardens (till 12 May) or Zaanse Schans (from 13 May). Proceed to Cologne Cathedral and continue to Frankfurt. Overnight in Germany. (Breakfast, Lunch, Packed Dinner)"
+        },
+        {
+          day: "Day 6",
+          details:
+            "Drive through the Black Forest with cuckoo clock demonstration. Visit Rhine Falls. Continue to Zurich. Overnight in Zurich. (Breakfast, Lunch, Dinner)"
+        },
+        {
+          day: "Day 7",
+          details:
+            "Optional excursion to Jungfraujoch – Top of Europe (at extra cost). Overnight in Zurich / Central Switzerland. (Breakfast, Lunch, Dinner)"
+        },
+        {
+          day: "Day 8",
+          details:
+            "Excursion to Mt. Titlis via Rotair cable car. Lucerne city orientation including Lion Monument and Chapel Bridge with free time for shopping. Overnight in Zurich. (Breakfast, Lunch, Dinner)"
+        },
+        {
+          day: "Day 9",
+          details:
+            "Visit Vaduz (Liechtenstein) with toy train ride. Continue to Swarovski Crystal Museum. Orientation tour of Innsbruck including Golden Roof and Maria-Theresien-Strasse. Overnight in Innsbruck. (Breakfast, Lunch, Dinner)"
+        },
+        {
+          day: "Day 10",
+          details:
+            "Proceed to Venice. Private boat transfer to St. Mark’s Square. Enjoy Gondola ride. Continue to Padova for overnight stay. (Breakfast, Lunch, Dinner)"
+        },
+        {
+          day: "Day 11",
+          details:
+            "Visit Pisa Leaning Tower (photo stop). Guided Florence city tour and Piazzale Michelangelo viewpoint. Overnight in Arezzo / Tuscany. (Breakfast, Lunch, Dinner)"
+        },
+        {
+          day: "Day 12",
+          details:
+            "Guided Rome & Vatican City tour including St. Peter’s Basilica. View Colosseum (external), Piazza Venezia & Trevi Fountain. Return to Arezzo. (Breakfast, Lunch, Dinner)"
+        },
+        {
+          day: "Day 13",
+          details:
+            "After breakfast, transfer to airport for return journey. Tour ends with unforgettable memories. (Breakfast)"
+        }
+      ],
+      paymentTerms: [
+        "INR 1,00,000 per person non-refundable booking deposit",
+        "Balance payment to be completed 28 days prior to departure",
+        "Final tour cost subject to ROE at time of full payment"
+      ],
+      cancellationPolicy: [
+        "45–30 days before departure: Deposit non-refundable",
+        "29 days or less before departure: 100% tour cost non-refundable"
+      ],
+      importantNotes: [
+        "Tour operates subject to minimum 20 adult passengers",
+        "Itinerary order may change due to operational reasons",
+        "Hotel check-in 15:00 hrs and check-out 11:00 hrs",
+        "Luggage allowance as per airline policy",
+        "No refund for unutilized services",
+        "Optional tours must be pre-booked",
+        "All terms subject to Mantra Miles Tour’s standard policies"
+      ]
+    }
     ]
   },
-  vietnam: {
+  asia: {
     name: "Vietnam",
     packages: [
       {
-        "title": "Discover Vietnam: North to South Land Package",
-        "duration": "8 Days / 7 Nights (Land Only)",
-        "overview": "Embark on an incredible journey through Vietnam, from the historic capital of Hanoi to the bustling southern metropolis of Ho Chi Minh City. This package covers iconic landmarks, including a cruise in the magnificent Halong Bay, a traditional boat ride in Hoi An's Coconut Forest, and an immersive tour of the Cu Chi Tunnels and Mekong Delta.",
-        "inclusions": [
-          "Hanoi Afternoon City Tour (Opera House, St. Joseph Cathedral, Temple of Literature, Ho Chi Minh Mausoleum, Tran Quoc Pagoda) - Shared Basis",
-          "Deluxe Halong Bay cruise (6 hours) with lunch and kayaking - Shared Basis",
-          "Coconut Forest, Hoi An boat ride, and flower lantern tour - Shared Basis",
-          "Cu Chi Tunnels and Mekong Delta combo tour - Shared Basis",
-          "Private transfers from Hanoi Airport to Hanoi Hotel and vice versa",
-          "Private transfers from Ho Chi Minh Airport to Ho Chi Minh Hotel and vice versa",
-          "Private transfers from Da Nang Airport to Da Nang Hotel and vice versa"
+        title: "Unbeatable Vietnam Premium",
+        subtitle: "A Curated Mantra Miles Journey",
+        duration: "7 Nights / 8 Days",
+        destinations: [
+          "Hanoi (2N)",
+          "Halong Bay (1N)",
+          "Da Nang (2N)",
+          "Ho Chi Minh City (2N)"
         ],
-        "exclusions": [
-          "International and domestic flights",
-          "Hotel accommodation",
-          "Visa services",
-          "Meals unless specified (only lunch is included on the Halong Bay cruise)",
-          "Entrance fees to monuments/attractions not part of the specified tours",
-          "Personal expenses such as tips, shopping, and laundry"
+        overview:
+          "An immersive premium journey through Vietnam covering vibrant cities, breathtaking natural landscapes, and layers of rich history. From the cultural soul of Hanoi and the limestone wonders of Halong Bay to the iconic Golden Bridge at Ba Na Hills and the historic Cu Chi Tunnels, this itinerary blends comfort, culture, and curated exploration—ensuring a refined and worry-free travel experience.",
+        inclusions: [
+          "7 nights accommodation in premium 4/5-star hotels",
+          "Daily continental breakfasts, lunches, and Indian dinners as per itinerary",
+          "Domestic flights: Hanoi–Da Nang & Da Nang–Ho Chi Minh City (20 kg baggage)",
+          "Single-entry Vietnam E-Visa",
+          "All sightseeing with professional English-speaking guides",
+          "Tours and transfers on a shared basis",
+          "Half-day Hanoi City Tour",
+          "Full-day Ninh Binh (Tam Coc & Hoa Lu) tour",
+          "Overnight Halong Bay cruise with onboard meals",
+          "Full-day Ba Na Hills & Golden Bridge excursion",
+          "Half-day Hoi An Ancient Town tour",
+          "Full-day Ho Chi Minh City & Cu Chi Tunnels tour",
+          "Free time for shopping"
         ],
-        "price": "₹18,000*",
-        "rating": null,
-        "itinerary": [
+        exclusions: [
+          "Guide tips (USD 3 per person per day)",
+          "Any increase in airfare, visa fees, taxes, or fuel surcharge",
+          "Seat selection, airline upgrades, or hotel room upgrades",
+          "Pre or post-tour accommodation",
+          "Personal expenses (laundry, beverages, shopping, porterage)",
+          "Costs due to illness, emergencies, or force majeure situations",
+          "Optional activities not mentioned in the itinerary"
+        ],
+        meals: {
+          breakfasts: "8 continental breakfasts",
+          lunches: "6 lunches (Indian & local cuisine)",
+          dinners: "6 Indian dinners + 1 local dinner on Halong Bay cruise",
+          notes: "Veg & Jain options available; vegetarian meals on cruise on request"
+        },
+        hotels: [
+          { city: "Hanoi", nights: 2, name: "Pullman Hanoi" },
+          { city: "Halong Bay", nights: 1, name: "Premium Cruise" },
+          { city: "Da Nang", nights: 2, name: "Grand Mercure Danang" },
+          { city: "Ho Chi Minh City", nights: 2, name: "Sofitel Saigon Plaza" }
+        ],
+        price: "₹X,XX,XXX*",
+        rating: null,
+        pdf: "/itinerary/vietnam.pdf",
+        itinerary: [
           {
-            "day": "Day 1",
-            "details": "Arrival at Hanoi Airport and a private transfer to your hotel. The day is free for you to explore the city at your leisure."
+            day: "Day 1",
+            details:
+              "Arrive at Noi Bai International Airport, Hanoi. Meet Mantra Miles local representative and transfer to hotel. Visit Hoan Kiem Lake, Ngoc Son Temple via Red Bridge, One Pillar Pagoda, view Ho Chi Minh Mausoleum (outside), and Dong Xuan Market. Dinner at an Indian restaurant. (Indian Lunch & Dinner)"
           },
           {
-            "day": "Day 2",
-            "details": "Join an afternoon city tour on a shared basis, visiting key landmarks such as the Opera House, St. Joseph Cathedral, and the Ho Chi Minh Mausoleum complex."
+            day: "Day 2",
+            details:
+              "Drive to Ninh Binh. Enjoy a sampan boat ride at Tam Coc through limestone caves and rice fields. Visit Hoa Lu temples dedicated to Kings Dinh and Le. Return to Hanoi. (Breakfast, Local Lunch, Indian Dinner)"
           },
           {
-            "day": "Day 3",
-            "details": "Go for a full-day excursion to Halong Bay. Enjoy a scenic cruise with a delicious lunch and a kayaking session. Return to Hanoi in the evening."
+            day: "Day 3",
+            details:
+              "Transfer to Halong Bay and board a traditional cruise. Sail through emerald waters, explore caves, and enjoy onboard activities. Overnight on cruise. (Breakfast, Lunch & Dinner on Cruise)"
           },
           {
-            "day": "Day 4",
-            "details": "Private transfer to Hanoi Airport for your flight to Da Nang. Upon arrival, a private vehicle will transfer you to your hotel in Hoi An. Enjoy the evening at your leisure."
+            day: "Day 4",
+            details:
+              "After breakfast, disembark and transfer to Hanoi airport. Fly to Da Nang and check into hotel. Evening at leisure. (Brunch, Indian Dinner)"
           },
           {
-            "day": "Day 5",
-            "details": "Experience a unique tour of the Coconut Forest, including a boat ride and a flower lantern tour in the evening, all on a shared basis."
+            day: "Day 5",
+            details:
+              "Full-day excursion to Ba Na Hills via cable car. Visit Linh Ung Pagoda, the iconic Golden Bridge, and Fantasy Park. Optional visit to Debay Wine Cellar (direct payment). (Breakfast, Lunch, Dinner)"
           },
           {
-            "day": "Day 6",
-            "details": "Private transfer to Da Nang Airport for your flight to Ho Chi Minh City. Upon arrival, a private vehicle will transfer you to your hotel. The evening is at your leisure."
+            day: "Day 6",
+            details:
+              "Visit Coconut Forest with basket boat ride. Explore Hoi An Ancient Town including Phuc Kien Assembly Hall, Tan Ky Ancient House, Japanese Covered Bridge, and handicraft streets. Fly to Ho Chi Minh City. (Breakfast, Lunch, Indian Dinner)"
           },
           {
-            "day": "Day 7",
-            "details": "Embark on a combo tour on a shared basis. Explore the historic Cu Chi Tunnels and then take a relaxing boat ride through the lush Mekong Delta."
+            day: "Day 7",
+            details:
+              "Ho Chi Minh City tour covering Notre Dame Cathedral (outside), Central Post Office, Thien Hau Pagoda, and Chinatown. Post lunch visit Cu Chi Tunnels. Return to city. (Breakfast, Local Lunch, Indian Dinner)"
           },
           {
-            "day": "Day 8",
-            "details": "After breakfast, a private vehicle will transfer you to Ho Chi Minh Airport for your onward journey."
+            day: "Day 8",
+            details:
+              "Free time for shopping at Ben Thanh Market or nearby malls. Transfer to airport for departure. (Breakfast)"
           }
-        ]
-      },
-      {
-        "title": "The Grand Tour of Vietnam",
-        "duration": "10 Days / 9 Nights (Land Only)",
-        "overview": "Experience the best of Vietnam from north to south with this comprehensive tour. Explore the serene 'Halong Bay on land' in Ninh Binh, cruise the majestic Halong Bay, and discover the charm of Hoi An's ancient town. The journey concludes with a deep dive into the history and culture of Ho Chi Minh City, including the legendary Cu Chi Tunnels and the vibrant Mekong Delta.",
-        "inclusions": [
-          "Ninh Binh Day Trip from Hanoi with buffet lunch and limousine bus transfers - Shared Basis",
-          "Hanoi Afternoon City Tour - Shared Basis",
-          "Ba Na Hills - Golden Bridge tour - Shared Basis",
-          "Coconut Forest, Hoi An boat ride, and flower lantern tour - Shared Basis",
-          "Morning City Tour of Ho Chi Minh City - Shared Basis",
-          "Cu Chi Tunnels with Mekong Delta combo tour - Shared Basis",
-          "Private transfers from Hanoi Airport to Hanoi Hotel and vice versa",
-          "Private transfers from Ho Chi Minh Airport to Ho Chi Minh Hotel and vice versa",
-          "Private transfers from Da Nang Airport to Da Nang Hotel and vice versa",
-          "Shuttle transfers from Hanoi to Halong and Halong to Hanoi"
         ],
-        "exclusions": [
-          "International and domestic flights",
-          "Hotel accommodation",
-          "Visa services",
-          "Meals unless specified (only buffet lunch is included on the Ninh Binh tour)",
-          "Entrance fees to monuments/attractions not part of the specified tours",
-          "Personal expenses such as tips, shopping, and laundry"
+        paymentTerms: [
+          "INR 80,000 per person non-refundable deposit at booking",
+          "Balance payment due 28 days prior to departure",
+          "Rate of exchange applicable at final payment"
         ],
-        "price": "₹28,000*",
-        "rating": null,
-        "itinerary": [
-          {
-            "day": "Day 1",
-            "details": "Arrival at Hanoi Airport and a private transfer to your hotel. The day is free for you to explore the city at your leisure."
-          },
-          {
-            "day": "Day 2",
-            "details": "Join an afternoon city tour on a shared basis, visiting key landmarks such as the Opera House, St. Joseph Cathedral, Ho Chi Minh Mausoleum, and the Temple of Literature."
-          },
-          {
-            "day": "Day 3",
-            "details": "Embark on a full-day trip to Ninh Binh, often called 'Halong Bay on land.' The tour includes visits to Hoa Lu, Trang An, and Hang Mua, with a buffet lunch and comfortable limousine bus transfers."
-          },
-          {
-            "day": "Day 4",
-            "details": "Take a shuttle transfer from Hanoi to Halong for a day trip. Enjoy a scenic cruise on the bay before taking a shuttle back to Hanoi in the evening."
-          },
-          {
-            "day": "Day 5",
-            "details": "Private transfer to Hanoi Airport for your flight to Da Nang. Upon arrival, a private vehicle will transfer you to your hotel in Hoi An. The evening is at your leisure."
-          },
-          {
-            "day": "Day 6",
-            "details": "Take a shared tour to the Ba Na Hills and marvel at the breathtaking Golden Bridge and the beautiful French Village."
-          },
-          {
-            "day": "Day 7",
-            "details": "Experience a unique tour of the Coconut Forest, including a boat ride. In the evening, enjoy a traditional flower lantern tour in the ancient town of Hoi An."
-          },
-          {
-            "day": "Day 8",
-            "details": "Private transfer to Da Nang Airport for your flight to Ho Chi Minh City. Upon arrival, a private vehicle will transfer you to your hotel. Later, enjoy a morning city tour of Ho Chi Minh City."
-          },
-          {
-            "day": "Day 9",
-            "details": "Embark on a combo tour on a shared basis. Explore the historic Cu Chi Tunnels and then take a relaxing boat ride through the lush Mekong Delta."
-          },
-          {
-            "day": "Day 10",
-            "details": "After breakfast, a private vehicle will transfer you to Ho Chi Minh Airport for your onward journey."
-          }
+        cancellationPolicy: [
+          "45–30 days before departure: Deposit non-refundable",
+          "29 days or less before departure: 100% tour cost non-refundable"
+        ],
+        importantNotes: [
+          "Minimum 18 adults required to operate the tour",
+          "Standard hotel check-in 15:00 hrs and check-out 11:00 hrs",
+          "Baggage allowance as per airline policy",
+          "Meals are fixed menus; special requests subject to availability",
+          "Tours conducted on shared basis unless specified",
+          "Itinerary may change due to operational or force majeure conditions",
+          "No refund for unutilized services"
         ]
       }
     ]
@@ -1304,54 +1673,246 @@ const packageData = {
           }
         ]
       },
+      {
+        title: "Dubai – Smart Saver Tour Package",
+        subtitle: "Modern Glamour • Desert Adventures • Cultural Landmarks",
+        duration: "05 Nights / 06 Days",
+        destinations: [
+          "Dubai",
+          "Abu Dhabi"
+        ],
+        overview:
+          "A perfectly balanced Dubai holiday combining modern attractions, cultural landmarks, desert adventures, and leisure time. From the iconic Burj Khalifa and Marina Dhow Cruise to a premium desert safari and the grandeur of Sheikh Zayed Grand Mosque and BAPS Hindu Mandir, this Smart Saver package offers exceptional value, comfort, and memorable experiences with Mantra Miles Tour.",
+        pdf: "/itinerary/dubai1.pdf",
+        inclusions: [
+          "Return economy class airfare ex-Bangalore",
+          "Applicable taxes as per current regulations",
+          "Single-entry UAE Tourist Visa",
+          "Travel insurance for passengers below 60 years",
+          "Airport transfers (arrival & departure)",
+          "5 nights accommodation in 4★ hotels",
+          "Daily breakfast at hotel",
+          "Half-day Dubai city tour",
+          "Burj Khalifa – 124th Floor (non-peak hours)",
+          "Dubai Mall & Fountain Show",
+          "Marina Dhow Cruise with dinner",
+          "Premium Desert Safari with BBQ dinner",
+          "Full-day Abu Dhabi city tour",
+          "BAPS Hindu Mandir & Sheikh Zayed Grand Mosque visits",
+          "Ferrari World photo stop",
+          "3 Indian dinners at hotel / restaurant",
+          "Tour Director (TD) charges"
+        ],
+        exclusions: [
+          "OTB (Ok to Board) charges",
+          "Any services not mentioned in inclusions",
+          "RBI-mandated foreign exchange (USD 10,000 under BTQ)",
+          "Personal expenses (laundry, porterage, telephone calls, beverages, tips)",
+          "Optional tours and activities",
+          "Any deviation from the group itinerary"
+        ],
+        hotels: [
+          "Versailles by Vieras",
+          "Leela Hotel",
+          "Grand Central",
+          "Landmark Hotel",
+          "Or similar 4★ category hotels"
+        ],
+        price: "₹X,XXX*",
+        rating: null,
+        itinerary: [
+          {
+            day: "Day 1",
+            details:
+              "Arrival in Dubai. Meet Mantra Miles Tour representative and transfer to hotel for check-in. In the evening, visit Dubai Mall and witness the world-famous Dubai Fountain Show. Later enjoy a Marina Dhow Cruise with buffet dinner while admiring Dubai Marina skyline. Overnight in Dubai. (Dinner)"
+          },
+          {
+            day: "Day 2",
+            details:
+              "Half-day Dubai City Tour covering Jumeirah Mosque, Jumeirah Beach, Burj Al Arab photo stop, Atlantis, Sheikh Zayed Road, and Old Dubai with Gold & Spice Souks. Later visit Burj Khalifa – 124th Floor (non-peak hours). Return for Indian dinner. Overnight in Dubai. (Breakfast & Dinner)"
+          },
+          {
+            day: "Day 3",
+            details:
+              "Leisure morning. In the afternoon, enjoy a Premium Desert Safari with dune bashing, camel ride, henna art, cultural performances, and BBQ dinner at a Bedouin-style camp. Overnight in Dubai. (Breakfast & Dinner)"
+          },
+          {
+            day: "Day 4",
+            details:
+              "Full-day Abu Dhabi City Tour. Visit Sheikh Zayed Grand Mosque, BAPS Hindu Mandir, Corniche Drive, and enjoy a photo stop at Ferrari World. Return to Dubai for dinner. Overnight in Dubai. (Breakfast & Dinner)"
+          },
+          {
+            day: "Day 5",
+            details:
+              "Free day at leisure. Optional tours and activities available at additional cost. Overnight in Dubai. (Breakfast & Dinner)"
+          },
+          {
+            day: "Day 6",
+            details:
+              "After breakfast, check out from the hotel and transfer to the airport for departure with unforgettable memories of Dubai. (Breakfast)"
+          }
+        ],
+        documentsRequired: [
+          "Original Indian passport (valid minimum 7 months beyond travel date)",
+          "PAN card copy",
+          "One recent passport-size photograph with white background"
+        ],
+        paymentTerms: [
+          "INR 50,000 per person non-refundable deposit at booking",
+          "Balance amount payable 25 days prior to departure",
+          "Final ROE applicable at time of full payment"
+        ],
+        cancellationPolicy: [
+          "45–26 days before departure: Deposit amount non-refundable",
+          "20 days or less before departure: 100% tour cost non-refundable"
+        ],
+        importantNotes: [
+          "Minimum 20 adult passengers required to operate the group tour",
+          "Airline seat allocation subject to airline policy",
+          "Standard baggage allowance: 20 kg check-in & 7 kg cabin",
+          "Hotel check-in 15:00 hrs and check-out 11:00 hrs",
+          "No refunds for unutilized services",
+          "Itinerary subject to change due to operational, weather, or road conditions",
+          "Prices subject to change due to airfare, ROE, fuel surcharge, visa fees, or government taxes"
+        ]
+      }
+
+
     ]
   },
   thailand: {
     name: "Thailand",
     packages: [
       {
-        "title": "Bangkok & Pattaya: City & Island Escape",
-        "duration": "5 Days / 4 Nights (Land Only)",
-        "overview": "Embark on a dynamic journey combining the vibrant city of Bangkok with the lively coastal town of Pattaya. This package offers a perfect mix of cultural exploration, thrilling shows, and island relaxation, complete with private transfers for a seamless travel experience.",
-        "inclusions": [
-          "Private transfer from Suvarnabhumi Airport (BKK) to Pattaya hotel",
-          "Alcazar Show (Normal Seat) - Private Basis",
-          "Coral Island Tour by Speed Boat with Lunch - Shared Basis",
-          "Private transfer from Pattaya hotel to Bangkok hotel",
-          "Bangkok City Tour with Gems Gallery (Golden Buddha and Marble Temple) - Shared Basis",
-          "Private transfer from Bangkok hotel to Suvarnabhumi Airport (BKK)"
+        title: "Singapore • Malaysia • Thailand",
+        subtitle: "Three Countries • One Seamless Mantra Miles Journey",
+        duration: "11 Days / 10 Nights",
+        destinations: [
+          "Singapore (3 Nights)",
+          "Kuala Lumpur, Malaysia (3 Nights)",
+          "Pattaya, Thailand (2 Nights)",
+          "Bangkok, Thailand (2 Nights)"
         ],
-        "exclusions": [
-          "International and domestic flights",
-          "Hotel accommodation",
-          "Visa services",
-          "Meals unless specified (only lunch is included on the Coral Island tour)",
-          "Entrance fees to monuments/attractions not part of the specified tours",
-          "Personal expenses such as tips, shopping, and laundry"
+        overview:
+          "An exciting multi-country Asian journey covering the futuristic cityscape of Singapore, the cultural and modern highlights of Malaysia, and the vibrant beaches, temples, cruises, and wildlife experiences of Thailand. Thoughtfully curated by Mantra Miles Tour, this itinerary blends iconic attractions, Indian meals, guided sightseeing, and seamless transfers for a truly memorable international holiday.",
+        inclusions: [
+          "Economy class airfare ex-Bangalore with applicable taxes",
+          "Singapore, Malaysia & Thailand visa charges with on-arrival assistance",
+          "03 nights accommodation in Singapore with breakfast",
+          "03 nights accommodation in Kuala Lumpur with breakfast",
+          "02 nights accommodation in Pattaya with breakfast",
+          "02 nights accommodation in Bangkok with breakfast",
+          "Daily breakfast and Indian veg / non-veg lunches & dinners",
+          "Guided city tour of Singapore",
+          "Gardens by the Bay (Flower Dome)",
+          "Marina Bay Sands SkyPark Observation Deck",
+          "Sentosa Island tour including Cable Car, Madame Tussauds 5-in-1 Combo & Wings of Time",
+          "Universal Studios Singapore (full day)",
+          "Kuala Lumpur city tour",
+          "KL Tower (Menara KL) Observation Deck",
+          "Putrajaya city visit",
+          "Batu Caves",
+          "Genting Highlands excursion with Cable Car (weather permitting)",
+          "Alcazar Show, Pattaya",
+          "Coral Island excursion by speedboat",
+          "Nong Nooch Village with tram ride",
+          "Bangkok city & temple tour",
+          "Chao Phraya River Dinner Cruise",
+          "Safari World & Marine Park",
+          "All sightseeing and entry fees as mentioned",
+          "All transfers and sightseeing by air-conditioned luxury coach"
         ],
-        "price": "₹8,568*",
-        "rating": null,
-        "itinerary": [
+        exclusions: [
+          "Any services not mentioned in the itinerary",
+          "Personal expenses (porterage, laundry, mineral water, telephone calls, optional tours)",
+          "Food and beverages not specified under inclusions",
+          "Cost of deviation from the group tour",
+          "Covid-19 PCR test charges (if applicable)"
+        ],
+        hotels: [
+          { city: "Singapore", nights: 3, name: "V Hotel Lavender or similar" },
+          { city: "Kuala Lumpur", nights: 3, name: "Hotel Verdant Hill 4★ or similar" },
+          { city: "Pattaya", nights: 2, name: "Grand Bella Hotel / The Bayview Pattaya or similar" },
+          { city: "Bangkok", nights: 2, name: "Vince Hotel Pratunam / Bangkok Palace Hotel or similar" }
+        ],
+        price: "₹X,XX,XXX*",
+        pdf: "/itinerary/thailand.pdf",
+        rating: null,
+        itinerary: [
           {
-            "day": "Day 1",
-            "details": "Arrival at Suvarnabhumi Bangkok Airport (BKK). A private vehicle will transfer you to your hotel in Pattaya. Check in and spend the evening at your leisure."
+            day: "Day 1",
+            details:
+              "Arrive in Singapore and proceed for a guided city tour covering Little India, Merlion Park, Singapore River view, Chinatown, Sri Mariamman Temple, and the Esplanade. Lunch at an Indian restaurant. In the evening, visit Gardens by the Bay (Flower Dome) and Marina Bay Sands SkyPark Observation Deck. Dinner and overnight in Singapore."
           },
           {
-            "day": "Day 2",
-            "details": "Enjoy a Coral Island tour by speed boat. The tour includes a delicious lunch on the island. In the evening, get ready for a mesmerizing Alcazar Show with private transfers."
+            day: "Day 2",
+            details:
+              "After breakfast, proceed to Sentosa Island. Enjoy Cable Car ride, Madame Tussauds Singapore, Wings of Time night show, and Sentosa Merlion. Dinner at an Indian restaurant. Overnight in Singapore."
           },
           {
-            "day": "Day 3",
-            "details": "After breakfast, a private vehicle will transfer you from your Pattaya hotel to your Bangkok hotel. The rest of the day is free for you to explore Bangkok."
+            day: "Day 3",
+            details:
+              "After breakfast, enjoy a full day at Universal Studios Singapore with a lunch coupon. Dinner at an Indian restaurant. Overnight in Singapore."
           },
           {
-            "day": "Day 4",
-            "details": "Go for a shared Bangkok City Tour. Visit the famous Golden Buddha and the Marble Temple, with a stop at a Gems Gallery."
+            day: "Day 4",
+            details:
+              "Early breakfast or packed breakfast. Travel by coach to Kuala Lumpur. En-route visit Putrajaya, Malaysia’s Garden City. Check in to hotel by evening. Dinner and overnight in Kuala Lumpur."
           },
           {
-            "day": "Day 5",
-            "details": "After breakfast, a private vehicle will transfer you to Suvarnabhumi Bangkok Airport (BKK) for your onward journey."
+            day: "Day 5",
+            details:
+              "Kuala Lumpur city tour including Menara KL Tower Observation Deck, National Mosque, King’s Palace, Sultan Abdul Samad Building, Merdeka Square, National Monument, Railway Station, and Cocoa House. Free time for shopping. Dinner and overnight in Kuala Lumpur."
+          },
+          {
+            day: "Day 6",
+            details:
+              "Visit Batu Caves en-route to Genting Highlands. Enjoy cable car ride (subject to weather). Lunch included. Return to Kuala Lumpur by evening. Dinner and overnight stay."
+          },
+          {
+            day: "Day 7",
+            details:
+              "Fly from Kuala Lumpur to Bangkok. Transfer to Pattaya. Evening visit to the famous Alcazar Show. Dinner and overnight in Pattaya."
+          },
+          {
+            day: "Day 8",
+            details:
+              "Coral Island excursion by speedboat. Lunch at Indian restaurant. Visit Nong Nooch Village with cultural shows and tram ride. Dinner and overnight in Pattaya."
+          },
+          {
+            day: "Day 9",
+            details:
+              "Transfer to Bangkok. City and temple tour covering Golden Buddha and Marble Buddha temples. Evening Chao Phraya River Dinner Cruise. Overnight in Bangkok."
+          },
+          {
+            day: "Day 10",
+            details:
+              "Full-day visit to Safari World & Marine Park with animal shows. Lunch at Safari World restaurant. Dinner at Indian restaurant. Overnight in Bangkok."
+          },
+          {
+            day: "Day 11",
+            details:
+              "After breakfast, transfer to Bangkok Airport for return flight to Bangalore."
           }
+        ],
+        paymentTerms: [
+          "INR 70,000 per person non-refundable booking deposit",
+          "Second installment payable within 15 days of booking",
+          "Full balance payable 25 days prior to departure",
+          "ROE calculated at final payment",
+          "GST 5% applicable",
+          "TCS 5% or 20% applicable as per government regulations"
+        ],
+        cancellationPolicy: [
+          "45–26 days before departure: Deposit amount non-refundable",
+          "20 days or less before departure: 100% tour cost non-refundable"
+        ],
+        importantNotes: [
+          "Minor itinerary changes may occur due to weather or road conditions",
+          "Seat selection subject to airline policies and requested at airport",
+          "Internal flights are low-cost carriers; no meals onboard",
+          "Baggage allowance: 20 kg check-in & 7 kg cabin",
+          "No refund for unutilized services"
         ]
       },
       {
@@ -1414,111 +1975,202 @@ const packageData = {
       }
     ]
   },
-  australia: {
-    name: "Australia",
+  kazakistan: {
+    name: "Uzbekistan · Kyrgyzstan · Kazakhstan",
     packages: [
       {
-        "title": "Sydney & Melbourne: Iconic Australian Journey",
-        "duration": "6 Days / 5 Nights (Land Only)",
-        "overview": "Discover the best of Australia's two most iconic cities on this 6-day land package. Explore Sydney's natural wonders and urban landmarks, including the Blue Mountains and the famous Opera House. Your journey continues in Melbourne, where you'll see the city's highlights and witness the adorable Penguin Parade at Phillip Island.",
-        "inclusions": [
-          "Private airport transfers in Sydney and Melbourne",
-          "Sydney Opera House Walking Tour",
-          "Sydney attraction pass for any 3 of the following: SEA LIFE Aquarium, Sydney Tower, Wild Life Zoo, or Madame Tussauds - Shared Basis",
-          "Blue Mountain tour with Scenic World and Sydney Zoo - Shared Basis",
-          "Melbourne City Tour - Shared Basis",
-          "Phillip Island Tour with Penguin Parade - Shared Basis"
-        ],
-        "exclusions": [
-          "International flights to/from Australia",
-          "Domestic flight from Sydney to Melbourne",
-          "Hotel accommodation",
-          "Visa services",
-          "Meals unless specified",
-          "Entrance fees to attractions not included in the passes",
-          "Personal expenses"
-        ],
-        "price": "₹45,999*",
-        "rating": null,
-        "itinerary": [
-          {
-            "day": "Day 1",
-            "details": "Arrive at Sydney Airport (SYD). A private vehicle will transfer you to your hotel. The rest of the day is at your leisure to explore the city."
-          },
-          {
-            "day": "Day 2",
-            "details": "Embark on a full-day tour to the Blue Mountains. Visit Scenic World to experience the Scenic Skyway, Railway, and Cableway, and then visit Sydney Zoo."
-          },
-          {
-            "day": "Day 3",
-            "details": "Take a walking tour of the iconic Sydney Opera House. Afterwards, use your attraction pass to visit any three of the included attractions (SEA LIFE Aquarium, Sydney Tower, Wild Life Zoo, or Madame Tussauds)."
-          },
-          {
-            "day": "Day 4",
-            "details": "After breakfast, a private vehicle will transfer you to Sydney Airport for your domestic flight to Melbourne. Upon arrival in Melbourne, you will be transferred to your hotel."
-          },
-          {
-            "day": "Day 5",
-            "details": "Begin the day with a Melbourne City Tour to see the city's key landmarks. In the afternoon, head out for a tour to Phillip Island to witness the charming Penguin Parade at dusk."
-          },
-          {
-            "day": "Day 6",
-            "details": "After breakfast, a private vehicle will transfer you to Melbourne Airport (MEL) for your onward journey."
-          }
-        ]
-      }
+      title: "Essence of Central Asia – 2025",
+      subtitle: "Uzbekistan • Kyrgyzstan • Kazakhstan",
+      duration: "8 Days / 7 Nights",
+      destinations: [
+        "Tashkent & Chimgan, Uzbekistan",
+        "Bishkek & Ala Archa, Kyrgyzstan",
+        "Almaty & Medeo, Kazakhstan"
+      ],
+      overview:
+        "A culturally rich and scenic journey across the heart of Central Asia, covering the historic cities, alpine landscapes, vibrant bazaars, and modern capitals of Uzbekistan, Kyrgyzstan, and Kazakhstan. Thoughtfully curated by Mantra Miles Tour, this itinerary blends heritage, nature, and authentic local experiences with comfortable stays and seamless travel.",
+      highlights: [
+        "Khast-Imam Complex & Barak Khan Madrasah",
+        "Chorsu Bazaar & artistic Tashkent Metro stations",
+        "Chimgan Mountains & Charvak Lake with chairlift ride",
+        "Ala Archa National Park alpine hike",
+        "Ala-Too Square & Osh Bazaar in Bishkek",
+        "Scenic Bishkek–Almaty road journey",
+        "Medeo Ice Rink & Shymbulak Ski Resort cable car",
+        "Panfilov Park, Zenkov Cathedral & Arbat Street walk"
+      ],
+      inclusions: [
+        "7 nights accommodation in premium 4★ hotels",
+        "Daily breakfast at hotels",
+        "03 Indian dinners",
+        "All transfers and sightseeing as per itinerary",
+        "Chairlift ride at Chimgan Mountains",
+        "Cable car ride at Shymbulak Ski Resort",
+        "English-speaking local guides and city escorts",
+        "Entrance fees to Khast-Imam Complex",
+        "Air-conditioned transportation",
+        "Applicable GST (5%)"
+      ],
+      exclusions: [
+        "Any entrance fees not mentioned under inclusions",
+        "Photo and video charges",
+        "Personal expenses, tips, and gratuities",
+        "Optional activities",
+        "TCS 5%",
+        "Flights between Tashkent and Bishkek unless specified"
+      ],
+      price: "₹X,XX,XXX*",
+      pdf: "/itinerary/kazakistan.pdf",
+      rating: null,
+      itinerary: [
+        {
+          day: "Day 1",
+          details:
+            "Arrival at Tashkent International Airport. Meet Mantra Miles Tour representative and transfer to hotel. Check-in and relax. Evening at leisure to explore nearby cafes or enjoy local Uzbek tea. Overnight in Tashkent."
+        },
+        {
+          day: "Day 2",
+          details:
+            "Full-day guided city tour of Tashkent covering Khast-Imam Complex, Barak Khan Madrasah, Chorsu Bazaar, artistic Tashkent Metro stations, Independence Square, Amir Timur Square, and photo stops at Hotel Uzbekistan and Romanov Palace (exterior). Dinner at Indian restaurant. Overnight in Tashkent."
+        },
+        {
+          day: "Day 3",
+          details:
+            "Full-day excursion to Chimgan Mountains in the Western Tian Shan range. Enjoy a chairlift ride to scenic viewpoints and visit Charvak Lake with free time for relaxation or optional activities. Return to Tashkent. Overnight stay."
+        },
+        {
+          day: "Day 4",
+          details:
+            "Check-out and transfer to Tashkent International Airport. Fly to Bishkek (flight not included unless specified). Arrival at Manas International Airport and transfer to hotel. Check-in and rest. Overnight in Bishkek."
+        },
+        {
+          day: "Day 5",
+          details:
+            "Excursion to Ala Archa National Park with a guided hike through Ak-Sai Gorge, enjoying alpine meadows, glaciers, rivers, and wildlife. Return to Bishkek for city tour covering Ala-Too Square, Manas Statue, Osh Bazaar, Opera & Ballet Theatre, Oak Park, and State Historical Museum (subject to availability). Dinner at Indian restaurant. Overnight in Bishkek."
+        },
+        {
+          day: "Day 6",
+          details:
+            "Check-out and scenic road transfer from Bishkek to Almaty (approx. 4–5 hours). Border crossing with self-handled luggage. Arrival in Almaty, hotel check-in, and evening at leisure. Overnight in Almaty."
+        },
+        {
+          day: "Day 7",
+          details:
+            "Excursion to Medeo Ice Rink and Shymbulak Ski Resort via cable car. Return to Almaty for city sightseeing including Panfilov Park, Zenkov Cathedral, and Arbat Street walking tour. Dinner at Indian restaurant. Overnight in Almaty."
+        },
+        {
+          day: "Day 8",
+          details:
+            "After breakfast, check-out and transfer to Almaty International Airport. Tour concludes with memorable Central Asia experiences curated by Mantra Miles Tour."
+        }
+      ],
+      paymentTerms: [
+        "30% non-refundable advance at the time of booking",
+        "Balance 70% payable at least 20 days prior to departure"
+      ],
+      cancellationPolicy: [
+        "45–21 days before departure: 50% cancellation charges",
+        "20–10 days before departure: 75% cancellation charges",
+        "Less than 10 days or no-show: 100% cancellation charges"
+      ],
+      importantNotes: [
+        "Guaranteed group departure by Mantra Miles Tour",
+        "Optional activities at personal discretion and cost",
+        "Comfortable walking shoes and layered clothing recommended",
+        "Modest attire required at religious sites",
+        "Self-handling of luggage at border crossings",
+        "Valid passport and applicable visas are mandatory"
+      ]
+    }
     ]
   },
   singapore: {
     name: "Singapore",
     packages: [
       {
-        "title": "Singapore: City, Wildlife & Island Adventure",
-        "duration": "6 Days / 5 Nights (Land Only)",
-        "overview": "Embark on an exciting journey through Singapore, a vibrant city-state known for its urban marvels and lush green spaces. This comprehensive package includes a city tour, thrilling experiences at Universal Studios, an enchanting night safari, and a fun-filled day at Sentosa Island, all with hassle-free shared and private transfers.",
-        "inclusions": [
-          "Half-day Singapore City Tour - Shared Basis",
-          "Universal Studios Singapore - Shared Basis",
-          "Sentosa Admission with one-way Cable Car, Skyhelix, and Wings of Time - Shared Basis",
-          "Singapore Zoo and Night Safari Combo - Shared Basis",
-          "Private airport transfers from Singapore Changi Airport (SIN) to hotel and vice versa"
+        title: "Unbelievable Singapore & Malaysia",
+        subtitle: "A Curated Mantra Miles Journey",
+        duration: "6 Nights / 7 Days",
+        destinations: [
+          "Singapore (3 Nights)",
+          "Kuala Lumpur, Malaysia (3 Nights)"
         ],
-        "exclusions": [
-          "International flights to/from Singapore",
-          "Hotel accommodation",
-          "Visa services",
-          "Meals unless specified",
-          "Personal expenses such as shopping, laundry, and tips"
+        overview:
+          "An immersive Singapore–Malaysia journey blending iconic city highlights, world-class attractions, and rich cultural experiences. Thoughtfully curated for comfort, discovery, and memorable moments, this tour takes you from Singapore’s futuristic skyline and entertainment hubs to Malaysia’s cultural landmarks and scenic highlands.",
+        inclusions: [
+          "6 nights accommodation in comfortable hotels",
+          "Daily breakfast at hotels",
+          "Guided city tours and sightseeing as per itinerary",
+          "Gardens by the Bay (Flower Dome) visit",
+          "Marina Bay Sands SkyPark visit",
+          "Sentosa Island excursion",
+          "Universal Studios Singapore – full day access",
+          "Singapore to Kuala Lumpur transfer by coach",
+          "Putrajaya city visit",
+          "Kuala Lumpur city tour",
+          "KL Tower Observation Deck visit",
+          "Genting Highlands excursion with cable car ride (weather permitting)",
+          "Batu Caves visit",
+          "All transfers and sightseeing on shared basis",
+          "Professional tour coordination"
         ],
-        "price": "₹19,978*",
-        "rating": null,
-        "itinerary": [
+        exclusions: [
+          "International airfare",
+          "Visa charges",
+          "Travel insurance",
+          "Meals not mentioned under inclusions",
+          "Personal expenses (shopping, tips, beverages, etc.)",
+          "Optional activities not mentioned in itinerary",
+          "Any cost arising due to force majeure situations"
+        ],
+        price: "₹X,XX,XXX*",
+        pdf: "/itinerary/singapore.pdf",
+        rating: null,
+        itinerary: [
           {
-            "day": "Day 1",
-            "details": "Arrive at Singapore Changi Airport (SIN). A private vehicle will transfer you to your hotel. Check in and spend the rest of the day at your leisure."
+            day: "Day 1",
+            details:
+              "Arrive in Singapore and begin a guided city tour covering Little India, Merlion Park, Singapore River, Chinatown, Sri Mariamman Temple, and the Esplanade. In the evening, visit Gardens by the Bay (Flower Dome) and Marina Bay Sands SkyPark for panoramic views. Overnight in Singapore."
           },
           {
-            "day": "Day 2",
-            "details": "Begin the day with a half-day Singapore City Tour on a shared basis. See the key landmarks and learn about the city's rich history and culture. The rest of the day is free for you to explore on your own."
+            day: "Day 2",
+            details:
+              "Relaxed morning followed by an afternoon and evening at Sentosa Island, home to Singapore’s most popular attractions and entertainment zones. Overnight in Singapore."
           },
           {
-            "day": "Day 3",
-            "details": "Enjoy a full day of excitement at Universal Studios Singapore. Experience thrilling rides and shows based on blockbuster movies and television series."
+            day: "Day 3",
+            details:
+              "Full-day visit to Universal Studios Singapore. Enjoy thrilling rides, live shows, and world-class entertainment suitable for all ages. Overnight in Singapore."
           },
           {
-            "day": "Day 4",
-            "details": "Head to the Mandai Wildlife Reserve for a day dedicated to wildlife. Start with the Singapore Zoo and later, experience the world's first nocturnal zoo on a Night Safari tram ride."
+            day: "Day 4",
+            details:
+              "Travel by scenic coach from Singapore to Kuala Lumpur. En-route visit to Putrajaya, Malaysia’s modern administrative capital known for its architecture and landscaped boulevards. Overnight in Kuala Lumpur."
           },
           {
-            "day": "Day 5",
-            "details": "Explore the famous Sentosa Island. The package includes admission to the island, a one-way cable car ride, a thrilling spin on the Skyhelix, and the spectacular Wings of Time show."
+            day: "Day 5",
+            details:
+              "Kuala Lumpur city tour including KL Tower Observation Deck, National Mosque, King’s Palace, Merdeka Square, Sultan Abdul Samad Building, National Monument, Railway Station, and Cocoa House. Enjoy shopping time. Overnight in Kuala Lumpur."
           },
           {
-            "day": "Day 6",
-            "details": "After breakfast, a private vehicle will transfer you to Singapore Changi Airport (SIN) for your departure."
+            day: "Day 6",
+            details:
+              "Visit Batu Caves followed by a day excursion to Genting Highlands, including a scenic cable car ride (subject to weather conditions). Overnight in Kuala Lumpur."
+          },
+          {
+            day: "Day 7",
+            details:
+              "Transfer to Kuala Lumpur International Airport for return flight to Bangalore, concluding your Mantra Miles Tour experience."
           }
+        ],
+        importantNotes: [
+          "Itinerary order may change due to operational requirements",
+          "Cable car rides subject to weather conditions",
+          "Sightseeing conducted on shared basis",
+          "No refund for unutilized services"
         ]
       }
+
     ]
   },
   bali: {
