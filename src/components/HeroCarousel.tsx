@@ -4,12 +4,20 @@ import { Button } from "@/components/ui/button";
 
 import ayodhya from "@/assets/ayodhya_top.jpg";
 import dubai from "@/assets/dubai_top.jpg";
-import kashmir from "@/assets/kashmir_top.jpg";
 import ahobilam from "@/assets/ahobilam_top.jpg";
 import puri from "@/assets/puri_top.jpg";
 import kamakya from "@/assets/kamakya_top1.jpg";
+import Khailash from "@/assets/kailash-mansarovar-4-1.jpg";
 
 const heroImages = [
+  {
+    id: 'kailash-mansarovar',
+    image: Khailash,
+    title: "Kailash Mansarovar Yatra",
+    subtitle: "Journey to the Divine — Sacred Pilgrimage of Spiritual Liberation",
+    highlight: "13-16 Days • Revered by Hindus, Buddhists, Jains & Bon followers",
+    cta: "Explore Yatra",
+  },
   {
     id: 'dubai',
     image: dubai,
@@ -25,14 +33,6 @@ const heroImages = [
     subtitle: "Experience India`s most sacred spiritual circuit — 3 Days / 2 Nights",
     highlight: "Departure from Bangalore",
     cta: "Join the Pilgrimage",
-  },
-  {
-    id: 'kashmir',
-    image: kashmir,
-    title: "Kashmir, India",
-    subtitle: "Celebrate Christmas in the snow-clad paradise of the Himalayas",
-    highlight: "Special Christmas 2025 Winter Tour",
-    cta: "Reserve My Seat",
   },
   {
     id: 'ahobilam-narasimha-pilgrimage',
@@ -52,7 +52,7 @@ const heroImages = [
   },
   {
   id: 'kamakhya-shillong-kaziranga',
-  image: kamakya, 
+  image: kamakya,
   title: "Kamakhya – Shillong – Kaziranga Sacred Nature Yatra",
   subtitle: "A soulful journey through Shakti temples, misty hills, living root bridges, pristine rivers, and wild forests",
   highlight: "Kamakhya Shakti Peetha • Living Root Bridges • Dawki River • Cherrapunji • Kaziranga National Park",

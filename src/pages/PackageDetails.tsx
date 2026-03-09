@@ -21,6 +21,17 @@ import { useMetaPixel } from "@/hooks/useMetaPixel";
  */
 
 type ItineraryItem = { day: string; detail: string };
+type PackageVariant = {
+  id: number;
+  tag: string;
+  name: string;
+  subtitle: string;
+  price: string;
+  pdf: string;
+  inclusions: string[];
+  exclusions: string[];
+  terms: string[];
+};
 type PackageType = {
   id: string;
   name: string;
@@ -37,6 +48,7 @@ type PackageType = {
   exclusions?: string[];
   pdf?: string;
   terms?: string[];
+  variants?: PackageVariant[];
 };
 
 export default function PackageDetails(): JSX.Element {
@@ -149,7 +161,7 @@ export default function PackageDetails(): JSX.Element {
     <div className="py-16 px-6 max-w-7xl mx-auto">
       {/* Back button (left only as requested) */}
       <div className="flex justify-start mb-8">
-        <Button variant="outline" className="rounded-full px-5" onClick={() => navigate(-1)}>
+        <Button variant="outline" className="rounded-full px-5" onClick={() => navigate('/#destinations')}>
           <ArrowLeft className="mr-2" size={16} /> Back to Packages
         </Button>
       </div>
@@ -184,11 +196,98 @@ export default function PackageDetails(): JSX.Element {
         ))}
       </div>
 
+      {/* Puri Jagannath Variants Section */}
+      {pkg.id === 'puri-jagannath' && pkg.variants && (
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Choose Your Package
+          </h2>
+          <div className="space-y-8">
+            {pkg.variants.map((variant: PackageVariant) => (
+              <div key={variant.id} className="bg-white rounded-xl shadow-lg overflow-hidden">
+                {/* Header with Badge and Price */}
+                <div className="px-6 pt-4 pb-2 flex items-center justify-between">
+                  <Badge className="bg-teal-600 text-white text-sm font-semibold">
+                    {variant.tag}
+                  </Badge>
+                  <span className="text-2xl font-bold text-emerald-600">{variant.price}</span>
+                </div>
+
+                {/* Title and Subtitle */}
+                <div className="px-6 pb-4">
+                  <h4 className="text-xl font-bold text-gray-900 mb-1">{variant.name}</h4>
+                  <p className="text-sm text-gray-600">{variant.subtitle}</p>
+                </div>
+
+                {/* Inclusions, Exclusions, Terms */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 py-4 border-t border-gray-200">
+                  {/* Inclusions */}
+                  <div>
+                    <h5 className="font-bold text-gray-900 mb-3 text-sm uppercase">Inclusions</h5>
+                    <ul className="space-y-2 text-sm text-gray-700">
+                      {variant.inclusions.map((item, idx) => (
+                        <li key={idx} className="flex gap-2">
+                          <span className="text-emerald-600 font-bold">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Exclusions */}
+                  <div>
+                    <h5 className="font-bold text-gray-900 mb-3 text-sm uppercase">Exclusions</h5>
+                    <ul className="space-y-2 text-sm text-gray-700">
+                      {variant.exclusions.map((item, idx) => (
+                        <li key={idx} className="flex gap-2">
+                          <span className="text-red-500 font-bold">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Terms */}
+                  <div>
+                    <h5 className="font-bold text-gray-900 mb-3 text-sm uppercase">Terms</h5>
+                    <ul className="space-y-2 text-sm text-gray-700">
+                      {variant.terms.map((item, idx) => (
+                        <li key={idx} className="flex gap-2">
+                          <span className="text-blue-600 font-bold">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-3 px-6 py-4 border-t border-gray-200 bg-gray-50">
+                  <QuoteDialog destination={variant.name}>
+                    <Button className="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-semibold">
+                      Get Quote for {variant.tag}
+                    </Button>
+                  </QuoteDialog>
+                  <Button
+                    variant="outline"
+                    className="flex-1 border-2 border-teal-600 text-teal-600 font-semibold hover:bg-teal-50"
+                    onClick={() => openPdfViewer(variant.pdf, variant.name)}
+                  >
+                    View Itinerary
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Main grid: itinerary (left wide) + CTA (right) */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
 
-          {/* Inclusions / Exclusions / Terms - AFTER itinerary */}
+          {/* Inclusions / Exclusions / Terms - AFTER itinerary (hidden for puri-jagannath with variants) */}
+          {!(pkg.id === 'puri-jagannath' && pkg.variants) && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card>
               <CardHeader>
@@ -223,9 +322,11 @@ export default function PackageDetails(): JSX.Element {
               </CardContent>
             </Card>
           </div>
+          )}
         </div>
 
-        {/* CTA on right */}
+        {/* CTA on right (hidden for puri-jagannath with variants) */}
+        {!(pkg.id === 'puri-jagannath' && pkg.variants) && (
         <aside className="lg:col-span-1">
           <div className="sticky top-24">
             <Card className="p-6 shadow-2xl border-2 border-green-50">
@@ -256,6 +357,7 @@ export default function PackageDetails(): JSX.Element {
             </Card>
           </div>
         </aside>
+        )}
       </div>
 
       {/* Modal Gallery - custom overlay with arrows (no X on image) */}

@@ -999,7 +999,7 @@ const packageData = {
     name: "Europe",
     packages: [
       {
-        title: "Ultimate Europe Grand Tour",
+        title: "Ultimate Europe Grand Tour - 23rd April, 1st May",
         duration: "18 Nights / 19 Days",
         overview:
           "A thoughtfully curated European journey covering iconic cities, cultural landmarks, scenic landscapes, and spiritual touchpoints across the UK, Western Europe, Switzerland, and Italy. Designed for travellers seeking comfort, clarity, and meaning, this tour blends guided exploration, premium travel, and seamless logistics for a truly immersive European experience.",
@@ -1021,7 +1021,7 @@ const packageData = {
           "Any cost arising due to force majeure or personal emergencies",
           "Anything not mentioned under inclusions"
         ],
-        price: "₹X,XX,XXX*",
+        price: "₹1,15,000*",
         rating: null,
         itinerary: [
           {
@@ -1122,7 +1122,7 @@ const packageData = {
         ]
       },
       {
-        title: "Unbeatable Europe 2026",
+        title: "Unbeatable Europe 2026 - 22nd April, 06th May, 20th May",
         duration: "7 Nights / 8 Days",
         countriesCovered: [
           "France",
@@ -1157,7 +1157,7 @@ const packageData = {
           "Expenses due to force majeure circumstances",
           "Anything not mentioned under inclusions"
         ],
-        price: "₹X,XX,XXX*",
+        price: "₹94,000*",
         rating: null,
         itinerary: [
           {
@@ -1220,7 +1220,7 @@ const packageData = {
         ]
       },
       {
-        title: "Unbelievable Europe - 2026",
+        title: "Unbelievable Europe - 2026 - 20th April, 27th April, 9th May, 19th May, 25th May, 01 June",
         subtitle: "A Signature Mantra Miles Journey",
         duration: "12 Days / 11 Nights",
         countriesCovered: [
@@ -1259,7 +1259,7 @@ const packageData = {
           "Expenses arising from force majeure circumstances",
           "Anything not mentioned under inclusions"
         ],
-        price: "₹X,XX,XXX*",
+        price: "₹93,000*",
         rating: null,
         itinerary: [
           {
@@ -1324,7 +1324,7 @@ const packageData = {
           }
         ],
         paymentTerms: [
-          "₹1,00,000 per person non-refundable deposit at booking",
+          "₹50,000 per person non-refundable deposit at booking",
           "Balance payment due 28 days prior to departure",
           "ROE calculated at final payment"
         ],
@@ -1341,7 +1341,7 @@ const packageData = {
         ]
       },
       {
-      title: "Wonders of Europe",
+      title: "Wonders of Europe - 22ndApril",
       subtitle: "Best Seller | Ideal for First-Time Europe Travelers",
       duration: "13 Days / 12 Nights",
       destinations: [
@@ -1404,7 +1404,7 @@ const packageData = {
         { city: "Padova", nights: 1, name: "UNAWAY Hotel Occhiobello or similar" },
         { city: "Arezzo", nights: 2, name: "Hotel Forum or similar" }
       ],
-      price: "₹X,XX,XXX*",
+      price: "₹1,04,000*",
       pdf: "/itinerary/europewonders.pdf",
       rating: null,
       itinerary: [
@@ -1499,7 +1499,7 @@ const packageData = {
     name: "Vietnam",
     packages: [
       {
-        title: "Unbeatable Vietnam Premium",
+        title: "Unbeatable Vietnam Premium -20th April and 15th May 2026",
         subtitle: "A Curated Mantra Miles Journey",
         duration: "7 Nights / 8 Days",
         destinations: [
@@ -1546,7 +1546,7 @@ const packageData = {
           { city: "Da Nang", nights: 2, name: "Grand Mercure Danang" },
           { city: "Ho Chi Minh City", nights: 2, name: "Sofitel Saigon Plaza" }
         ],
-        price: "₹X,XX,XXX*",
+        price: "₹1,36,000*",
         rating: null,
         pdf: "/itinerary/vietnam.pdf",
         itinerary: [
@@ -1718,7 +1718,7 @@ const packageData = {
           "Landmark Hotel",
           "Or similar 4★ category hotels"
         ],
-        price: "₹X,XXX*",
+        price: "₹48,000* onwards",
         rating: null,
         itinerary: [
           {
@@ -1835,7 +1835,7 @@ const packageData = {
           { city: "Pattaya", nights: 2, name: "Grand Bella Hotel / The Bayview Pattaya or similar" },
           { city: "Bangkok", nights: 2, name: "Vince Hotel Pratunam / Bangkok Palace Hotel or similar" }
         ],
-        price: "₹X,XX,XXX*",
+        price: "₹53,000*",
         pdf: "/itinerary/thailand.pdf",
         rating: null,
         itinerary: [
@@ -1896,7 +1896,7 @@ const packageData = {
           }
         ],
         paymentTerms: [
-          "INR 70,000 per person non-refundable booking deposit",
+          "INR 30,000 per person non-refundable booking deposit",
           "Second installment payable within 15 days of booking",
           "Full balance payable 25 days prior to departure",
           "ROE calculated at final payment",
@@ -2019,7 +2019,7 @@ const packageData = {
         "TCS 5%",
         "Flights between Tashkent and Bishkek unless specified"
       ],
-      price: "₹X,XX,XXX*",
+      price: "₹58,000*",
       pdf: "/itinerary/kazakistan.pdf",
       rating: null,
       itinerary: [
@@ -2123,7 +2123,7 @@ const packageData = {
           "Optional activities not mentioned in itinerary",
           "Any cost arising due to force majeure situations"
         ],
-        price: "₹X,XX,XXX*",
+        price: "₹53,000*",
         pdf: "/itinerary/singapore.pdf",
         rating: null,
         itinerary: [
@@ -2222,6 +2222,169 @@ const packageData = {
       }
     ]
   },
+  iceland: {
+  name: "Iceland",
+  packages: [
+    {
+      title: "Northern Lights – Iceland – 26th Feb 2026",
+      duration: "7 Days / 6 Nights",
+      overview:
+        "Explore the Land of Fire & Ice on this thoughtfully curated Iceland journey. Designed for travelers seeking a balance of adventure, relaxation, and cultural depth, this itinerary covers Iceland’s most iconic natural wonders—from geysers and waterfalls to glaciers and lava tunnels—while offering unforgettable Northern Lights experiences and premium comfort.",
+
+      inclusions: [
+        "5 nights accommodation in Reykjavik & 1 night in Frankfurt",
+        "Daily breakfast",
+        "Indian dinners and packed Indian lunch as per itinerary",
+        "Northern Lights excursion",
+        "Golden Circle tour (Thingvellir, Geysir, Gullfoss)",
+        "South Iceland tour with waterfalls, glacier & black sand beaches",
+        "Whale watching cruise",
+        "Blue Lagoon geothermal spa entry",
+        "Lava Show experience and lava tunnel exploration",
+        "Perlan Museum visit",
+        "All airport transfers and ground transportation",
+        "Services of an experienced tour leader"
+      ],
+
+      exclusions: [
+        "International flights",
+        "Visa charges",
+        "Personal expenses such as laundry, beverages, tips, porterage",
+        "Optional activities not mentioned in inclusions",
+        "Costs arising due to itinerary deviations or force majeure"
+      ],
+
+      price: "₹1,04,000*",
+      pdf: "/itinerary/iceland.pdf",
+      rating: null
+    }
+  ]
+},
+japan: {
+  name: "Japan",
+  packages: [
+    {
+      title: "Sakura Dreams 2026 – Japan – 25th March, 1st & 3rd April",
+      duration: "8 Days / 7 Nights",
+
+      overview:
+        "Experience Japan at its most beautiful during the cherry blossom season with Sakura Dreams 2026. This premium spring journey blends ancient traditions, modern marvels, and breathtaking natural scenery. From Shinkansen bullet trains and sacred temples to Mt. Fuji views and Tokyo’s futuristic skyline, this tour is thoughtfully curated for comfort, cultural depth, and unforgettable seasonal beauty.",
+
+      inclusions: [
+        "Return economy-class airfare ex-Bangalore",
+        "Japan Tourist Visa assistance & processing",
+        "Travel insurance for passengers below 60 years",
+        "7 nights accommodation in handpicked 4-star hotels",
+        "Daily breakfast, lunch & dinner as per itinerary",
+        "Shinkansen bullet train journeys: Osaka–Hiroshima & Kyoto–Shizuoka",
+        "All sightseeing and entrance fees as per itinerary",
+        "Mt. Fuji 5th Station, Hakone ropeway & Lake Ashi cruise",
+        "teamLab Planets digital art experience",
+        "Tokyo Skytree observatory visit",
+        "Kimono experience in Asakusa",
+        "Professional English-speaking tour manager",
+        "Deluxe air-conditioned coach for transfers & sightseeing",
+        "1 bottle of mineral water per person per day"
+      ],
+
+      exclusions: [
+        "5% TCS (Tax Collected at Source)",
+        "Tips for driver and guide",
+        "Personal expenses such as shopping, laundry, beverages",
+        "Meals not mentioned in itinerary",
+        "Early check-in / late check-out charges",
+        "Optional tours or activities not specified",
+        "Expenses due to flight delays, weather, natural calamities, or force majeure"
+      ],
+
+      price: "₹1,04,000*",
+      pdf: "/itinerary/japan.pdf",
+      rating: null
+    }
+  ]
+},
+china: {
+  name: "China",
+  packages: [
+    {
+      title: "China Discovery Tour – 28th April, 16th May",
+      duration: "11 Days / 10 Nights",
+
+      overview:
+        "Step into the heart of China where ancient dynasties meet futuristic skylines. This immersive journey blends imperial heritage, spiritual landmarks, breathtaking natural wonders, and ultra-modern cities. From the Great Wall and Forbidden City to the Avatar-like mountains of Zhangjiajie and the dazzling skyline of Shanghai, this tour offers a perfect balance of culture, nature, and innovation.",
+
+      inclusions: [
+        "Return economy-class airfare ex-Bangalore",
+        "China Tourist Visa assistance",
+        "Travel insurance for passengers below 60 years",
+        "10 nights accommodation in 4-star hotels (twin-sharing)",
+        "Daily breakfast",
+        "Indian & Chinese lunches and dinners as per itinerary",
+        "Lunch box during high-speed train journey",
+        "Private air-conditioned coach for sightseeing & transfers",
+        "Domestic flights and high-speed train tickets",
+        "Professional English-speaking guide",
+        "All entrance fees as per itinerary",
+        "2 bottles of mineral water per person per day"
+      ],
+
+      exclusions: [
+        "5% TCS",
+        "Personal expenses (laundry, shopping, beverages etc.)",
+        "Meals not mentioned in itinerary",
+        "Early check-in / late check-out charges",
+        "Optional tours and activities",
+        "Expenses due to force majeure",
+        "Anything not specified under inclusions"
+      ],
+
+      price: "₹79,000*",
+      pdf: "/itinerary/china.pdf",
+      rating: null
+    }
+  ]
+},
+russia: {
+  name: "Russia",
+  packages: [
+    {
+      title: "Majestic Russia – 1st & 16th May 2026 – Moscow & St. Petersburg",
+      duration: "7 Days / 6 Nights",
+
+      overview:
+        "Golden palaces, imperial boulevards, world-class museums, and iconic cityscapes come together in this grand Russian journey. From the historic Kremlin and Red Square to the opulence of the Hermitage Museum and the golden fountains of Peterhof, this tour offers a deep dive into Russia’s royal legacy, culture, and architectural splendour—curated with comfort, elegance, and cultural depth.",
+
+      inclusions: [
+        "Return economy-class airfare ex-Bangalore",
+        "Russia tourist visa charges",
+        "Travel insurance for passengers below 60 years",
+        "6 nights accommodation in Moscow & St. Petersburg",
+        "Daily breakfast",
+        "Indian lunches and dinners as per itinerary",
+        "High-speed Sapsan bullet train (Moscow ↔ St. Petersburg)",
+        "All airport, hotel and sightseeing transfers",
+        "Deluxe coach or suitable vehicle for sightseeing",
+        "Sparrow Hills cable car experience",
+        "Professional English-speaking tour manager/guide",
+        "All sightseeing and entrance fees as per itinerary"
+      ],
+
+      exclusions: [
+        "5% TCS",
+        "Personal expenses (laundry, minibar, drinks, tips, phone calls)",
+        "Meals not mentioned in itinerary",
+        "Early check-in / late check-out charges",
+        "Optional tours and activities",
+        "Expenses due to flight delays, weather, natural calamities, or force majeure",
+        "Anything not mentioned under inclusions"
+      ],
+
+      price: "₹93,000*",
+      pdf: "/itinerary/russia.pdf",
+      rating: null
+    }
+  ]
+}
 
 };
 
@@ -2231,7 +2394,7 @@ interface PackagesSectionProps {
 }
 
 export const PackagesSection = ({ destination, onBack }: PackagesSectionProps) => {
-  // const [openItinerary, setOpenItinerary] = useState<number | null>(null);
+  const [openItinerary, setOpenItinerary] = useState<number | null>(null);
   const [openQuote, setOpenQuote] = useState(false);
   const [selectedPkg, setSelectedPkg] = useState<{ title: string; destination: string; price: string } | null>(null);
 
@@ -2324,9 +2487,19 @@ export const PackagesSection = ({ destination, onBack }: PackagesSectionProps) =
                       <Button
                         variant="outline"
                         className="flex-1 text-green-500"
-                        onClick={() => openPdfViewer(pkg.pdf, pkg.title)}
+                        onClick={() => setOpenItinerary(openItinerary === index ? null : index)}
                       >
-                        See Full Itinerary
+                        {openItinerary === index ? (
+                          <>
+                            <ChevronUp className="h-4 w-4 mr-2" />
+                            Hide Itinerary
+                          </>
+                        ) : (
+                          <>
+                            <ChevronDown className="h-4 w-4 mr-2" />
+                            See Full Itinerary
+                          </>
+                        )}
                       </Button>
                       <QuoteDialog
                         destination={destinationData.name}
@@ -2380,19 +2553,19 @@ export const PackagesSection = ({ destination, onBack }: PackagesSectionProps) =
                 </div>
 
                 {/* Itinerary expand */}
-                {/* {openItinerary === index && (
+                {openItinerary === index && (
                   <div className="mt-6 border-t pt-6">
-                    <h4 className="font-semibold text-foreground mb-4">Detailed Itinerary</h4>
-                    <ul className="space-y-4">
+                    <h4 className="font-semibold text-foreground mb-4 text-lg">Detailed Itinerary</h4>
+                    <div className="space-y-3">
                       {pkg.itinerary?.map((day, dIndex) => (
-                        <li key={dIndex} className="text-sm text-muted-foreground">
-                          <span className="font-medium text-foreground">{day.day}: </span>
-                          {day.details}
-                        </li>
+                        <div key={dIndex} className="bg-gray-50 rounded-lg p-4 border-l-4 border-emerald-600">
+                          <p className="font-semibold text-foreground text-green-700 mb-2">{day.day}</p>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{day.details}</p>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
-                )} */}
+                )}
               </CardContent>
             </Card>
           ))}

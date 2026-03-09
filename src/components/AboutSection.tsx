@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Users, Globe, Award, Quote, LeafIcon, Compass, Landmark, Recycle, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Star, Users, Globe, Award, Quote, LeafIcon, Compass, Landmark, Recycle } from "lucide-react";
 import ceoImage from "@/assets/ceo.png";
 
 export const AboutSection = () => {
@@ -136,83 +136,6 @@ export const AboutSection = () => {
           </div>
         </div>
 
-        {/* Meet the Team Section */}
-        <div className="text-center my-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-            Meet Our <span className="text-emerald-600">Team</span>
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            The passionate individuals behind our soulful journeys.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
-          {[
-            {
-              image: ceoImage,
-              name: "Pramukh Rao",
-              designation: "Founder & CEO",
-              description: "The visionary leader who started it all.",
-              socials: [
-                { icon: <Linkedin className="h-5 w-5" />, url: "#" },
-                { icon: <Twitter className="h-5 w-5" />, url: "#" },
-                { icon: <Instagram className="h-5 w-5" />, url: "#" },
-              ],
-            },
-            {
-              image: "/path/to/team-member-2.png",
-              name: "Jane Doe",
-              designation: "Head of Operations",
-              description: "Ensuring every trip is seamless and memorable.",
-              socials: [
-                { icon: <Linkedin className="h-5 w-5" />, url: "#" },
-                { icon: <Twitter className="h-5 w-5" />, url: "#" },
-              ],
-            },
-            {
-              image: "/path/to/team-member-3.png",
-              name: "John Smith",
-              designation: "Lead Tour Designer",
-              description: "Crafting authentic and transformative experiences.",
-              socials: [
-                { icon: <Linkedin className="h-5 w-5" />, url: "#" },
-                { icon: <Instagram className="h-5 w-5" />, url: "#" },
-              ],
-            },
-            {
-              image: "/path/to/team-member-4.png",
-              name: "Emily Jones",
-              designation: "Community Manager",
-              description: "Nurturing our community of fellow travelers.",
-              socials: [
-                { icon: <Twitter className="h-5 w-5" />, url: "#" },
-              ],
-            },
-          ].map((member, idx) => (
-            <Card
-              key={idx}
-              className="text-center border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white"
-            >
-              <CardContent className="p-6">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                />
-                <h3 className="font-semibold text-gray-900 mb-1">{member.name}</h3>
-                <p className="text-sm text-emerald-600 font-medium mb-2">{member.designation}</p>
-                <p className="text-sm text-muted-foreground">{member.description}</p>
-                <div className="flex justify-center gap-4 mt-4">
-                  {member.socials.map((social, index) => (
-                    <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-emerald-600">
-                      {social.icon}
-                    </a>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
       </div>
     </section>
   );

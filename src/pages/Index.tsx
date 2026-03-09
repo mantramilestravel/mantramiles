@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { DestinationTabs } from "@/components/DestinationTabs";
@@ -12,19 +12,37 @@ import { Footer } from "@/components/Footer";
 import MainBlog, { BlogPostType } from "@/components/MainBlog";
 import BlogPost from "@/components/BlogPost";
 import PartnersAndCertificates from "@/components/PartnersAndCertificates";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 const Index = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [currentView, setCurrentView] = useState<'home' | 'packages'>('home');
   const [selectedDestination, setSelectedDestination] = useState<string>('');
   const [selectedBlog, setSelectedBlog] = useState<BlogPostType | null>(null);
 
+  // Handle hash-based scrolling (e.g., /#destinations)
+  useEffect(() => {
+    if (location.hash) {
+      const elementId = location.hash.replace('#', '');
+      const element = document.getElementById(elementId);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 0);
+      }
+    }
+  }, [location.hash]);
+
   const handleDestinationClick = (destination: string, id?: string) => {
     // console.log(destination, id);
     if (id) {
-      navigate(`/package/${id}`);
+      if (id === 'kailash-mansarovar') {
+        navigate(`/kailash-mansarovar`);
+      } else {
+        navigate(`/package/${id}`);
+      }
       return;
     }
     setSelectedDestination(destination);

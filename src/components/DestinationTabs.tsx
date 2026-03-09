@@ -25,6 +25,10 @@ import thailandImage from "@/assets/thailand.jpg";
 import kasakistanImage from "@/assets/kasakistan.jpg";
 import singaporeImage from "@/assets/singapore.jpg";
 import baliImage from "@/assets/bali.jpeg";
+import icelandImage from "@/assets/iceland.jpg";
+import japanImage from "@/assets/japan.jpg";
+import chinaImage from "@/assets/china.jpg";
+import russiaImage from "@/assets/russia.jpg";
 
 // Domestic Destinations
 const domesticDestinations = [
@@ -47,7 +51,12 @@ const internationalDestinations = [
   { id: "thailand", name: "Thailand", tagline: "Land of smiles & temples", image: thailandImage },
   { id: "kazakistan", name: "Central Asia", tagline: "Nature, beaches & adventure", image: kasakistanImage },
   { id: "singapore", name: "Singapore", tagline: "Tradition meets innovation", image: singaporeImage },
-  { id: "bali", name: "Bali", tagline: "Island of gods & beaches", image: baliImage }
+  { id: "bali", name: "Bali", tagline: "Island of gods & beaches", image: baliImage },
+  { id: "iceland", name: "Iceland", tagline: "Auroras, glaciers and Arctic Wonders ", image: icelandImage },
+  { id: "japan", name: "Japan", tagline: "A blend of tradition and modernity", image: japanImage },
+  { id: "china", name: "China", tagline: "Ancient heritage and modern marvels", image: chinaImage },
+  { id: "russia", name: "Russia", tagline: "Imperial grandeur & cultural depth", image: russiaImage }
+
 ];
 
 interface DestinationTabsProps {

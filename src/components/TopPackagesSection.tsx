@@ -30,7 +30,11 @@ export const TopPackagesSection = () => {
   const [wishlistedItems, setWishlistedItems] = useState<Set<string>>(new Set());
 
   const handleViewDetails = (id: string) => {
-    navigate(`/package/${id}`);
+    if (id === 'kailash-mansarovar') {
+      navigate(`/kailash-mansarovar`);
+    } else {
+      navigate(`/package/${id}`);
+    }
   };
 
   // Helper function to get browser fingerprinting data
