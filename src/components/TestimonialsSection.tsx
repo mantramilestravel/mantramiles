@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
-const mediaModules = import.meta.glob('/src/assets/gallery/*.{jpeg,jpg,png,gif,mp4,webm,ogg}');
-const media = Object.keys(mediaModules);
+const mediaModules = import.meta.glob('../assets/gallery/*.{jpeg,jpg,png,gif,mp4,webm,ogg}', { eager: true });
+const media = Object.values(mediaModules).map((module: any) => module.default);
 
 export const TestimonialsSection = () => {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
