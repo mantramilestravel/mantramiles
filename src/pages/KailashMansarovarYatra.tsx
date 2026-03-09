@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Download, Phone, Mountain, Heart, Users, MapPin, Zap, CheckCircle2, ChevronDown, ChevronUp, MessageCircle } from "lucide-react";
 import { Header } from "@/components/Header";
+import { PaymentSection } from "@/components/PaymentModal";
 import { Footer } from "@/components/Footer";
 import { QuoteDialog } from "@/components/QuoteDialog";
 import PDFViewer from "@/components/PDFViewer";
@@ -345,7 +346,7 @@ export default function KailashMansarovarYatra() {
                 Registrations Open
               </Badge>
 
-              <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 drop-shadow-2xl text-center leading-tight">
+              <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 drop-shadow-2xl text-center leading-tight">
                 KAILASH MANSAROVAR
               </h1>
 
@@ -373,7 +374,7 @@ export default function KailashMansarovarYatra() {
                 {/* Secondary WhatsApp CTA */}
                 <Button
                   size="lg"
-                  onClick={() => window.open('https://wa.me/+9199728161108', '_blank')}
+                  onClick={() => window.open('https://wa.me/+919972816108', '_blank')}
                   className="cta-primary bg-green-600 text-white font-bold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-2xl hover:scale-110 hover:bg-green-700 transition-all duration-300"
                 >
                   <MessageCircle className="mr-3 h-6 w-6" />
@@ -931,7 +932,7 @@ export default function KailashMansarovarYatra() {
             {/* WhatsApp CTA */}
             <Button
               size="lg"
-              onClick={() => window.open('https://wa.me/+9199728161108', '_blank')}
+              onClick={() => window.open('https://wa.me/+919972816108', '_blank')}
               className="cta-primary bg-green-500 hover:bg-green-600 text-white font-bold px-10 py-7 text-lg rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 w-full sm:w-auto"
             >
               <MessageCircle className="mr-3 h-6 w-6" />
@@ -977,6 +978,7 @@ export default function KailashMansarovarYatra() {
         />
       )}
 
+      <PaymentSection />
       <Footer />
     </div>
   );

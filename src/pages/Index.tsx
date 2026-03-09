@@ -8,6 +8,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { StatsSection } from "@/components/StatsSection";
 import { EnquirySection } from "@/components/EnquirySection";
 import { AboutSection } from "@/components/AboutSection";
+import { PaymentSection } from "@/components/PaymentModal";
 import { Footer } from "@/components/Footer";
 import MainBlog, { BlogPostType } from "@/components/MainBlog";
 import BlogPost from "@/components/BlogPost";
@@ -124,6 +125,7 @@ const Index = () => {
         <AboutSection />
       </div>
       <EnquirySection />
+      <PaymentSection />
       <div id="footer">
         <Footer />
       </div>

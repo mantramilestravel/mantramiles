@@ -1,7 +1,7 @@
 import React from "react";
 import { Mail, Phone, Facebook, Instagram, MapPin, MessageCircle } from "lucide-react";
 import Image from "@/assets/logo.png";
-import { useNavigate } from "react-router-dom"; // <-- useNavigate instead of Link
+import { useNavigate } from "react-router-dom";
 
 export const Footer: React.FC = () => {
   const navigate = useNavigate();

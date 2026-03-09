@@ -208,14 +208,14 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
       <DialogTrigger asChild>{children}</DialogTrigger>
 
       <DialogContent
-        className="premium-dialog sm:max-w-5xl p-0 gap-0 overflow-hidden rounded-2xl"
+        className="premium-dialog max-w-lg sm:max-w-5xl p-0 gap-0 overflow-hidden rounded-2xl"
       >
         <style>{premiumModalStyles}</style>
 
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-5 min-h-96">
           {/* Left Panel - Experience Section */}
-          <div className="md:col-span-2 bg-gradient-to-b from-emerald-600 via-teal-600 to-blue-600 p-8 md:p-12 flex flex-col justify-between text-white relative overflow-hidden">
+          <div className="hidden md:flex md:col-span-2 bg-gradient-to-b from-emerald-600 via-teal-600 to-blue-600 p-8 md:p-12 flex-col justify-between text-white relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-full blur-3xl"></div>
@@ -255,7 +255,7 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
           </div>
 
           {/* Right Panel - Form Section */}
-          <div className="md:col-span-3 p-8 md:p-10 overflow-y-auto max-h-[600px]">
+          <div className="md:col-span-3 p-8 md:p-10 overflow-y-auto max-h-screen md:max-h-[600px]">
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-gray-900">Quick Details</h3>
               <p className="text-sm text-gray-600 mt-1">Let’s create your perfect {destination} experience</p>

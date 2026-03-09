@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
+import { PaymentSection } from "@/components/PaymentModal";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -381,6 +382,7 @@ export default function PaymentGateway() {
         </div>
       </div>
 
+      <PaymentSection />
       <Footer />
     </div>
   );
