@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import PackageDetails from "@/pages/PackageDetails";
 import PaymentGateway from "@/pages/PaymentGateway";
 import Contact from "@/pages/Contact";
+import KailashMansarovarYatra from "@/pages/KailashMansarovarYatra";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
 import { MetaPixelProvider, MetaPixelNoticeBanner } from "@/contexts/MetaPixelContext";
@@ -77,6 +78,7 @@ const App: React.FC = () => {
               <Route path="/package/:id" element={<PackageDetails />} />
               <Route path="/payment/:id" element={<PaymentGateway />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/kailash-mansarovar" element={<KailashMansarovarYatra />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsAndConditions />} />
               <Route path="*" element={<NotFound />} />
