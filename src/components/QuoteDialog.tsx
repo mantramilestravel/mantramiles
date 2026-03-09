@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/select";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon, Send, User, Mail, Phone, Users, DollarSign, CheckCircle2, Sparkles } from "lucide-react";
+import { CalendarIcon, Send, User, Mail, Phone, Users, CheckCircle2, Sparkles } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -334,13 +334,13 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
                       <SelectTrigger className="premium-input pl-10 h-11 border-gray-200 rounded-lg">
                         <SelectValue placeholder="Select number" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-white border border-gray-200 rounded-lg shadow-lg">
                         {[1, 2, 3, 4].map((num) => (
-                          <SelectItem key={num} value={String(num)}>
+                          <SelectItem key={num} value={String(num)} className="py-2 px-3 cursor-pointer hover:bg-emerald-50 focus:bg-emerald-100">
                             {num} {num === 1 ? "Person" : "People"}
                           </SelectItem>
                         ))}
-                        <SelectItem value="5+">5+ People</SelectItem>
+                        <SelectItem value="5+" className="py-2 px-3 cursor-pointer hover:bg-emerald-50 focus:bg-emerald-100">5+ People</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -348,17 +348,17 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
                 <div>
                   <Label className="text-sm font-semibold text-gray-700 mb-2 block">Budget</Label>
                   <div className="relative">
-                    <DollarSign className="absolute left-3 top-3 h-4 w-4 text-gray-400 z-10 pointer-events-none" />
+                    <span className="absolute left-3 top-3 text-gray-400 z-10 pointer-events-none font-semibold">₹</span>
                     <Select onValueChange={(value) => updateFormData("budget", value)}>
                       <SelectTrigger className="premium-input pl-10 h-11 border-gray-200 rounded-lg">
                         <SelectValue placeholder="Select budget" />
                       </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="below-25k">Below ₹25K</SelectItem>
-                        <SelectItem value="25k-50k">₹25K - ₹50K</SelectItem>
-                        <SelectItem value="50k-100k">₹50K - ₹1L</SelectItem>
-                        <SelectItem value="100k-200k">₹1L - ₹2L</SelectItem>
-                        <SelectItem value="above-200k">Above ₹2L</SelectItem>
+                      <SelectContent className="bg-white border border-gray-200 rounded-lg shadow-lg">
+                        <SelectItem value="below-25k" className="py-2 px-3 cursor-pointer hover:bg-emerald-50 focus:bg-emerald-100">Below ₹25K</SelectItem>
+                        <SelectItem value="25k-50k" className="py-2 px-3 cursor-pointer hover:bg-emerald-50 focus:bg-emerald-100">₹25K - ₹50K</SelectItem>
+                        <SelectItem value="50k-100k" className="py-2 px-3 cursor-pointer hover:bg-emerald-50 focus:bg-emerald-100">₹50K - ₹1L</SelectItem>
+                        <SelectItem value="100k-200k" className="py-2 px-3 cursor-pointer hover:bg-emerald-50 focus:bg-emerald-100">₹1L - ₹2L</SelectItem>
+                        <SelectItem value="above-200k" className="py-2 px-3 cursor-pointer hover:bg-emerald-50 focus:bg-emerald-100">Above ₹2L</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
