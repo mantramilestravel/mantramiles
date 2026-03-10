@@ -112,8 +112,8 @@ export const QuoteDialog = ({ destination, children }: QuoteDialogProps) => {
   const { trackPackageInterest, isEnabled } = useMetaPixel();
 
   // EmailJS config
-   const SERVICE_ID = "service_30wnvqu";
-  const TEMPLATE_ID = "template_y3evqpn";
+   const SERVICE_ID = "service_8p4dhkg";
+  const TEMPLATE_ID = "template_y7frr6k";
   const USER_ID = import.meta.env.VITE_EMAILJS_USER || "";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

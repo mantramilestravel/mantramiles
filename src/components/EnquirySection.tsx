@@ -59,8 +59,8 @@ export const EnquirySection = () => {
   }, []);
 
   // EmailJS config
-  const SERVICE_ID = "service_30wnvqu";
-  const TEMPLATE_ID = "template_y3evqpn";
+  const SERVICE_ID = "service_8p4dhkg";
+  const TEMPLATE_ID = "template_y7frr6k";
   // Set VITE_EMAILJS_USER in .env.local or your host; fallback to empty string
   const USER_ID = (import.meta.env.VITE_EMAILJS_USER as string) || "";
 
