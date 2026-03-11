@@ -346,12 +346,12 @@ export default function KailashMansarovarYatra() {
                 Registrations Open
               </Badge>
 
-              <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 drop-shadow-2xl text-center leading-tight">
+              <h1 className="text-6xl md:text-5xl font-bold text-white mb-6 drop-shadow-2xl text-center leading-tight">
                 KAILASH MANSAROVAR
               </h1>
 
               <p className="text-3xl md:text-4xl text-white font-light italic mb-8 drop-shadow-lg text-center">
-                Answer the Call of Mount Kailash
+                Complete Kailash Yatra safely with medical support, experienced guides, experienced guides and full assistance from Mantra Miles during the toughest piligrimage in the world. 
               </p>
 
               <p className="text-xl text-white/90 text-center max-w-2xl mb-12 drop-shadow-lg">
