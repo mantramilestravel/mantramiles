@@ -42,15 +42,15 @@ export const Header = ({ onNavigate, currentView, onBackToHome }: HeaderProps) =
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo and Company Name */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2">
           {/* Logo image */}
           <img
             src = {logo}
             alt="Mantra Miles Logo"
-            className="h-14 w-14 rounded-sm object-contain"
+            className="h-16 w-16 rounded-full object-contain"
           />
 
-          <div className="flex flex-col">
+          <div className="flex flex-col hidden sm:block">
             <h1 className="text-xl font-bold text-foreground">Mantra Miles</h1>
             <span className="text-xs text-muted-foreground">
               Sacred Journeys. Shared Souls.
