@@ -101,6 +101,25 @@ export default function KailashMansarovarYatra() {
     setPdfViewer({ isOpen: false, pdfUrl: '', title: '' });
   };
 
+  // Download subsidy PDF
+  const downloadSubsidyPDF = async () => {
+    try {
+      const response = await fetch('/itinerary/Kashi and Chardham Yatra Subsidy.pdf');
+      if (!response.ok) throw new Error('Failed to download PDF');
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Kashi and Chardham Yatra Subsidy.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Download failed:', error);
+    }
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = "Kailash Mansarovar Yatra - Sacred Pilgrimage | Mantra Miles";
@@ -347,10 +366,10 @@ export default function KailashMansarovarYatra() {
               </Badge>
 
               <h1 className="text-6xl md:text-5xl font-bold text-white mb-6 drop-shadow-2xl text-center leading-tight">
-                KAILASH MANSAROVAR
+                Kailash Manasa Sarovara Yatra
               </h1>
 
-              <p className="text-3xl md:text-4xl text-white font-light italic mb-8 drop-shadow-lg text-center">
+              <p className="text-3xl md:text-2xl text-white font-light italic mb-8 drop-shadow-lg text-center">
                 Complete Kailash Yatra safely with medical support, experienced guides, comfortable logistics, and full assistance during the toughest pilgrimage on Earth.
               </p>
 
@@ -380,6 +399,17 @@ export default function KailashMansarovarYatra() {
                   <MessageCircle className="mr-3 h-6 w-6" />
                   Connect on WhatsApp
                 </Button>
+              </div>
+
+              {/* Subsidy Download Tab - End of Hero */}
+              <div className="mt-16 pt-12 border-t border-white/20">
+                <button
+                  onClick={downloadSubsidyPDF}
+                  className="bg-amber-400 hover:bg-amber-500 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto"
+                >
+                  <Download className="h-5 w-5" />
+                  Kailash Mansarovar Yatra Subsidy
+                </button>
               </div>
             </div>
           </div>
