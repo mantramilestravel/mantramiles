@@ -351,7 +351,7 @@ export default function KailashMansarovarYatra() {
               </h1>
 
               <p className="text-3xl md:text-4xl text-white font-light italic mb-8 drop-shadow-lg text-center">
-                Complete Kailash Yatra safely with medical support, experienced guides, experienced guides and full assistance from Mantra Miles during the toughest piligrimage in the world. 
+                Complete Kailash Yatra safely with medical support, experienced guides, confortable logistics and full assistance from Mantra Miles during the toughest piligrimage on earth. 
               </p>
 
               <p className="text-xl text-white/90 text-center max-w-2xl mb-12 drop-shadow-lg">
