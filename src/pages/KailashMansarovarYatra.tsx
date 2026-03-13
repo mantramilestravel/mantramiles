@@ -149,7 +149,7 @@ export default function KailashMansarovarYatra() {
       ],
       cost: "₹ 2,25,000/- per person",
       badgeColor: "bg-primary",
-      pdf: "/itinerary/kailash-mansarovar-overland.pdf",
+      pdf: "/itinerary/13Dayskailash.pdf",
       image: kailashImage1
     },
     {
@@ -194,7 +194,7 @@ export default function KailashMansarovarYatra() {
       ],
       cost: "₹ 3,20,000/- per person",
       badgeColor: "bg-primary",
-      pdf: "/itinerary/kailash-mansarovar-helicopter.pdf",
+      pdf: "/itinerary/11Days_kailash.pdf",
       image: kailashImage3
     },
     {
@@ -238,7 +238,7 @@ export default function KailashMansarovarYatra() {
       ],
       cost: "₹ 3,00,000/- per person",
       badgeColor: "bg-primary",
-      pdf: "/itinerary/kailash-mansarovar-helicopter-lucknow.pdf",
+      pdf: "/itinerary/9Days_kailash.pdf",
       image: kailashImage5
     }
   ];
