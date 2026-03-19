@@ -182,7 +182,7 @@ export default function KailashMansarovarYatra() {
       eligibility: "Indian Passport holders ONLY",
       eligibilitySubtext: "looking for a faster and less physically demanding route",
       startingPoint: "Lucknow, India",
-      route: "Lucknow – Nepalgunj (by road) – Simikot – Hilsa – Taklakot – Mansarovar – Mount Kailash – Return",
+      route: "Kathmandu – Nepalgunj (by road) – Simikot – Hilsa – Taklakot – Mansarovar – Mount Kailash – Return",
       modeOfTravel: "Helicopter, and air-conditioned coach",
       accommodation: "Hotels in Nepalgunj, and Taklakot; guesthouses in Tibet",
       physicalDemand: "Moderate (trekking during Kailash Parikrama)",
@@ -401,16 +401,6 @@ export default function KailashMansarovarYatra() {
                 </Button>
               </div>
 
-              {/* Subsidy Download Tab - End of Hero */}
-              <div className="mt-16 pt-12 border-t border-white/20">
-                <button
-                  onClick={downloadSubsidyPDF}
-                  className="bg-amber-400 hover:bg-amber-500 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto"
-                >
-                  <Download className="h-5 w-5" />
-                  Kailash Mansarovar Yatra Subsidy
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -770,6 +760,19 @@ export default function KailashMansarovarYatra() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ===== SUBSIDY DOWNLOAD SECTION ===== */}
+      <section className="py-12 px-6 md:px-12 bg-white">
+        <div className="max-w-4xl mx-auto flex justify-center">
+          <button
+            onClick={downloadSubsidyPDF}
+            className="bg-amber-400 hover:bg-amber-500 text-white font-semibold px-4 md:px-8 py-2 md:py-3 text-sm md:text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-1 md:gap-2"
+          >
+            <Download className="h-4 md:h-5 w-4 md:w-5" />
+            Kailash Mansarovar Yatra Subsidy
+          </button>
         </div>
       </section>
 
