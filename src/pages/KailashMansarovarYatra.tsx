@@ -352,7 +352,7 @@ export default function KailashMansarovarYatra() {
       <Header onNavigate={handleNavigation} currentView="home" onBackToHome={handleNavigation} />
 
       {/* ===== 1. HERO SECTION ===== */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative min-h-screen w-full overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -360,32 +360,32 @@ export default function KailashMansarovarYatra() {
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-blue-700/30 to-amber-900/50 z-10">
-            <div className="flex h-full flex-col items-center justify-center px-6">
-              <Badge className="mb-12 bg-primary text-white px-6 py-2 text-base font-semibold animate-pulse">
+            <div className="flex min-h-screen flex-col items-center justify-center px-4 sm:px-6 py-16 sm:py-8">
+              <Badge className="mb-6 sm:mb-12 bg-primary text-white px-6 py-2 text-base font-semibold animate-pulse">
                 Registrations Open
               </Badge>
 
-              <h1 className="text-6xl md:text-5xl font-bold text-white mb-6 drop-shadow-2xl text-center leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 drop-shadow-2xl text-center leading-tight">
                 Kailash Manasa Sarovara Yatra
               </h1>
 
-              <p className="text-3xl md:text-2xl text-white font-light italic mb-8 drop-shadow-lg text-center">
+              <p className="text-lg sm:text-2xl md:text-3xl text-white font-light italic mb-6 sm:mb-8 drop-shadow-lg text-center">
                 Complete Kailash Yatra safely with medical support, experienced guides, comfortable logistics, and full assistance during the toughest pilgrimage on Earth.
               </p>
 
-              <p className="text-xl text-white/90 text-center max-w-2xl mb-12 drop-shadow-lg">
+              <p className="text-base sm:text-xl text-white/90 text-center max-w-2xl mb-8 sm:mb-12 drop-shadow-lg">
                 A sacred journey that transforms the body, mind, and soul
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center w-full sm:w-auto">
                 {/* Premium Primary CTA */}
                 <QuoteDialog destination="Kailash Mansarovar Yatra">
                   <Button
                     size="lg"
-                    className="cta-primary pulse-glow bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 text-white font-bold px-8 py-6 text-lg rounded-full shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 relative overflow-hidden group"
+                    className="cta-primary pulse-glow bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 text-white font-bold px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg rounded-full shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 relative overflow-hidden group"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-emerald-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
-                    <Phone className="mr-3 h-6 w-6" />
+                    <Phone className="mr-2 sm:mr-3 h-4 sm:h-6 w-4 sm:w-6" />
                     <span className="relative">Speak to Expert</span>
                   </Button>
                 </QuoteDialog>
@@ -394,9 +394,9 @@ export default function KailashMansarovarYatra() {
                 <Button
                   size="lg"
                   onClick={() => window.open('https://wa.me/+919972816108', '_blank')}
-                  className="cta-primary bg-green-600 text-white font-bold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-2xl hover:scale-110 hover:bg-green-700 transition-all duration-300"
+                  className="cta-primary bg-green-600 text-white font-bold px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg rounded-full shadow-lg hover:shadow-2xl hover:scale-110 hover:bg-green-700 transition-all duration-300"
                 >
-                  <MessageCircle className="mr-3 h-6 w-6" />
+                  <MessageCircle className="mr-2 sm:mr-3 h-4 sm:h-6 w-4 sm:w-6" />
                   Connect on WhatsApp
                 </Button>
               </div>
