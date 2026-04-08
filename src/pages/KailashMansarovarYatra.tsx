@@ -147,7 +147,7 @@ export default function KailashMansarovarYatra() {
         "Kailash Parikrama covering Dirapuk and Zuthulphuk",
         "Trek across Dolma La Pass, the highest point of the journey"
       ],
-      cost: "₹ 2,25,000/- per person",
+      cost: "₹ 2,50,000/- per person",
       badgeColor: "bg-primary",
       pdf: "/itinerary/13Dayskailash.pdf",
       image: kailashImage1
@@ -170,7 +170,7 @@ export default function KailashMansarovarYatra() {
         "Trekking through Dirapuk, Dolma La Pass (5,700m), and Zuthulphuk",
         "Visit the sacred Gauri Kund"
       ],
-      cost: "USD $ 3,000/- per person",
+      cost: "USD $ 3,300/- per person",
       badgeColor: "bg-accent",
       pdf: "/itinerary/kailash-mansarovar-overland.pdf",
       image: kailashImage2
@@ -181,7 +181,7 @@ export default function KailashMansarovarYatra() {
       duration: "11 Days / 10 Nights",
       eligibility: "Indian Passport holders ONLY",
       eligibilitySubtext: "looking for a faster and less physically demanding route",
-      startingPoint: "Lucknow, India",
+      startingPoint: "Kathmandu, India",
       route: "Kathmandu – Nepalgunj (by road) – Simikot – Hilsa – Taklakot – Mansarovar – Mount Kailash – Return",
       modeOfTravel: "Helicopter, and air-conditioned coach",
       accommodation: "Hotels in Nepalgunj, and Taklakot; guesthouses in Tibet",
@@ -192,7 +192,7 @@ export default function KailashMansarovarYatra() {
         "Kailash Parikrama covering Dirapuk, Dolma La Pass, and Zuthulphuk",
         "Return via the same route, with a stopover at Nepalgunj"
       ],
-      cost: "₹ 3,20,000/- per person",
+      cost: "₹ 3,60,000/- per person",
       badgeColor: "bg-primary",
       pdf: "/itinerary/11Days_kailash.pdf",
       image: kailashImage3
@@ -214,7 +214,7 @@ export default function KailashMansarovarYatra() {
         "Kailash Parikrama covering Dirapuk, Dolma La Pass, and Zuthulphuk",
         "Return via the same route, with a stopover at Nepalgunj"
       ],
-      cost: "USD $ 3,500/- per person",
+      cost: "USD $ 3,900/- per person",
       badgeColor: "bg-accent",
       pdf: "/itinerary/kailash-mansarovar-helicopter.pdf",
       image: kailashImage4
@@ -236,10 +236,32 @@ export default function KailashMansarovarYatra() {
         "Kailash Parikrama covering Dirapuk, Dolma La Pass, and Zuthulphuk",
         "Return via the same route, with a stopover at Nepalgunj"
       ],
-      cost: "₹ 3,00,000/- per person",
+      cost: "₹ 3,25,000/- per person",
       badgeColor: "bg-primary",
       pdf: "/itinerary/9Days_kailash.pdf",
       image: kailashImage5
+    },
+    {
+      id: 6,
+      name: "Helicopter Tour - Kailash Mansarovar Yatra",
+      duration: "9 Days / 8 Nights",
+      eligibility: "Non-Indian Passport holders ONLY",
+      eligibilitySubtext: "looking for a faster and less physically demanding route",
+      startingPoint: "Lucknow, India",
+      route: "Lucknow – Nepalgunj (by road) – Simikot – Hilsa – Taklakot – Mansarovar – Mount Kailash – Return",
+      modeOfTravel: "Helicopter, and air-conditioned coach",
+      accommodation: "Hotels in Nepalgunj, and Taklakot; guesthouses in Tibet",
+      physicalDemand: "Moderate (trekking during Kailash Parikrama)",
+      highlights: [
+        "Flight from Kathmandu to Nepalgunj and then to Simikot",
+        "Helicopter ride from Simikot to Hilsa, offering aerial views of the Himalayas",
+        "Kailash Parikrama covering Dirapuk, Dolma La Pass, and Zuthulphuk",
+        "Return via the same route, with a stopover at Nepalgunj"
+      ],
+      cost: "USD $ 3,500/- per person",
+      badgeColor: "bg-primary",
+      pdf: "/itinerary/9Days_kailash.pdf",
+      image: kailashImage3
     }
   ];
 
@@ -653,12 +675,11 @@ export default function KailashMansarovarYatra() {
               ))}
             </div>
 
-            {/* Row 3: 1 Card Centered */}
-            <div className="flex justify-center">
-              <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow w-full md:max-w-xl">
-                {yatraPackages.slice(4, 5).map((pkg) => (
-                  <div key={pkg.id}>
-                    {/* Image */}
+            {/* Row 3: 2 Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {yatraPackages.slice(4, 6).map((pkg) => (
+                <div key={pkg.id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                  {/* Image */}
                     <div
                       className="h-48 bg-cover bg-center"
                       style={{
@@ -752,15 +773,14 @@ export default function KailashMansarovarYatra() {
                         </Button>
                       )}
 
-                      {/* Button */}
-                      
+                      {/* Get More Details Button */}
+
                     </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* ===== SUBSIDY DOWNLOAD SECTION ===== */}
