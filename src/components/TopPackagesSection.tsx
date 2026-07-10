@@ -74,11 +74,12 @@ export const TopPackagesSection = () => {
 
       // Track AddToWishlist event with fallback user data
       if (isEnabled) {
+        const priceValue = pkg.price.includes('₹') ? parseInt(pkg.price.replace(/[^\d]/g, '')) : 0;
         const packageInfo = {
           id: pkg.id,
           name: pkg.name,
           category: pkg.type,
-          price: parseInt(pkg.price.replace(/[^\d]/g, '')),
+          price: priceValue,
           currency: 'INR'
         };
 
@@ -164,9 +165,8 @@ export const TopPackagesSection = () => {
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-white">
                   <h3 className="text-lg font-bold">{pkg.name}</h3>
-                  <Badge className="font-semibold text-white">
-                    {pkg.Oldprice && <span className="text-white text-xs line-through pr-4">{pkg.Oldprice}</span>}
-                    <span className="text-white font-bold text-base">{pkg.price}</span>
+                  <Badge className="font-semibold text-white bg-emerald-600">
+                    {pkg.price}
                   </Badge>
                 </div>
               </div>

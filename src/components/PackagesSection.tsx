@@ -28,7 +28,7 @@ const packageData = {
           "Airfares and train ticket charges",
           "Entrance fees to any monuments, activities, or attractions unless specified"
         ],
-        "price": "₹3500*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -67,7 +67,7 @@ const packageData = {
           "Airfares and train tickets",
           "Any entrance fees or charges for optional activities"
         ],
-        "price": "₹5620*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -115,7 +115,7 @@ const packageData = {
           "Airfares and train ticket charges",
           "Any entrance fees or charges for activities"
         ],
-        "price": "₹21500*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -158,7 +158,7 @@ const packageData = {
           "Airfares and train ticket charges",
           "Any entrance fees or charges for activities unless specified"
         ],
-        "price": "₹28,000*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -217,7 +217,7 @@ const packageData = {
           "All personal expenses",
           "Anything not mentioned in the inclusions"
         ],
-        "price": "₹27,000*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -267,7 +267,7 @@ const packageData = {
           "All personal expenses",
           "Anything not mentioned in the inclusions"
         ],
-        "price": "₹39,000*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -324,7 +324,7 @@ const packageData = {
           "Airfares and train ticket charges",
           "Any entrance fees, activities charges, or NGT permit vehicle fees"
         ],
-        "price": "₹19,000*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -374,7 +374,7 @@ const packageData = {
           "Airfares and train ticket charges",
           "Any entrance fees or charges for activities or permits"
         ],
-        "price": "₹38,500*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -443,7 +443,7 @@ const packageData = {
           "Optional tours, like Nathula Pass or Toy Train Joy Ride",
           "Permit fees for restricted areas"
         ],
-        "price": "₹28,000*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -494,7 +494,7 @@ const packageData = {
           "Liability for delays due to weather, strikes, or roadblocks",
           "GST or applicable taxes if not mentioned"
         ],
-        "price": "₹47,000*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -563,7 +563,7 @@ const packageData = {
           "Guide service",
           "Costs incidental to any change in the itinerary due to unforeseen circumstances"
         ],
-        "price": "₹10,500*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -612,7 +612,7 @@ const packageData = {
           "Guide service",
           "Costs incidental to any change in the itinerary due to unforeseen circumstances"
         ],
-        "price": "₹17,000*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -672,7 +672,7 @@ const packageData = {
           "Boat charges for Bet Dwarka",
           "Personal expenses"
         ],
-        "price": "₹25,000*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -720,7 +720,7 @@ const packageData = {
           "Personal expenses",
           "Anything not mentioned in the inclusions"
         ],
-        "price": "₹45,000*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -787,7 +787,7 @@ const packageData = {
           "Additional costs due to flight cancellations or other unforeseen factors",
           "Any other services not mentioned in the inclusions"
         ],
-        "price": "₹22,000*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -837,7 +837,7 @@ const packageData = {
           "Additional costs due to flight cancellations or other unforeseen factors",
           "Any other services not mentioned in the inclusions"
         ],
-        "price": "₹25,000*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -902,7 +902,7 @@ const packageData = {
           "Personal expenses such as tips, laundry, and beverages",
           "Water sports activities in Bentota"
         ],
-        "price": "₹39,000*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -956,7 +956,7 @@ const packageData = {
           "Optional tours like Minneriya National Park wildlife tours",
           "Personal expenses such as tips, shopping, and beverages"
         ],
-        "price": "₹46,480*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -1021,7 +1021,7 @@ const packageData = {
           "Any cost arising due to force majeure or personal emergencies",
           "Anything not mentioned under inclusions"
         ],
-        price: "₹1,15,000*",
+        price: "Contact us for best rate",
         rating: null,
         itinerary: [
           {
@@ -1157,7 +1157,7 @@ const packageData = {
           "Expenses due to force majeure circumstances",
           "Anything not mentioned under inclusions"
         ],
-        price: "₹94,000*",
+        price: "Contact us for best rate",
         rating: null,
         itinerary: [
           {
@@ -1259,7 +1259,7 @@ const packageData = {
           "Expenses arising from force majeure circumstances",
           "Anything not mentioned under inclusions"
         ],
-        price: "₹93,000*",
+        price: "Contact us for best rate",
         rating: null,
         itinerary: [
           {
@@ -1324,7 +1324,7 @@ const packageData = {
           }
         ],
         paymentTerms: [
-          "₹50,000 per person non-refundable deposit at booking",
+          "Contact us for pricing details",
           "Balance payment due 28 days prior to departure",
           "ROE calculated at final payment"
         ],
@@ -1404,7 +1404,7 @@ const packageData = {
         { city: "Padova", nights: 1, name: "UNAWAY Hotel Occhiobello or similar" },
         { city: "Arezzo", nights: 2, name: "Hotel Forum or similar" }
       ],
-      price: "₹1,04,000*",
+      price: "Contact us for best rate",
       pdf: "/itinerary/europewonders.pdf",
       rating: null,
       itinerary: [
@@ -1546,7 +1546,7 @@ const packageData = {
           { city: "Da Nang", nights: 2, name: "Grand Mercure Danang" },
           { city: "Ho Chi Minh City", nights: 2, name: "Sofitel Saigon Plaza" }
         ],
-        price: "₹1,36,000*",
+        price: "Contact us for best rate",
         rating: null,
         pdf: "/itinerary/vietnam.pdf",
         itinerary: [
@@ -1642,8 +1642,8 @@ const packageData = {
           "Travel/medical insurance (beyond package coverage)",
           "Any increase in taxes or fuel surcharges post booking"
         ],
-        "price": "₹96,000/- (Offer Price, all-inclusive)",
-        "oldPrice": "₹1,15,000/-",
+        "price": "Contact us for best rate",
+        "oldPrice": "",
         "rating": 4.9,
         "pdf": "/itinerary/dubai.pdf",
         "itinerary": [
@@ -1718,7 +1718,7 @@ const packageData = {
           "Landmark Hotel",
           "Or similar 4★ category hotels"
         ],
-        price: "₹48,000* onwards",
+        price: "Contact us for best rate",
         rating: null,
         itinerary: [
           {
@@ -1835,7 +1835,7 @@ const packageData = {
           { city: "Pattaya", nights: 2, name: "Grand Bella Hotel / The Bayview Pattaya or similar" },
           { city: "Bangkok", nights: 2, name: "Vince Hotel Pratunam / Bangkok Palace Hotel or similar" }
         ],
-        price: "₹53,000*",
+        price: "Contact us for best rate",
         pdf: "/itinerary/thailand.pdf",
         rating: null,
         itinerary: [
@@ -1936,7 +1936,7 @@ const packageData = {
           "National Park Fees (compulsory and payable locally): approx. 400 THB per person for Phi Phi Islands tour, 400 THB per person for Krabi 4-Island tour, and fees for the Krabi Rainforest tour",
           "Personal expenses, such as tips, shopping, and beverages"
         ],
-        "price": "₹24,498*",
+        "price": "Contact us for best rate",
         "rating": null,
         "itinerary": [
           {
@@ -2019,7 +2019,7 @@ const packageData = {
         "TCS 5%",
         "Flights between Tashkent and Bishkek unless specified"
       ],
-      price: "₹58,000*",
+      price: "Contact us for best rate",
       pdf: "/itinerary/kazakistan.pdf",
       rating: null,
       itinerary: [
@@ -2123,7 +2123,7 @@ const packageData = {
           "Optional activities not mentioned in itinerary",
           "Any cost arising due to force majeure situations"
         ],
-        price: "₹53,000*",
+        price: "Contact us for best rate",
         pdf: "/itinerary/singapore.pdf",
         rating: null,
         itinerary: [
@@ -2194,7 +2194,7 @@ const packageData = {
           "Meals unless specified",
           "Personal expenses such as tips, shopping, and laundry"
         ],
-        "price": "₹18,299*",
+        "price": "Contact us for best rate",
         "pdf": "/itinerary/bali.pdf",
         "rating": null,
         "itinerary": [
@@ -2254,7 +2254,7 @@ const packageData = {
         "Costs arising due to itinerary deviations or force majeure"
       ],
 
-      price: "₹1,04,000*",
+      price: "Contact us for best rate",
       pdf: "/itinerary/iceland.pdf",
       rating: null
     }
@@ -2297,7 +2297,7 @@ japan: {
         "Expenses due to flight delays, weather, natural calamities, or force majeure"
       ],
 
-      price: "₹1,04,000*",
+      price: "Contact us for best rate",
       pdf: "/itinerary/japan.pdf",
       rating: null
     }
@@ -2338,7 +2338,7 @@ china: {
         "Anything not specified under inclusions"
       ],
 
-      price: "₹79,000*",
+      price: "Contact us for best rate",
       pdf: "/itinerary/china.pdf",
       rating: null
     }
@@ -2379,7 +2379,7 @@ russia: {
         "Anything not mentioned under inclusions"
       ],
 
-      price: "₹93,000*",
+      price: "Contact us for best rate",
       pdf: "/itinerary/russia.pdf",
       rating: null
     }

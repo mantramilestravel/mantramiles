@@ -147,7 +147,7 @@ export default function KailashMansarovarYatra() {
         "Kailash Parikrama covering Dirapuk and Zuthulphuk",
         "Trek across Dolma La Pass, the highest point of the journey"
       ],
-      cost: "₹ 2,50,000/- per person",
+      cost: "Contact us for best rate",
       badgeColor: "bg-primary",
       pdf: "/itinerary/13Dayskailash.pdf",
       image: kailashImage1
@@ -170,7 +170,7 @@ export default function KailashMansarovarYatra() {
         "Trekking through Dirapuk, Dolma La Pass (5,700m), and Zuthulphuk",
         "Visit the sacred Gauri Kund"
       ],
-      cost: "USD $ 3,300/- per person",
+      cost: "Contact us for best rate",
       badgeColor: "bg-accent",
       pdf: "/itinerary/kailash-mansarovar-overland.pdf",
       image: kailashImage2
@@ -192,7 +192,7 @@ export default function KailashMansarovarYatra() {
         "Kailash Parikrama covering Dirapuk, Dolma La Pass, and Zuthulphuk",
         "Return via the same route, with a stopover at Nepalgunj"
       ],
-      cost: "₹ 3,60,000/- per person",
+      cost: "Contact us for best rate",
       badgeColor: "bg-primary",
       pdf: "/itinerary/11Days_kailash.pdf",
       image: kailashImage3
@@ -214,7 +214,7 @@ export default function KailashMansarovarYatra() {
         "Kailash Parikrama covering Dirapuk, Dolma La Pass, and Zuthulphuk",
         "Return via the same route, with a stopover at Nepalgunj"
       ],
-      cost: "USD $ 3,900/- per person",
+      cost: "Contact us for best rate",
       badgeColor: "bg-accent",
       pdf: "/itinerary/kailash-mansarovar-helicopter.pdf",
       image: kailashImage4
@@ -236,7 +236,7 @@ export default function KailashMansarovarYatra() {
         "Kailash Parikrama covering Dirapuk, Dolma La Pass, and Zuthulphuk",
         "Return via the same route, with a stopover at Nepalgunj"
       ],
-      cost: "₹ 3,25,000/- per person",
+      cost: "Contact us for best rate",
       badgeColor: "bg-primary",
       pdf: "/itinerary/9Days_kailash.pdf",
       image: kailashImage5
@@ -258,7 +258,7 @@ export default function KailashMansarovarYatra() {
         "Kailash Parikrama covering Dirapuk, Dolma La Pass, and Zuthulphuk",
         "Return via the same route, with a stopover at Nepalgunj"
       ],
-      cost: "USD $ 3,500/- per person",
+      cost: "Contact us for best rate",
       badgeColor: "bg-primary",
       pdf: "/itinerary/9Days_kailash.pdf",
       image: kailashImage3

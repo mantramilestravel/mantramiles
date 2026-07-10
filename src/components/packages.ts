@@ -46,8 +46,8 @@ export const packagesData = [
     duration: "13-16 Days",
     description:
       "Embark on a transformative sacred pilgrimage to Mount Kailash and Lake Mansarovar, revered by Hindus, Buddhists, Jains, and Bon followers. Experience spiritual liberation through the sacred circumambulation (Parikrama) across high-altitude terrain with expert guides and comprehensive support.",
-    price: "₹2,25,000/-",
-    Oldprice: "₹3,20,000/-",
+    price: "Contact us for best rate",
+    Oldprice: "",
     rating: 4.9,
     type: "Domestic",
     tag: "Pilgrimage",
@@ -85,8 +85,8 @@ export const packagesData = [
     duration: "6 Days / 5 Nights",
     description:
       "Experience the perfect blend of luxury, adventure, and culture with our exclusive Dubai Travel Package! This journey covers iconic attractions of Dubai, Sharjah and Abu Dhabi — from the thrilling desert safari and Ferrari World to breathtaking views at the Burj Khalifa and Dubai Frame. Also included are the vibrant Miracle Garden, Global Village, and the awe-inspiring Museum of the Future.",
-    price: "₹1,09,900/-",
-    Oldprice: "₹1,49,900/-",
+    price: "Contact us for best rate",
+    Oldprice: "",
     rating: 4.9,
     type: "International",
     coverImage: dubaiImage,
@@ -130,8 +130,8 @@ export const packagesData = [
     duration: "4 Days / 3 Nights",
     description:
       "Embark on a spiritually enriching 4-day journey to Prayagraj and Ayodhya, designed for comfort, devotion, and a deeply immersive pilgrimage experience. This yatra blends sacred rituals, temple visits, serene sightseeing, and balanced rest—ideal for families, seniors, and first-time pilgrims.",
-    price: "₹18,999/-",
-    Oldprice: "₹32,999/-",
+    price: "Contact us for best rate",
+    Oldprice: "",
     rating: 4.8,
     type: "Domestic",
     pdf: "/itinerary/prayagraj_ayodhya_kashi.pdf",
@@ -169,7 +169,7 @@ export const packagesData = [
   duration: "11 Days / 10 Nights",
   description:
     "Embark on the sacred Char Dham Yatra covering Yamunotri, Gangotri, Kedarnath, and Badrinath — a deeply spiritual journey through the majestic Himalayas. This yatra blends devotion, ancient traditions, scenic mountain routes, and disciplined group travel. Designed for seekers looking for a complete and well-organized pilgrimage experience, the journey offers divine temple darshan, breathtaking landscapes, and guidance rooted in Stala Puranas and Sanatana Dharma.",
-  price: "₹64,000/-",
+  price: "Contact us for best rate",
   rating: 4.9,
   type: "Domestic",
   pdf: "/itinerary/chardham.pdf",
@@ -198,7 +198,7 @@ export const packagesData = [
   ],
 
   terms: [
-    "Special package cost: ₹64,000 per person (limited period offer)",
+    "Special package cost: Contact us for best rate)",
     "Yatra validity: May (4th week) & June (4th week) batches – 2026",
     "Rates are subject to availability and may change without prior notice",
     "Booking confirmation subject to seat and flight availability",
@@ -215,8 +215,8 @@ export const packagesData = [
     duration: "2 Days / 1 Night",
     description:
       "Ahobilam Yatra is a sacred pilgrimage to the mystical hills of the Nallamala Forest, home to the nine divine forms of Lord Narasimha. Surrounded by pristine nature, waterfalls, and ancient temples, this journey offers a powerful blend of spirituality and adventure. Mantra Mile organizes guided tours to Ahobilam, providing a seamless and enriching experience as you explore the Nava-Narasimha shrines, discover their legends, and immerse yourself in the unique spiritual atmosphere of this holy land.",
-    price: "₹6,499/-",
-    Oldprice: "₹7,499/-",
+    price: "Contact us for best rate",
+    Oldprice: "",
     rating: 4.7,
     type: "Domestic",
     tag: "Group Package",
@@ -252,7 +252,7 @@ export const packagesData = [
     duration: "7 Days / 6 Nights",
     description:
       "Discover Odisha and Bengal’s spiritual and cultural gems with visits to Lingaraj, Konark Sun Temple, Jagannath Temple, Chilika Lake, Gangasagar and Mayapur. A soulful journey through India’s heritage, scripture, and devotional traditions — featuring temple darshans, heritage villages, and key Vaishnava & Shaiva sites.",
-    price: "₹13,500* INR Onwards",
+    price: "Contact us for best rate",
     rating: 4.6,
     type: "Domestic",
     coverImage: puriImage,
@@ -274,7 +274,7 @@ export const packagesData = [
       "Anything not mentioned in inclusions"
     ],
     terms: [
-      "Full package amount: ₹49,000/-",
+      "Full package amount: Contact us for best rate",
       "Payment schedule: Rs. 25,000 at registration + remaining before departure (15 days prior)",
       "Advance payment required to confirm booking; deposits may be non-refundable",
       "Company not liable for delays due to weather, local restrictions or temple rituals",
@@ -287,7 +287,7 @@ export const packagesData = [
         tag: "Flight Package",
         name: "Flight Package - Puri Jagannath & Kolkata Mayapur",
         subtitle: "4-day enlightening escapade with Mayapur",
-        price: "₹49,000/-",
+        price: "Contact us for best rate",
         pdf: "/itinerary/jagannathpuri.pdf",
         inclusions: [
           "Round-trip flights from Bangalore",
@@ -306,7 +306,7 @@ export const packagesData = [
           "Anything not mentioned in inclusions"
         ],
         terms: [
-          "Full package amount: ₹49,000/-",
+          "Full package amount: Contact us for best rate",
           "Payment schedule: Rs. 25,000 at registration + remaining before departure (15 days prior)",
           "Advance payment required to confirm booking; deposits may be non-refundable",
           "Company not liable for delays due to weather, local restrictions or temple rituals",
@@ -319,7 +319,7 @@ export const packagesData = [
         tag: "Flight Package",
         name: "Flight Package - Puri Jagannath Yatra",
         subtitle: "3-day enlightening escapade for others",
-        price: "₹23,999/- + GST",
+        price: "Contact us for best rate",
         pdf: "/itinerary/puri_flight_3days.pdf",
         inclusions: [
           "Round trip economy flight from Bangalore",
@@ -338,7 +338,7 @@ export const packagesData = [
         ],
         terms: [
           "Offers valid till February 28, 2028",
-          "Package cost: ₹23,999/- per adult + applicable GST",
+          "Package cost: Contact us for best rate",
           "Payment can be made in installments",
           "Advance payment required to confirm booking",
           "Company not liable for delays due to weather, local restrictions or temple rituals",
@@ -350,7 +350,7 @@ export const packagesData = [
         tag: "Train Package",
         name: "Train Package",
         subtitle: "3-day enlightening escapade for others",
-        price: "₹13,500/- + GST",
+        price: "Contact us for best rate",
         pdf: "/itinerary/jagganathpuri_train.pdf",
         inclusions: [
           "3-tier AC round trip from Bangalore Railway Station",
@@ -368,7 +368,7 @@ export const packagesData = [
           "Anything not specifically mentioned in inclusions"
         ],
         terms: [
-          "Package cost: ₹13,500/- per adult + applicable GST",
+          "Package cost: Contact us for best rate",
           "Payment can be made in installments",
           "Remaining balance to be paid before departure (75 days prior)",
           "Company not liable for delays due to weather, local restrictions or temple rituals",
@@ -386,8 +386,8 @@ export const packagesData = [
     duration: "8 Days / 7 Nights",
     description:
       "A soulful and immersive journey through powerful Shakti temples, misty Himalayan hills, living root bridges, crystal-clear rivers, and wild forests of Northeast India. This yatra blends deep spiritual experiences at Kamakhya with conscious slow travel through Meghalaya’s natural wonders and the rich wildlife of Kaziranga — designed not just to see places, but to truly feel their spirit.",
-    price: "₹35,000/-",
-    Oldprice: "₹40,000/-",
+    price: "Contact us for best rate",
+    Oldprice: "",
     rating: 4.9,
     type: "Domestic",
     tag: "Flag Journey",
