@@ -6,25 +6,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { useMetaPixel } from "@/hooks/useMetaPixel";
-import packagesData from "@/components/packages";
-
-type PackageType = {
-  id: string;
-  name: string;
-  destinations: string;
-  duration: string;
-  description: string;
-  price: string;
-  Oldprice?: string;
-  rating: number;
-  type: string;
-  tag?: string;
-  coverImage: string; // imported image
-  images?: string[];
-};
+import { usePackages } from "@/hooks/usePackages";
+import type { PackageType } from "@/types/package";
 
 export const TopPackagesSection = () => {
   const navigate = useNavigate();
+  const packagesData = usePackages();
   const { toast } = useToast();
   const { trackWishlistAdd, isEnabled } = useMetaPixel();
   const [wishlistedItems, setWishlistedItems] = useState<Set<string>>(new Set());
@@ -117,7 +104,7 @@ export const TopPackagesSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold text-gray-900 mb-4">
-            🌍 Best-Selling Travel Packages 2025
+            🌍 Best-Selling Travel Packages 2026
           </h2>
           <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
             Discover handpicked adventures — spiritual journeys, scenic escapes and curated experiences.

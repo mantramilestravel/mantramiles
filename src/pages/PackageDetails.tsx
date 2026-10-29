@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import PDFViewer from "@/components/PDFViewer";
-import { packagesData } from "@/components/packages";
+import { usePackagesQuery } from "@/hooks/usePackages";
+import type { PackageType, PackageVariant } from "@/types/package";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -20,42 +21,13 @@ import { useMetaPixel } from "@/hooks/useMetaPixel";
  * - booking CTA on right (sticky on large screens)
  */
 
-type ItineraryItem = { day: string; detail: string };
-type PackageVariant = {
-  id: number;
-  tag: string;
-  name: string;
-  subtitle: string;
-  price: string;
-  pdf: string;
-  inclusions: string[];
-  exclusions: string[];
-  terms: string[];
-};
-type PackageType = {
-  id: string;
-  name: string;
-  destinations: string;
-  duration: string;
-  description: string;
-  price: string;
-  rating: number;
-  type: string;
-  coverImage?: string;
-  images: string[];
-  highlights?: string[];
-  inclusions?: string[];
-  exclusions?: string[];
-  pdf?: string;
-  terms?: string[];
-  variants?: PackageVariant[];
-};
-
 export default function PackageDetails(): JSX.Element {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { trackPackageView, trackCustomizeProduct, isEnabled } = useMetaPixel();
-  const pkg = packagesData.find((p: PackageType) => p.id === id) || (packagesData[0] as PackageType);
+  const { packages: packagesData, isLoading } = usePackagesQuery();
+  const pkg: PackageType | undefined =
+    packagesData.find((p) => p.id === id) || (isLoading ? undefined : packagesData[0]);
   const [pdfViewer, setPdfViewer] = useState<{ isOpen: boolean; pdfUrl: string; title: string }>({
     isOpen: false,
     pdfUrl: '',
@@ -141,9 +113,9 @@ export default function PackageDetails(): JSX.Element {
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [modalIndex, pkg.images.length]);
+  }, [modalIndex, pkg?.images.length]);
 
-  if (!pkg) return <div className="py-24 text-center">Package not found</div>;
+  if (!pkg) return <div className="py-24 text-center">{isLoading ? "Loading..." : "Package not found"}</div>;
 
   // modal helpers
   const openModalAt = (index: number) => setModalIndex(index);
@@ -197,7 +169,7 @@ export default function PackageDetails(): JSX.Element {
       </div>
 
       {/* Puri Jagannath Variants Section */}
-      {pkg.id === 'puri-jagannath' && pkg.variants && (
+      {pkg.variants?.length > 0 && (
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Choose Your Package
@@ -287,7 +259,7 @@ export default function PackageDetails(): JSX.Element {
         <div className="lg:col-span-2">
 
           {/* Inclusions / Exclusions / Terms - AFTER itinerary (hidden for puri-jagannath with variants) */}
-          {!(pkg.id === 'puri-jagannath' && pkg.variants) && (
+          {!(pkg.variants?.length > 0) && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card>
               <CardHeader>
@@ -326,7 +298,7 @@ export default function PackageDetails(): JSX.Element {
         </div>
 
         {/* CTA on right (hidden for puri-jagannath with variants) */}
-        {!(pkg.id === 'puri-jagannath' && pkg.variants) && (
+        {!(pkg.variants?.length > 0) && (
         <aside className="lg:col-span-1">
           <div className="sticky top-24">
             <Card className="p-6 shadow-2xl border-2 border-green-50">

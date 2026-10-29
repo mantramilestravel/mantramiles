@@ -17,6 +17,10 @@ import { MetaPixelProvider, MetaPixelNoticeBanner } from "@/contexts/MetaPixelCo
 import PrivacyPolicy from "@/components/PrivacyPolicy";
 import TermsAndConditions from "@/components/TermsAndConditions";
 import InfoPopup from "@/components/InfoPopup";
+import AdminLogin from "@/pages/admin/AdminLogin";
+import AdminLayout from "@/pages/admin/AdminLayout";
+import AdminTrips from "@/pages/admin/AdminTrips";
+import AdminTripForm from "@/pages/admin/AdminTripForm";
 
 const queryClient = new QueryClient();
 
@@ -66,7 +70,7 @@ const App: React.FC = () => {
           <Toaster />
           <Sonner />
 
-          {isPopupVisible && <InfoPopup onClose={handleClosePopup} />}
+          {isPopupVisible && !window.location.pathname.startsWith("/admin") && <InfoPopup onClose={handleClosePopup} />}
 
           <BrowserRouter>
             {/* scroll to top on route change */}
@@ -81,6 +85,11 @@ const App: React.FC = () => {
               <Route path="/kailash-mansarovar" element={<KailashMansarovarYatra />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsAndConditions />} />
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<AdminTrips />} />
+                <Route path="trips/:id" element={<AdminTripForm />} />
+              </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
 

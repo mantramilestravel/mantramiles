@@ -151,7 +151,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <div className="text-primary-foreground/80 text-center md:text-left">
-            <div>© 2025 Mantra Miles. All rights reserved.</div>
+            <div>© 2026 Mantra Miles. All rights reserved.</div>
             <div className="mt-1 hover:text-black cursor-pointer" onClick={() => window.open("https://wa.me/27731108711", "_blank")}>Designed by <span className="font-medium">Pramod Ramamurthy</span> — +91 9739020703</div>
           </div>
 

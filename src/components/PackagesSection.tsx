@@ -1979,7 +1979,7 @@ const packageData = {
     name: "Uzbekistan · Kyrgyzstan · Kazakhstan",
     packages: [
       {
-      title: "Essence of Central Asia – 2025",
+      title: "Essence of Central Asia – 2026",
       subtitle: "Uzbekistan • Kyrgyzstan • Kazakhstan",
       duration: "8 Days / 7 Nights",
       destinations: [
